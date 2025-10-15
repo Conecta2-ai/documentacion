@@ -50,25 +50,26 @@ Configura qué información debe extraer la IA de cada conversación:
     
     Puede agregar variables personalizadas según su caso de uso específico.
   </Accordion>
-  
+
+
   <Accordion title="Variable Examples" icon="lightbulb">
     Variables comunes para diferentes escenarios:
     
-    **Requisitos de venta:**
-  - `presupuesto` (número): rango presupuestario del cliente
-  - `responsable_de_la_decisión` (verdadero/falso): si la persona que llama es el responsable de la decisión
-  - `plazo` (cadena): cuándo necesitan la solución
-  - `puntos_débiles` (cadena): principales retos mencionados
-    
-    **Reserva de citas:**
-  - `fecha_cita` (cadena): fecha preferida para la cita
-  - `tipo_servicio` (cadena): tipo de servicio solicitado
-  - `método_contacto` (cadena): método de contacto preferido
-    
-    **Llamadas de asistencia:**
-  - `tipo_incidencia` (cadena): categoría del problema
-  - `nivel_urgencia` (número): puntuación de prioridad (1-10)
-  - `resolution_status` (Verdadero/Falso): ¿Se resolvió el problema?
+      **Requisitos de venta:**
+    - `presupuesto` (número): rango presupuestario del cliente
+    - `responsable_de_la_decisión` (verdadero/falso): si la persona que llama es el responsable de la decisión
+    - `plazo` (cadena): cuándo necesitan la solución
+    - `puntos_débiles` (cadena): principales retos mencionados
+      
+      **Reserva de citas:**
+    - `fecha_cita` (cadena): fecha preferida para la cita
+    - `tipo_servicio` (cadena): tipo de servicio solicitado
+    - `método_contacto` (cadena): método de contacto preferido
+      
+      **Llamadas de asistencia:**
+    - `tipo_incidencia` (cadena): categoría del problema
+    - `nivel_urgencia` (número): puntuación de prioridad (1-10)
+    - `resolution_status` (Verdadero/Falso): ¿Se resolvió el problema?
   </Accordion>
 </AccordionGroup>
 
@@ -78,17 +79,17 @@ Configura qué información debe extraer la IA de cada conversación:
   <Accordion title="How AI Extracts Variables" icon="brain">
     La IA utiliza un análisis sofisticado para extraer variables de sus llamadas:
     
-    **Fuentes de datos:**
-- **Transcripción completa de la llamada:** todo lo dicho tanto por la IA como por el cliente.
-- **Contexto de las indicaciones del sistema:** los objetivos y las instrucciones de su asistente ayudan a guiar la extracción.
-- **Descripciones de variables:** descripciones claras que usted proporciona para cada variable.
-    
-    **Método de análisis:**
-1. La IA revisa la transcripción completa de la conversación.
-2. Tiene en cuenta las indicaciones del sistema y los objetivos de la llamada.
-3. Identifica la información relevante basándose en las descripciones de las variables.
-4. Extrae y formatea los datos según los tipos especificados.
-5. Valida los valores extraídos antes de enviarlos al webhook.
+        **Fuentes de datos:**
+    - **Transcripción completa de la llamada:** todo lo dicho tanto por la IA como por el cliente.
+    - **Contexto de las indicaciones del sistema:** los objetivos y las instrucciones de su asistente ayudan a guiar la extracción.
+    - **Descripciones de variables:** descripciones claras que usted proporciona para cada variable.
+        
+        **Método de análisis:**
+    1. La IA revisa la transcripción completa de la conversación.
+    2. Tiene en cuenta las indicaciones del sistema y los objetivos de la llamada.
+    3. Identifica la información relevante basándose en las descripciones de las variables.
+    4. Extrae y formatea los datos según los tipos especificados.
+    5. Valida los valores extraídos antes de enviarlos al webhook.
   </Accordion>
 </AccordionGroup>
 
