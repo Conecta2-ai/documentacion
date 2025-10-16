@@ -1,62 +1,60 @@
 ---
-title: "Cal.com Appointment Scheduling"
-icon: "calendar-days"
-description: "Learn how to enable your AI assistant to schedule appointments using Cal.com integration"
+título: "Programación de citas en Cal.com"
+icono: "días calendario"
+descripción: "Aprenda cómo habilitar su asistente de IA para programar citas mediante la integración de Cal.com"
 ---
 
-Enable your AI assistant to seamlessly schedule meetings and appointments using Cal.com integration. This powerful feature allows your AI to check availability and book meetings directly during calls.
+Permite que tu asistente de IA programe reuniones y citas sin problemas mediante la integración con Cal.com. Esta potente función permite que tu IA consulte la disponibilidad y reserve reuniones directamente durante las llamadas.
 
 <Warning>
-  Do not make any new fields required in your Cal.com event settings. The
-  integration only supports default fields and the optional phone field. Adding
-  required custom fields will cause the integration to fail.
+  No configure ningún campo nuevo como obligatorio en la configuración de eventos de Cal.com. La integración solo admite los campos predeterminados y el campo de teléfono opcional. Agregar campos personalizados obligatorios provocará un error en la integración.
 </Warning>
 
-## Prerequisites
+## Prerrequisitos
 
-Before setting up Cal.com integration, you'll need:
+Antes de configurar la integración de Cal.com, necesitará:
 
-- A Cal.com account (either hosted or self-hosted)
-- An event type configured in Cal.com
-- An API key from Cal.com
+- Una cuenta de Cal.com (alojada o autoalojada)
+- Un tipo de evento configurado en Cal.com
+- Una clave API de Cal.com
 
-## Setup Process
+## Proceso de configuración
 
-### 1. Cal.com Configuration
+### 1. Configuración de Cal.com
 
-1. Sign up or log in to your [Cal.com](https://cal.com/) account
-2. Create a new event type specifically for AI assistant bookings
-   - Give it a clear name like "Meeting with AI Assistant"
-   - Configure duration, availability, and other settings
-3. Once created, note down the event ID from the URL
+1. Regístrese o inicie sesión en su cuenta [Cal.com](https://cal.com/) 
+2. Cree un nuevo tipo de evento específicamente para reservas de asistentes de IA
+   - Dale un nombre claro como "Reunión con Asistente de IA".
+   - Configurar la duración, la disponibilidad y otros ajustes
+3. Una vez creado, anote el ID del evento de la URL
    <img height="200" src="/resources/cal-event-id.png" />
-4. Generate an API key:
-   - Go to Cal.com settings
-   - Navigate to Developer Settings
-   - Create a new API key
-   - Copy and securely store the API key
+4. Generar una clave API:
+   - Vaya a la configuración de Cal.com
+   - Vaya a Configuración del desarrollador
+   - Crear una nueva clave API
+   - Copiar y almacenar de forma segura la clave API
 
-### 2. Customer Contact Information
+### 2. Información de contacto del cliente
 
-#### Email Configuration
+#### Configuración de correo electrónico
 
-To send calendar invites to customers:
+Para enviar invitaciones de calendario a los clientes:
 
-1. Define `email` in your assistant's input variables
-2. Pass the customer's email as the `email` variable when creating the lead
-3. The system will automatically use this email for calendar invitations
+1. Define `email` en las variables de entrada de tu asistente
+2. Pase el correo electrónico del cliente como `email` variable al crear el cliente potencial
+3. El sistema utilizará automáticamente este correo electrónico para las invitaciones del calendario.
 
-#### Phone Number in Calendar Events
+#### Número de teléfono en eventos del calendario
 
-To include the caller's phone number in calendar events:
+Para incluir el número de teléfono de la persona que llama en los eventos del calendario:
 
-1. Go to your event settings in Cal.com
-2. Click on "Add a question"
+1. Vaya a la configuración de su evento en Cal.com
+2. Haga clic en "Agregar una pregunta" 
    <img height="200" src="/resources/cal-event-settings.jpeg" />
-3. Configure the field with these exact values:
-   - Identifier: `phone` (this must be exact)
+3. Configure el campo con estos valores exactos:
+   - Identificador: `phone` debe ser exacto)
      <img height="200" src="/resources/cal-phone-field.jpeg" />
-4. Save your changes
+4. Guarda tus cambios
    <img height="200" src="/resources/cal-save.jpeg" />
 
 ### 3. Adding Cal.com to Your Assistant
