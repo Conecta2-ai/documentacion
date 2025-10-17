@@ -57,54 +57,54 @@ Para incluir el número de teléfono de la persona que llama en los eventos del 
 4. Guarda tus cambios
    <img height="200" src="/resources/cal-save.jpeg" />
 
-### 3. Adding Cal.com to Your Assistant
+### 3. Cómo agregar Cal.com a tu Asistente
 
-1. In your [AI assistant settings](/ai-assistants/settings/prompt-and-tools#default-tools), locate the Tools section
-2. Add the Cal.com integration
-3. Configure the tool with:
-   - Your Cal.com API key
-   - The event type ID
+1. En [ la configuración de tu asistente de IA ](/ai-assistants/settings/prompt-and-tools#default-tools), ubica la sección Herramientas
+2. Agregue la integración de Cal.com
+3. Configurar la herramienta con: 
+   - Su clave API de Cal.com
+   - El ID del tipo de evento
      <img height="200" src="/resources/cal-tool.png" />
 
-## Best Practices
+## Mejores prácticas
 
-- Create dedicated event types for AI bookings to track their usage
-- Set clear buffer times between meetings
-- Configure appropriate meeting durations
-- Use descriptive event names that make sense to your customers
-- Keep only default fields and the phone field optional
-- Always include customer email in lead creation for calendar invites
+- Cree tipos de eventos dedicados para reservas de IA para rastrear su uso
+- Establezca tiempos de amortiguación claros entre reuniones
+- Configurar duraciones de reuniones adecuadas
+- Utilice nombres de eventos descriptivos que tengan sentido para sus clientes
+- Mantener solo los campos predeterminados y el campo de teléfono opcional
+- Incluya siempre el correo electrónico del cliente en la creación de clientes potenciales para las invitaciones del calendario.
 
-## Testing
+## Pruebas
 
-After setup, we recommend:
+Después de la configuración, recomendamos:
 
-1. Making a test call to your AI assistant
-2. Requesting to schedule a meeting
-3. Verifying the booking appears in your Cal.com dashboard
-4. Checking that the phone number appears in the calendar event
-5. Verifying the customer receives the calendar invitation email
-6. Checking the confirmation emails are received
+1. Realizar una llamada de prueba a su asistente de IA
+2. Solicitar programar una reunión
+3. Verificar que la reserva aparezca en su panel de Cal.com
+4. Comprobar que el número de teléfono aparece en el evento del calendario
+5. Verificar que el cliente recibe el correo electrónico de invitación del calendario
+6. Comprobando que se han recibido los correos de confirmación
 
-## Troubleshooting
+## Solución de problemas
 
-### Quick Fixes:
+### Soluciones rápidas:
 
-**Missing API Key Error:**
-- **Solution:** Enter correct API key and event ID in assistant settings
-- **Steps:** Go to [assistant settings](/ai-assistants/settings/prompt-and-tools#default-tools) → Appointment Scheduling → Enter API key and event ID → Save
+**Error de clave API faltante:**
+- **Solución:** Ingrese la clave API y el ID del evento correctos en la configuración del asistente
+- **Pasos:** Vaya a  [la configuración del asistente ](/ai-assistants/settings/prompt-and-tools#default-tools) → Programación de citas → ngrese la clave API y el ID del evento → Guardar
 
-**Booking Failures:**
-- **Email Required:** Ensure assistant has email defined in [assistant settings](/ai-assistants/settings/prompt-and-tools#call-variables)
-- **Phone field setup:** Add phone field in Cal.com event settings with identifier "phone". See [Phone Number in Calendar Events](#phone-number-in-calendar-events) for detailed setup.
-- **Test with real phone calls:** Use phone call (not web call) for testing
-- **No custom fields:** Don't add required custom fields in Cal.com event settings
+**Errores de reserva:**
+- **Se requiere correo electrónico:** asegúrese de que el asistente tenga el correo electrónico definido en [la configuración del asistente](/ai-assistants/settings/prompt-and-tools#call-variables)
+- **Configuración del campo Teléfono:** Agregue el campo Teléfono en la configuración de eventos de Cal.com con el identificador "teléfono". Consulte [Número de teléfono en eventos del calendario"](#phone-number-in-calendar-events) para obtener información detallada.
+- **Prueba con llamadas telefónicas reales:** utiliza una llamada telefónica (no una llamada web) para realizar la prueba
+- **Sin campos personalizados:** no agregue campos personalizados obligatorios en la configuración de eventos de Cal.com
 
-**Connection Issues:**
-- **Verify API key** is active in Cal.com developer settings
-- **Check event ID** from your Cal.com event URL
-- **Confirm phone field** identifier is exactly "phone"
+**Problemas de conexión::**
+- **Verificar que la clave API** esté activa en la configuración de desarrollador de Cal.com
+- **Verifique el ID del evento** desde la URL de su evento de Cal.com
+- **Confirme que el identificador del campo de teléfono** sea exactamente "teléfono"
 
 <Note>
-For comprehensive Cal.com troubleshooting, including detailed solutions and additional issues, see [Cal.com Issues](/troubleshooting/cal-com).
+Para obtener una resolución completa de problemas de Cal.com, incluidas soluciones detalladas y problemas adicionales, consulte [Problemas de Cal.com](/troubleshooting/cal-com).
 </Note>
