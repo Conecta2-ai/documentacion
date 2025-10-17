@@ -1,33 +1,29 @@
 ---
-title: "Custom Mid-Call Tools"
-icon: "code-branch"
-description: "Learn how to create and configure custom API integrations that your AI assistant can use during calls"
+título: "Herramientas personalizadas de mitad de llamada"
+icono: "rama de código"
+descripción: "Aprenda a crear y configurar integraciones API personalizadas que su asistente de IA pueda usar durante las llamadas"
 ---
 
 <Note>
-  Custom Mid-Call Tools let your AI assistant interact with external systems
-  during calls. Whether checking inventory, verifying customer data, or fetching
-  real-time information, these tools make your AI more powerful and connected.
+Las herramientas personalizadas de mitad de llamada permiten que tu asistente de IA interactúe con sistemas externos durante las llamadas. Ya sea para revisar el inventario, verificar los datos de los clientes o obtener información en tiempo real, estas herramientas hacen que tu IA sea más potente y esté más conectada.
 </Note>
 
-## Overview
+## Descripción general
 
-Custom Mid-Call Tools enable your AI assistant to:
+Las herramientas personalizadas durante la llamada permiten que su asistente de IA:
 
-- Make real-time API calls during conversations
-- Fetch or submit data to your systems
-- Make informed decisions based on live data
-- Provide accurate, up-to-date information to callers
+- Realizar llamadas API en tiempo real durante las conversaciones
+- Obtener o enviar datos a sus sistemas
+- Tome decisiones informadas basadas en datos en vivo
+- Proporcionar información precisa y actualizada a las personas que llaman.
 
 <Card title="Key Benefits" icon="star">
-  - No coding required - just configure the API endpoint and parameters - AI
-  automatically knows when and how to use the tools - Real-time data access
-  during calls - Seamless integration with your existing systems
+  - No requiere codificación: solo configure el punto final y los parámetros de la API - La IA sabe automáticamente cuándo y cómo usar las herramientas - Acceso a datos en tiempo real durante las llamadas - Integración perfecta con sus sistemas existentes
 </Card>
 
-## Setting Up Your Tool
+## Configuración de su herramienta
 
-### 1. Basic Configuration
+### 1. Configuración básica
 
 <Frame>
   <img src="/resources/mid-call.png" alt="Main Tool Configuration" />
@@ -35,22 +31,22 @@ Custom Mid-Call Tools enable your AI assistant to:
 
 <Steps>
   <Step title="Access Tool Creation">
-    Navigate to **Mid call tools** and click **Create Mid-Call Tool**
+    Vaya a **Herramientas de mitad de llamadas** y haga clic en **Crear herramienta de mitad de llamada**
   </Step>
 
   <Step title="Configure Main Settings">
-    Fill in the essential details:
+    Complete los detalles esenciales:
 
-    - **Name**: Use lowercase and underscores (e.g., `check_order_status`)
-    - **Description**: Explain when and how the AI should use this tool
-    - **Endpoint**: Your API URL (e.g., `https://api.yourcompany.com/orders`)
-    - **Timeout**: How long to wait for responses (in seconds)
-    - **Method**: Choose GET, POST, PUT, PATCH, or DELETE
+    - **Nombre**: Utiliza minúsculas y guiones bajos (por ejemplo, `check_order_status`).
+    - **Descripción**: Explique cuándo y cómo debe utilizar la IA esta herramienta.
+    - **Punto final**: La URL de su API (por ejemplo, `https://api.yourcompany.com/orders`)
+    - **Tiempo de espera**: Cuánto tiempo esperar las respuestas (en segundos)
+    - **Método**: Elija GET, POST, PUT, PATCH, o DELETE
 
   </Step>
 
   <Step title="Add Headers">
-    Common headers you might need:
+    Encabezados comunes que podrías necesitar:
     ```yaml
     Content-Type: application/json
     Authorization: Bearer your_token
@@ -58,7 +54,7 @@ Custom Mid-Call Tools enable your AI assistant to:
   </Step>
 </Steps>
 
-### 2. Variable Configuration
+### 2. Configuración de variables
 
 <Frame>
   <img src="/resources/mid-call-param.png" alt="Variable Configuration" />
@@ -66,215 +62,212 @@ Custom Mid-Call Tools enable your AI assistant to:
 
 <Steps>
   <Step title="Define Parameters">
-    These are the pieces of information your AI will collect during the call:
+    Estos son los datos que tu IA recopilará durante la llamada:
     
     ```yaml
-    Name: order_number
-    Type: string
-    Description: "10-digit order number from the customer"
+    Nombre: número_de_pedido
+    Tipo: cadena
+    Descripción: "Número de pedido de 10 dígitos del cliente"
     ```
   </Step>
 
   <Step title="Set Validation Rules">
-    Add format requirements in the description:
+    Añadir requisitos de formato en la descripción:
     
     ```yaml
-    "Date in dd/mm/yyyy format"
-    "Phone number without spaces"
-    "Email address for confirmation"
+    "Fecha en formato dd/mm/aaa"
+    "Número de teléfono sin espacios"
+    "Dirección de correo electrónico para confirmación"
     ```
   </Step>
 </Steps>
 
-## Understanding Parameter Types
+## Comprensión de los tipos de parámetros
 
 <CardGroup cols={2}>
   <Card title="String" icon="font">
-    Text values like names, addresses, or reference numbers
+    Valores de texto como nombres, direcciones o números de referencia
 
     ```yaml
-    Type: string
-    Examples: "John Doe", "123 Main St"
+    Tipo: Cadena
+    Ejemplos: "Johny Dan", "Calle"
     ```
 
   </Card>
 
   <Card title="Number" icon="calculator">
-    Numeric values like amounts, quantities, or IDs
+    Valores numéricos como cantidades, cantidades o identificaciones
 
     ```yaml
-    Type: number
-    Examples: 42, 99.99
+    Tipo: número
+    Ejemplo: 42, 99.99
     ```
 
   </Card>
 
   <Card title="true_false" icon="toggle-on">
-    Boolean values for yes/no situations
+    Valores booleanos para situaciones de sí/no
 
     ```yaml
-    Type: true_false
-    Examples: true, false
+    Tipo: Verdadero_falso
+    Ejemplo: verdadero, falso
     ```
 
   </Card>
 
   <Card title="Formatting Help" icon="wand-magic-sparkles">
-    Add format instructions in descriptions
+    Añadir instrucciones de formato en las descripciones
 
     ```yaml
-    "Date in dd/mm/yyyy"
-    "Phone without spaces"
+    "Fecha dd/mm/aaa"
+    "Teléfono sin espacios"
     ```
 
   </Card>
 </CardGroup>
 
-## Dynamic Endpoints
+## Puntos finales dinámicos
 
 <Warning>
-  When using variables in your endpoint URL, make sure to enclose them in curly
-  braces and use the exact parameter name.
+  Al utilizar variables en la URL de su punto final, asegúrese de encerrarlas entre llaves y utilizar el nombre exacto del parámetro.
 </Warning>
 
-You can make your endpoints dynamic using variables:
+Puedes hacer que tus puntos finales sean dinámicos usando variables:
 
 ```yaml
-Basic URL:
+URL básica:
 https://api.example.com/orders/status
 
-With Variables:
+Con Variables:
 https://api.example.com/orders/{order_id}/status
 ```
 
-The AI will automatically replace `{order_id}` with the actual value collected during the conversation.
+La IA reemplazará automáticamente `{order_id}` con el valor real recopilado durante la conversación.
 
-## Testing Made Easy
+## Pruebas simplificadas
 
 <Card title="Automatic Testing" icon="vial">
-Click "Test Tool" to run a test with dummy data:
-- String parameters: "test"
-- Number parameters: 1
-- Boolean parameters: true
+Haga clic en "Herramienta de prueba" tpara ejecutar una prueba con datos ficticios:
+- Parámetros de cadena: "prueba"
+- Parámetros numéricos: 1
+- Parámetros booleanos: verdadero
 
-You'll see the response code and body, helping you verify everything works.
+Verá el código y el cuerpo de la respuesta, lo que le ayudará a verificar que todo funciona.
 
 </Card>
 
-## Power User Feature: Automation Platform Integration
+## Función de usuario avanzado: Integración de la plataforma de automatización
 
 <Note>
-  Need more complex logic? Connect your tool to the automation platform for
-  advanced workflows.
+  ¿Necesitas una lógica más compleja?  Conecta tu herramienta a la plataforma de automatización para flujos de trabajo avanzados.
 </Note>
 
-For advanced integrations and complex workflows, you can combine custom tools with our [Automation Platform](/automation-platform/introduction).
+Para integraciones avanzadas y flujos de trabajo complejos, puede combinar herramientas personalizadas con nuestra [Plataforma de automatización](/automation-platform/introduction).
 
-Here's how to create powerful integrations:
+A continuación se explica cómo crear integraciones potentes:
 
-1. In the automation platform:
+1. En la plataforma de automatización:
 
-   - Create a new flow
-   - Add a webhook trigger
-   - Build your logic (API calls, data transformation, etc.)
-   - End with "Return Response"
+   - Crear un nuevo flujo
+   - Agregar un activador de webhook
+   - Construye tu lógica (llamadas API, transformación de datos, etc.)
+   - Terminar con "Respuesta de retorno"
 
-2. In your custom tool:
-   - Use the webhook URL as your endpoint
-   - Add `/sync` at the end
-   - Example: `https://automation.autocalls.ai/webhook/abc123/sync`
+2. En su herramienta personalizada:
+   - Utilice la URL del webhook como punto final
+   - Añadir `/sync` al final
+   - Ejemplo: `https://automation.conecta2.ai/webhook/abc123/sync`
 
-This lets you:
+Esto le permite:
 
-- Transform data before/after API calls
-- Make multiple API calls in sequence
-- Apply complex business logic
-- Handle errors gracefully
+- Transformar datos antes/después de las llamadas API
+- Realizar múltiples llamadas API en secuencia
+- Aplicar lógica empresarial compleja
+- Manejar los errores con elegancia
 
-## Real-World Examples
+## Ejemplos del mundo real
 
 <AccordionGroup>
   <Accordion title="Order Lookup System" icon="magnifying-glass">
     ```yaml
-    Name: check_order
-    Endpoint: https://api.yourshop.com/orders/{order_number}
-    Parameters:
-      - Name: order_number
-        Type: string
-        Description: "Order reference (format: ORD-XXXXX)"
+    Nombre: check_order
+    Punto final: https://api.yourshop.com/orders/{order_number}
+    Parámetros:
+      - Nombre: order_number
+        Tipo: cadena
+        Descripción: "Referencia del pedido (formato: ORD-XXXXX)"
     ```
 
-    The AI will:
-    1. Ask for the order number
-    2. Fetch the status
-    3. Explain delivery dates and status to the customer
+    La IA hará lo siguiente:
+    1. Solicitará el número de pedido.
+    2. Obtendrá el estado.
+    3. Explicará las fechas de entrega y el estado al cliente.
 
   </Accordion>
 
   <Accordion title="Appointment Availability" icon="calendar">
     ```yaml
-    Name: check_slots
-    Endpoint: https://api.calendar.com/availability
-    Parameters:
-      - Name: service
-        Type: string
-        Description: "Service type (haircut, massage, consultation)"
-      - Name: date
-        Type: string
-        Description: "Preferred date (dd/mm/yyyy)"
+    Nombre: check_slots
+    Punto final: https://api.calendar.com/availability
+    Parámetros:
+      - Nombre: servicio
+        Tipo: cadena
+        Descripción: "Tipo de servicio (corte de pelo, masaje, consulta)"
+      - Nombre: fecha
+        Tipo: cadena 
+        Descripción: "Fecha preferida (dd/mm/aaaa)"
     ```
 
-    The AI will:
-    1. Ask about the desired service
-    2. Get preferred date
-    3. Show available time slots
+    La IA hará lo siguiente:
+    1. Preguntará por el servicio deseado
+    2. Obtendrá la fecha preferida.
+    3. Mostrará los horarios disponibles.
 
   </Accordion>
 
   <Accordion title="Customer Verification" icon="shield-check">
     ```yaml
-    Name: verify_customer
-    Endpoint: https://api.crm.com/verify
-    Parameters:
-      - Name: phone
-        Type: string
-        Description: "10-digit phone number"
-      - Name: email
-        Type: string
-        Description: "Email address for verification"
+    Nombre: verify_customer
+    Punto final: https://api.crm.com/verify
+    Parámetros:
+      - Nombre: phone
+        Tipo: string
+        Descripción: "Número de teléfono de 10 dígitos"
+      - Nombre: email 
+        Tipo: string
+        Descripción: "Dirección de correo electrónico para verificación"
     ```
 
-    The AI will:
-    1. Collect contact details
-    2. Verify against your CRM
-    3. Proceed based on verification status
+    La IA lo siguiente:
+    1. Recopilará los datos de contacto.
+    2. Los verificará con su CRM.
+    3. Procederá en función del estado de la verificación.
 
   </Accordion>
 </AccordionGroup>
 
-## Configuring Your AI
+## Configurando tu IA
 
 <Info>
-  The AI needs clear instructions in its system prompt to effectively use your
-  custom tools.
+  La IA necesita instrucciones claras en el mensaje del sistema para poder utilizar eficazmente sus herramientas personalizadas.
 </Info>
 
-Example prompt section:
+Ejemplo de sección de solicitud:
 
 ```yaml
-When to use check_order tool:
-1. Customer asks about order status
-2. Mentions tracking or delivery
-3. Wants to know where their package is
+Cuándo utilizar la herramienta check_order:
+1. El cliente pregunta por el estado del pedido.
+2. Menciona el seguimiento o la entrega.
+3.  Quiere saber dónde está su paquete.
 
-How to use it:
-1. Ask for order number if not provided
-2. Verify format (ORD-XXXXX)
-3. Use tool to fetch status
-4. Explain results in simple terms
+Cómo utilizarla:
+1. Pida el número de pedido si no se ha facilitado.
+2. Verifique el formato (ORD-XXXXX)
+3. Utilice la herramienta para obtener el estado.
+4. Explique los resultados en términos sencillos.
 ```
 
+
 <Tip>
-  Test your tools with various conversation flows to ensure the AI handles all
-  scenarios smoothly. Start with simple test calls before going live.
+  Pruebe sus herramientas con diversos flujos de conversación para garantizar que la IA gestione todos los escenarios sin problemas. Comience con llamadas de prueba sencillas antes de lanzar la aplicación.
 </Tip>
