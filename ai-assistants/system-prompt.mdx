@@ -1,156 +1,156 @@
 ---
-title: "System Prompts"
-icon: "brain"
-description: "Learn how to create effective system prompts - the core intelligence of your AI assistant"
+título: "Avisos del sistema"
+icono: "cerebro"
+descripción: "Aprende a crear mensajes de sistema eficaces: la inteligencia central de tu asistente de IA"
 ---
 
-The system prompt is the most crucial component of your AI assistant. It defines your assistant's personality, behavior, knowledge, and capabilities. Think of it as the "brain" and "training manual" combined.
+La interfaz del sistema es el componente más crucial de tu asistente de IA. Define su personalidad, comportamiento, conocimientos y capacidades. Imagínala como la combinación del "cerebro" y el "manual de entrenamiento".
 
-## Quick Start with Templates
+## Inicio rápido con plantillas
 
-To get started quickly:
+Para empezar rápidamente:
 
-1. Go to your [assistant settings](/ai-assistants/settings/prompt-and-tools#system-prompt)
-2. Find the system prompt field
-3. Click the "Templates" button nearby
-4. Choose a template that matches your use case
-5. Customize it for your needs
+1. Ve a [la configuración de tu asistente.](/ai-assistants/settings/prompt-and-tools#system-prompt)
+2. Encuentra el campo de solicitud del sistema
+3. Haz clic en el botón "Plantillas" que aparece cerca.
+4. Elija una plantilla que se ajuste a su caso de uso.
+5. Personalízalo según tus necesidades.
 
-## Language Support
+## Soporte lingüístico
 
-Your system prompt can be written in any language, regardless of the spoken language setting:
+El mensaje del sistema puede escribirse en cualquier idioma, independientemente de la configuración del idioma hablado:
 
-- Write the prompt in your preferred language
-- Set the spoken language separately in [assistant settings](/ai-assistants/settings/general#language-configuration)
-- The AI will follow the prompt's instructions while speaking in the selected language
+- Escribe la pregunta en tu idioma preferido.
+- Configure el idioma hablado por separado en [los ajustes del asistente.](/ai-assistants/settings/general#language-configuration)
+- La IA seguirá las instrucciones del mensaje mientras habla en el idioma seleccionado.
 
-For example:
+Por ejemplo:
 
-- System prompt in English, spoken language set to Spanish
-- System prompt in German, spoken language set to French
-- System prompt in Chinese, spoken language set to English
+- Mensaje del sistema en inglés, idioma hablado configurado en español
+- Mensaje del sistema en alemán, idioma hablado configurado en francés
+- Mensaje del sistema en chino, idioma hablado configurado en inglés
 
-## Why They Matter
+## Por qué son importantes
 
-Your system prompt:
+Mensaje del sistema:
 
-- Shapes how the AI thinks and responds
-- Defines conversation boundaries
-- Provides essential knowledge
-- Controls behavior and tone
-- Determines handling of edge cases
+- Moldea la forma en que la IA piensa y responde.
+- Define los límites de la conversación
+- Proporciona conocimientos esenciales
+- Controla el comportamiento y el tono
+- Determina el manejo de los casos límite.
 
-## Key Components
+## Componentes clave
 
-A good system prompt should include:
+Un buen mensaje del sistema debería incluir:
 
-### 1. Role & Identity
-
-```
-You are a professional sales representative for [Company]. You specialize in [Product/Service] and have extensive knowledge of our offerings.
-```
-
-### 2. Conversation Style
+### 1. Rol e identidad
 
 ```
-Maintain a friendly, professional tone. Use clear, concise language. Avoid technical jargon unless specifically asked.
+Eres representante de ventas profesional de [Empresa]. Estás especializado en [Producto/Servicio] y tienes un amplio conocimiento de nuestra oferta.
 ```
 
-### 3. Key Information
+### 2. Estilo de conversación
 
 ```
-Our main products are:
-- Product A ($X/month): [features]
-- Product B ($Y/month): [features]
-Current promotion: 20% off first 3 months
+Mantenga un tono amable y profesional. Utilice un lenguaje claro y conciso. Evite la jerga técnica a menos que se le solicite específicamente.
 ```
 
-### 4. Behavioral Guidelines
+### 3.  Información clave
 
 ```
-- Always verify customer information before discussing account details
-- Transfer to a human agent if the customer seems frustrated
-- Don't make promises about delivery dates
+Nuestros principales productos son:
+- Producto A ($X/mes): [características]
+- Producto B ($Y/mes): [características]
+Promoción actual: 20% de descuento durante los primeros 3 meses.
 ```
 
-### 5. Response Framework
+### 4. Pautas de comportamiento
 
 ```
-When asked about pricing:
-1. First understand their needs
-2. Present relevant package options
-3. Explain the value proposition
-4. Share any applicable discounts
+- Verifique siempre la información del cliente antes de discutir los detalles de la cuenta.
+- Transfiera la llamada a un agente humano si el cliente parece frustrado.
+- No haga promesas sobre las fechas de entrega.
 ```
 
-## Best Practices
-
-1. **Be Specific**
-
-   - Clear instructions get better results
-   - Include examples of good responses
-   - Define what NOT to do
-
-2. **Structure Matters**
-
-   - Organize information logically
-   - Use bullet points and sections
-   - Keep related information together
-
-3. **Test and Iterate**
-   - Start with a basic prompt
-   - Test various scenarios
-   - Refine based on call recordings
-   - Add handling for edge cases
-
-## Common Mistakes
-
-- **Too Vague**: "Be helpful and professional" (Not specific enough)
-- **Too Rigid**: Scripting every possible response (Reduces natural flow)
-- **Information Overload**: Including unnecessary details
-- **Missing Guidelines**: Not specifying how to handle common situations
-
-## Example Structure
+### 5. Marco de respuesta
 
 ```
-# Role and Purpose
-[Define who the AI is and its main goals]
-
-# Core Knowledge
-[Essential information about products/services]
-
-# Conversation Guidelines
-[How to interact with customers]
-
-# Response Patterns
-[How to handle specific situations]
-
-# Limitations and Boundaries
-[What the AI should NOT do]
+Cuando se le pregunte sobre los precios:
+1. Primero comprenda sus necesidades.
+2. Presente opciones de paquetes relevantes.
+3. Explique la propuesta de valor.
+4. Comparta cualquier descuento aplicable.
 ```
 
-## Testing Your Prompt
+## Mejores prácticas
 
-1. Make test calls covering:
+1. **Sea específico**
 
-   - Common scenarios
-   - Edge cases
-   - Difficult situations
-   - Various customer personalities
+   - Las instrucciones claras dan mejores resultados
+   - Incluye ejemplos de buenas respuestas.
+   - Define lo que NO se debe hacer
 
-2. Review and adjust:
-   - Listen to call recordings
-   - Check response accuracy
-   - Verify tone consistency
-   - Test knowledge retention
+2. **La estructura importa**
 
-## Optimization Tips
+   - Organizar la información de forma lógica
+   - Utilice viñetas y secciones
+   - Mantén la información relacionada junta.
 
-- Start with Fast Engine for quick iterations
-- Use call recordings to identify gaps
-- Add examples of good/bad responses
-- Include handling for unexpected questions
+3. **Prueba e itera**
+   - Comience con una pregunta básica
+   - Prueba varios escenarios
+   - Refinar en función de las grabaciones de llamadas
+   - Agregar manejo para casos extremos.
+
+## Errores comunes
+
+- **Demasiado vago**: "Sea servicial y profesional" (No es lo suficientemente específico)
+- **Demasiado rígido**: Prever cada respuesta posible (Reduce la fluidez natural)
+- **Sobrecarga de información**: Incluye detalles innecesarios
+- **Directrices faltantes**: No se especifica cómo manejar situaciones comunes
+
+## Estructura de ejemplo
+
+```
+# Función y propósito
+[Defina quién es la IA y cuáles son sus objetivos principales]
+
+# Conocimientos básicos
+[Información esencial sobre los productos/servicios]
+
+# Pautas de conversación
+[Cómo interactuar con los clientes]
+
+# Patrones de respuesta
+[Cómo manejar situaciones específicas]
+
+# Limitaciones y límites
+[Lo que la IA NO debe hacer]
+```
+
+## Probando su prompt
+
+1. Realiza llamadas de prueba que abarquen:
+
+   - Escenarios comunes
+   - Casos límite
+   - Situaciones difíciles
+   - Diversas personalidades de clientes
+
+2. Revisar y ajustar:
+   - Escuchar grabaciones de llamadas
+   - Verifique la precisión de la respuesta
+   - Verificar la consistencia del tono
+   - Retención de conocimientos de prueba
+
+## Consejos de optimización
+
+- Comience con Fast Engine para iteraciones rápidas.
+- Utilice las grabaciones de llamadas para identificar deficiencias.
+- Añade ejemplos de respuestas buenas/malas.
+- Incluir medidas para preguntas inesperadas
 
 ---
 
-**Pro Tip:** Your system prompt is a living document - regularly update it based on actual call experiences and customer interactions.
+**Consejo profesional:** El mensaje de su sistema es un documento vivo; actualícelo regularmente en función de las experiencias reales de llamadas e interacciones con los clientes.
