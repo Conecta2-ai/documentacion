@@ -1,56 +1,56 @@
 ---
-title: "Tools & Functions"
-icon: "screwdriver-wrench"
-description: "Explore the built-in tools and functions that enhance your AI assistant's capabilities during calls"
+título: "Herramientas y funciones"
+icono: "destornillador-llave"
+descripción: "Explora las herramientas y funciones integradas que mejoran las capacidades de tu asistente de IA durante las llamadas."
 ---
 
-Autocalls.ai offers built-in "tools" that your AI assistant can use during a call. These help you shape the conversation flow and automate actions like transferring calls or scheduling appointments.
+Conecta2.ai ofrece herramientas integradas que tu asistente de IA puede usar durante una llamada. Estas te ayudan a guiar el flujo de la conversación y automatizar acciones como transferir llamadas o programar citas.
 
-## 1. End Call Tool
+## 1. Herramienta de finalización de llamada
 
-- **Purpose**: Tells the AI to politely wrap up the conversation.
-- **How It Works**: You can specify in the system prompt or logic, for instance: "If the user says `goodbye`, end the call."
-- **Configuration**: Enable in [Prompt & Tools settings](/ai-assistants/settings/prompt-and-tools#default-tools) and define conditions in your system prompt that should trigger the end call.
+- **Propósito**: Indica a la IA que finalice la conversación de manera cortés.
+- **Cómo funciona**: Puede especificar en el indicador o la lógica del sistema, por ejemplo: "Si el usuario dice `adiós`, finalice la llamada."
+- **Configuración**: Habilite esta opción en [la configuración de "Prompt & Tools](/ai-assistants/settings/prompt-and-tools#default-tools) y defina las condiciones en el prompt del sistema que deberían activar la llamada final.
 
-## 2. Transfer Tool
+## 2. Herramienta de transferencia
 
-- **Purpose**: Moves the caller from the AI assistant to a human agent or external phone number.
-- **Use Cases**: Warm leads on a sales call, escalations on a support call, etc.
-- **Configuration**: Set up in [Prompt & Tools settings](/ai-assistants/settings/prompt-and-tools#default-tools) by adding the phone number or department the call should go to, and optionally a short hold message.
+- **Finalidad**: Traslada la llamada desde el asistente de IA a un agente humano o a un número de teléfono externo.
+- **Casos de uso**: Generar interés en clientes potenciales durante una llamada de ventas, gestionar incidencias escaladas en una llamada de soporte, etc.
+- **Configuración**: Configure en [los ajustes de Mensaje y Herramientas](/ai-assistants/settings/prompt-and-tools#default-tools) añadiendo el número de teléfono o el departamento al que debe dirigirse la llamada y, opcionalmente, un breve mensaje de espera.
 
-## 3. Appointment Scheduler
+## 3. Programador de citas
 
-- **Purpose**: Lets the AI check your calendar availability and book appointments automatically.
-- **Available Integrations**: Cal.com and GoHighLevel calendar systems
-- **Typical Flow**:
-  1. AI offers scheduling.
-  2. Caller selects date/time.
-  3. AI confirms and sends a confirmation (using email or SMS if configured).
-- **Configuration**: Set up in [Prompt & Tools settings](/ai-assistants/settings/prompt-and-tools#default-tools) with your calendar integration.
+- **Finalidad**: Permite que la IA compruebe la disponibilidad de tu calendario y reserve citas automáticamente.
+- **Integraciones disponibles**: Sistemas de calendario Cal.com y GoHighLevel
+- **Flujo típico**:
+  1. La IA ofrece funciones de programación.
+  2. La persona que llama selecciona la fecha y la hora.
+  3. La IA confirma y envía una confirmación (por correo electrónico o SMS si está configurada).
+- **Configuración**: Configúrela en [la configuración de Avisos y herramientas](/ai-assistants/settings/prompt-and-tools#default-tools) con la integración de su calendario.
 
-## 4. DTMF Input
+## 4. Entrada DTMF
 
-- **Purpose**: Allows the AI to send keypad inputs during calls to navigate phone menus, IVR systems, and automated workflows.
-- **How It Works**: The AI can press phone keypad buttons (0-9, *, #) when encountering automated systems or menu prompts.
-- **Use Cases**: 
-  - Navigate through company phone menus
-  - Enter extension numbers to reach specific departments
-  - Input security codes or account numbers
-  - Bypass IVR systems to reach human agents
-- **Configuration**: Enable in [Prompt & Tools settings](/ai-assistants/settings/prompt-and-tools#default-tools) and include instructions in your system prompt about when to use DTMF.
+- **Finalidad**: Permite que la IA envíe entradas de teclado durante las llamadas para navegar por los menús del teléfono, los sistemas IVR y los flujos de trabajo automatizados.
+- **Cómo funciona**: La IA puede presionar los botones del teclado del teléfono (0-9, *, #) cuando se encuentra con sistemas automatizados o indicaciones de menú.
+- **Casos de uso**: 
+  - Navegar por los menús telefónicos de la empresa
+  - Introduzca los números de extensión para comunicarse con departamentos específicos.
+  - Introduzca los códigos de seguridad o los números de cuenta.
+  - Evitar los sistemas IVR para contactar con agentes humanos
+- **Configuración**: Habilite esta opción en [ la configuración de "Señal de aviso y herramientas](/ai-assistants/settings/prompt-and-tools#default-tools) e incluya instrucciones en la pantalla de aviso del sistema sobre cuándo usar DTMF.
 
-## 5. No-Code Automation Platform
+## 5. Plataforma de automatización sin código
 
-- **Purpose**: After calls, the AI can trigger actions in the automation platform (like updating a CRM, sending an email, or logging results in Google Sheets).
-- **Configuration**: Set up triggers and actions in the [Automation Platform](/automation-platform/introduction), then link to your assistant via webhook configuration in [Post-call Actions](/ai-assistants/settings/post-call-actions#webhook-configuration).
+- **Finalidad**: Tras las llamadas, la IA puede activar acciones en la plataforma de automatización (como actualizar un CRM, enviar un correo electrónico o registrar los resultados en Google Sheets).
+- **Configuración**: Configure los activadores y las acciones en la [plataforma de automatización](/automation-platform/introduction), y, a continuación, vincúlelos a su asistente mediante la configuración de webhook en [Acciones posteriores a la llamada](/ai-assistants/settings/post-call-actions#webhook-configuration).
 
-## 6. Custom Mid-Call Tools
+## 6. Herramientas personalizadas para llamadas intermedias
 
-- **Purpose**: Create your own custom API integrations that the AI can use during calls.
-- **Use Cases**: Check inventory, verify customer data, fetch real-time information, or integrate with your own systems.
-- **Configuration**: Set up in [Prompt & Tools settings](/ai-assistants/settings/prompt-and-tools#custom-mid-call-tools) by defining API endpoints, parameters, and when the AI should use them.
-- For detailed setup instructions and examples, see our [Custom Mid-Call Tools Guide](/ai-assistants/custom-tools).
+- **Objetivo**: Crear integraciones de API personalizadas que la IA pueda utilizar durante las llamadas.
+- **Casos de uso**: Consultar inventario, verificar datos de clientes, obtener información en tiempo real o integrarse con sus propios sistemas.
+- **Configuración**: Configúrela en [la configuración de Prompt & Tools](/ai-assistants/settings/prompt-and-tools#custom-mid-call-tools) definiendo los endpoints de la API, los parámetros y cuándo la IA debe utilizarlos.
+- Para obtener instrucciones de configuración detalladas y ejemplos, consulte nuestra [Guía de herramientas personalizadas para llamadas intermedias](/ai-assistants/custom-tools).
 
 ---
 
-**Note:** Tools can be combined. For instance, the AI can use a custom tool to check availability, then schedule an appointment, and finally transfer to a human agent if needed.
+**Nota:** Las herramientas se pueden combinar. Por ejemplo, la IA puede usar una herramienta personalizada para comprobar la disponibilidad, luego programar una cita y, finalmente, transferir la llamada a un agente humano si es necesario.
