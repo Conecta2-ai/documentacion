@@ -1,29 +1,29 @@
 ---
-title: "Delete call"
-api: "DELETE /user/calls/{call}"
-description: "Delete a specific call record"
+título: "Eliminar llamada"
+API: "ELIMINAR /usuario/llamadas/{llamada}"
+descripción: "Eliminar un registro de llamada específico"
 ---
 
-This endpoint allows you to delete a specific call record that belongs to the authenticated user.
+Este punto de conexión le permite eliminar un registro de llamada específico que pertenece al usuario autenticado.
 
-### Path Parameters
+### Parámetros de ruta
 
 <ParamField path="call" type="integer" required>
-  The unique identifier of the call to delete
+  El identificador único de la llamada a eliminar
 </ParamField>
 
-### Response
+### Respuesta
 
 <ResponseField name="message" type="string">
-  Confirmation message indicating the call was deleted successfully
+  Mensaje de confirmación que indica que la llamada se eliminó correctamente
 </ResponseField>
 
-### Error Responses
+### Respuestas de error
 
 <ResponseField name="404 Not Found">
   <Expandable title="Error Response">
     <ResponseField name="message" type="string">
-      Error message when the call is not found or doesn't belong to the authenticated user
+      Mensaje de error cuando no se encuentra la llamada o no pertenece al usuario autenticado
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -32,21 +32,21 @@ This endpoint allows you to delete a specific call record that belongs to the au
 
 ```json 200 Success Response
 {
-  "message": "Call deleted successfully"
+  "message": "Llamada eliminada correctamente"
 }
 ```
 
 ```json 404 Not Found
 {
-  "message": "Call not found"
+  "message": "Llamada no encontrada"
 }
 ```
 
 </ResponseExample>
 
-### Notes
+### Notas
 
-- Only calls that belong to assistants owned by the authenticated user can be deleted
-- Once a call is deleted, it cannot be recovered
-- This action will permanently remove the call record, including any associated transcript, recording, and metadata
-- The call recording file (if exists) will also be deleted from storage
+- Solo se pueden eliminar las llamadas que pertenecen a asistentes propiedad del usuario autenticado.
+- Una vez eliminada una llamada, no se puede recuperar.
+- Esta acción eliminará permanentemente el registro de la llamada, incluyendo cualquier transcripción, grabación y metadatos asociados.
+- El archivo de grabación de la llamada (si existe) también se eliminará del almacenamiento.
