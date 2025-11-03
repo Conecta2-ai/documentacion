@@ -1,31 +1,31 @@
 ---
-title: "Get available voices"
-api: "GET /user/assistants/voices"
-description: "Retrieve all available voices for assistant configuration"
+título: "Obtén las voces disponibles"
+API: "OBTENER /usuario/asistentes/voces"
+descripción: "Recuperar todas las voces disponibles para la configuración del asistente"
 ---
 
-This endpoint returns a list of all available voices that can be used when creating or updating assistants, with optional filtering by assistant mode.
+Este punto de conexión devuelve una lista de todas las voces disponibles que se pueden usar al crear o actualizar asistentes, con la opción de filtrar por modo de asistente.
 
-### Query Parameters
+### Parámetros de consulta
 
 <ParamField query="mode" type="string" optional>
-  Filter voices by assistant mode. Options: `pipeline`, `multimodal`
+  Filtra las voces por modo de asistente. Opciones: `pipeline`, `multimodal`
 </ParamField>
 
-### Response fields
+### Campos de respuesta
 
 <ResponseField name="data" type="array">
   <Expandable title="properties">
     <ResponseField name="id" type="integer">
-      The unique identifier of the voice
+      El identificador único de la voz
     </ResponseField>
 
     <ResponseField name="name" type="string">
-      The display name of the voice
+      El nombre que se muestra de la voz.
     </ResponseField>
 
     <ResponseField name="mode" type="string">
-      The assistant mode this voice is compatible with (`pipeline` or `multimodal`)
+      El modo de asistente con el que es compatible esta voz (`pipeline` or `multimodal`)
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -36,17 +36,17 @@ This endpoint returns a list of all available voices that can be used when creat
 [
   {
     "id": 1,
-    "name": "Sarah",
+    "name": "Sara",
     "mode": "pipeline"
   },
   {
     "id": 2,
-    "name": "Michael",
+    "name": "Maicol",
     "mode": "pipeline"
   },
   {
     "id": 3,
-    "name": "Emma",
+    "name": "Ema",
     "mode": "multimodal"
   },
   {
@@ -56,7 +56,7 @@ This endpoint returns a list of all available voices that can be used when creat
   },
   {
     "id": 5,
-    "name": "Sophia",
+    "name": "Sofia",
     "mode": "pipeline"
   }
 ]
@@ -64,10 +64,10 @@ This endpoint returns a list of all available voices that can be used when creat
 
 </ResponseExample>
 
-### Notes
+### Notas
 
-- Use the `id` field when creating or updating assistants
-- The `mode` field indicates which assistant engine the voice is compatible with
-- Filter by mode to get only voices compatible with your intended assistant type
-- If no mode filter is provided, all available voices are returned
-- Only voices that are public or belong to the authenticated user are returned
+- Utilice este `id` campo al crear o actualizar asistentes.
+- Este `mode` campo indica con qué motor de asistente es compatible la voz.
+- Filtra por modo para obtener solo las voces compatibles con el tipo de asistente que deseas.
+- Si no se proporciona ningún filtro de modo, se devuelven todas las voces disponibles.
+- Solo se devuelven las voces que son públicas o pertenecen al usuario autenticado.
