@@ -1,29 +1,29 @@
 ---
-title: "Delete assistant"
-api: "DELETE /user/assistant/{id}"
-description: "Delete a specific AI assistant"
+título: "Delete assistant"
+API: "ELIMINAR /usuario/asistente/{id}"
+descripción: "Eliminar un asistente de IA específico"
 ---
 
-This endpoint allows you to permanently delete an AI assistant that belongs to the authenticated user.
+Este punto de conexión le permite eliminar permanentemente un asistente de IA que pertenece al usuario autenticado.
 
-### Path Parameters
+### Parámetros de ruta
 
 <ParamField path="id" type="integer" required>
-  The unique identifier of the assistant to delete
+  El identificador único del asistente a eliminar
 </ParamField>
 
-### Response
+### Respuesta
 
 <ResponseField name="message" type="string">
-  Confirmation message indicating the assistant was deleted successfully
+  Mensaje de confirmación que indica que el asistente se eliminó correctamente
 </ResponseField>
 
-### Error Responses
+### Respuestas de error
 
 <ResponseField name="404 Not Found">
   <Expandable title="Error Response">
     <ResponseField name="message" type="string">
-      Error message when the assistant is not found or doesn't belong to the authenticated user
+      Mensaje de error cuando no se encuentra el asistente o no pertenece al usuario autenticado
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -31,7 +31,7 @@ This endpoint allows you to permanently delete an AI assistant that belongs to t
 <ResponseField name="500 Internal Server Error">
   <Expandable title="Error Response">
     <ResponseField name="message" type="string">
-      Error message indicating assistant deletion failure
+      Mensaje de error que indica un fallo en la eliminación del asistente.
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -40,27 +40,27 @@ This endpoint allows you to permanently delete an AI assistant that belongs to t
 
 ```json 200 Success Response
 {
-  "message": "Assistant deleted successfully"
+  "mensaje": "Asistente eliminado correctamente"
 }
 ```
 
 ```json 404 Not Found
 {
-  "message": "Assistant not found"
+  "mensaje": "No se ha encontrado el asistente"
 }
 ```
 
 ```json 500 Internal Server Error
 {
-  "message": "Assistant deletion failed"
+  "mensaje": "Error al eliminar el asistente"
 }
 ```
 
 </ResponseExample>
 
-### Notes
+### Notas
 
-- Only assistants that belong to the authenticated user can be deleted
-- Once an assistant is deleted, it cannot be recovered
-- This action will permanently remove the assistant and all its configuration
-- If the assistant is currently handling active calls, those calls may be affected
+- Solo se pueden eliminar los asistentes que pertenecen al usuario autenticado.
+- Una vez eliminado un asistente, no se puede recuperar.
+- Esta acción eliminará permanentemente el asistente y toda su configuración.
+- Si el asistente está atendiendo llamadas activas, estas podrían verse afectadas.
