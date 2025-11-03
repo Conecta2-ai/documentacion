@@ -1,298 +1,300 @@
 ---
-title: "List assistants"
-api: "GET /user/assistants/get"
-description: "List all assistants for the authenticated user with pagination"
+título: "Asistentes de lista"
+API: "GET /user/assistants/get"
+descripción: "Lista de todos los asistentes del usuario autenticado con paginación"
 ---
 
-This endpoint allows you to retrieve all AI assistants belonging to the authenticated user.
+Este punto de conexión le permite recuperar todos los asistentes de IA que pertenecen al usuario autenticado.
 
-### Query Parameters
+### Parámetros de consulta
 
 <ParamField query="per_page" type="integer" optional>
-  Number of assistants per page (1-100, default: 10)
+  Número de asistentes por página (1-100, valor predeterminado: 10)
 </ParamField>
 
 <ParamField query="page" type="integer" optional>
-  Page number (default: 1)
+  Número de página (valor predeterminado: 1)
 </ParamField>
 
-### Response fields
+### Campos de respuesta
 
 <ResponseField name="data" type="array">
   <Expandable title="properties">
     <ResponseField name="id" type="integer">
-      The unique identifier of the assistant
+      El identificador único del asistente
     </ResponseField>
 
     <ResponseField name="user_id" type="integer">
-      The ID of the user who owns this assistant
+       El ID del usuario propietario de este asistente.
     </ResponseField>
 
     <ResponseField name="phone_number_id" type="integer">
-      The ID of the phone number assigned to the assistant
+       El ID del número de teléfono asignado al asistente.
     </ResponseField>
 
     <ResponseField name="engine_id" type="integer">
-      Engine ID
+      ID del motor.
     </ResponseField>
 
     <ResponseField name="synthesizer_id" type="integer">
-      Synthesizer ID
+      ID del sintetizador.
     </ResponseField>
 
     <ResponseField name="transcriber_id" type="integer">
-      Transcriber ID
+       ID del transcriptor.
     </ResponseField>
 
     <ResponseField name="voice_id" type="integer">
-      The ID of the voice used by the assistant
+      El ID de la voz utilizada por el asistente.
     </ResponseField>
 
     <ResponseField name="instance_id" type="integer">
-      The instance ID for the assistant
+      ID de instancia del asistente
     </ResponseField>
 
     <ResponseField name="name" type="string">
-      The name of the assistant
+       Nombre del asistente
     </ResponseField>
 
     <ResponseField name="variables" type="object">
-      Custom variables defined for the assistant
+      Variables personalizadas definidas para el asistente
     </ResponseField>
 
     <ResponseField name="post_call_evaluation" type="boolean">
-      Whether post-call evaluation is enabled
+       Si la evaluación posterior a la llamada está habilitada.
     </ResponseField>
 
     <ResponseField name="fillers" type="integer">
-      Whether filler audio is enabled (1 = enabled, 0 = disabled)
+      Si el audio de relleno está habilitado (1 = habilitado, 0 = deshabilitado).
     </ResponseField>
 
     <ResponseField name="post_call_schema" type="array">
-      Schema definition for post-call data extraction
-      <Expandable title="post_call_schema properties">
+      Definición del esquema para la extracción de datos posteriores a la llamada.
+      <Expandable title="propiedades del esquema posterior a la llamada">
         <ResponseField name="name" type="string">
-          The name of the schema field
+          El nombre del campo del esquema.
         </ResponseField>
         <ResponseField name="type" type="string">
-          The data type (string, number, bool)
+          El tipo de datos (cadena, número, booleano).
         </ResponseField>
         <ResponseField name="description" type="string">
-          Description of what this field represents
+          Descripción de lo que representa este campo.
         </ResponseField>
       </Expandable>
     </ResponseField>
 
     <ResponseField name="tools" type="array">
-      Array of tools available to the assistant
+      Matriz de herramientas disponibles para el asistente.
     </ResponseField>
 
     <ResponseField name="is_webhook_active" type="boolean">
-      Whether webhook notifications are enabled
+      Si las notificaciones webhook están habilitadas
     </ResponseField>
 
     <ResponseField name="webhook_url" type="string">
-      The webhook URL for post-call notifications
+      La URL webhook para notificaciones posteriores a la llamada
     </ResponseField>
 
     <ResponseField name="inbound_webhook_url" type="string">
-      The webhook URL for inbound call notifications
+      La URL del webhook para las notificaciones de llamadas entrantes.
     </ResponseField>
 
     <ResponseField name="language" type="string">
-      Language
+      Idioma.
     </ResponseField>
 
     <ResponseField name="type" type="string">
-      The type of assistant (inbound or outbound)
+      El tipo de asistente (entrante o saliente).
     </ResponseField>
 
     <ResponseField name="status" type="string">
-      The current status of the assistant (active or inactive)
+      El estado actual del asistente (activo o inactivo).
     </ResponseField>
 
     <ResponseField name="max_duration" type="integer">
-      Maximum call duration in seconds
+      Duración máxima de la llamada en segundos.
     </ResponseField>
 
     <ResponseField name="record" type="boolean">
-      Whether to record calls
+       Si se deben grabar las llamadas
     </ResponseField>
 
     <ResponseField name="initial_message" type="string">
-      The initial message the assistant will speak
+      El mensaje inicial que pronunciará el asistente
     </ResponseField>
 
     <ResponseField name="system_prompt" type="string">
-      The system prompt that defines the assistant's behavior
+       La indicación del sistema que define el comportamiento del asistente
     </ResponseField>
 
     <ResponseField name="flows_platform_id" type="integer">
-      ID for flows platform integration
+      ID para la integración de la plataforma de flujos
     </ResponseField>
 
     <ResponseField name="timezone" type="string">
-      The timezone setting for the assistant
+      Configuración de la zona horaria para el asistente
     </ResponseField>
 
     <ResponseField name="created_at" type="string">
-      The date and time when the assistant was created
+      Fecha y hora en que se creó el asistente.
     </ResponseField>
 
     <ResponseField name="updated_at" type="string">
-      The date and time when the assistant was last updated
+      Fecha y hora en que se actualizó por última vez el asistente.
     </ResponseField>
 
     <ResponseField name="max_silence_duration" type="integer">
-      Maximum silence duration in seconds before re-engagement
+      Duración máxima del silencio en segundos antes de volver a interactuar.
     </ResponseField>
 
     <ResponseField name="reengagement_interval" type="integer">
-      Re-engagement interval in seconds
+      Intervalo de reinteracción en segundos.
     </ResponseField>
 
     <ResponseField name="deleted_at" type="string">
-      Soft deletion timestamp (null if not deleted)
+      Marca de tiempo de eliminación temporal (nula si no se ha eliminado).
     </ResponseField>
 
     <ResponseField name="end_call_on_voicemail" type="integer">
-      Whether to end call when voicemail is detected (1 = yes, 0 = no)
+      Si se debe finalizar la llamada cuando se detecta un buzón de voz (1 = sí, 0 = no).
     </ResponseField>
 
     <ResponseField name="llm_temperature" type="string">
-      LLM temperature setting as string
+      
+  Configuración de la temperatura LLM como cadena
     </ResponseField>
 
     <ResponseField name="voice_stability" type="string">
-      Voice stability setting as string
+      Configuración de la estabilidad de la voz como cadena
     </ResponseField>
 
     <ResponseField name="voice_similarity" type="string">
-      Voice similarity setting as string
+      Configuración de la similitud de la voz como cadena
     </ResponseField>
 
     <ResponseField name="allow_interruptions" type="boolean">
-      Whether to allow caller interruptions
+      Si se permiten las interrupciones de la persona que llama.
     </ResponseField>
 
     <ResponseField name="enable_noise_cancellation" type="boolean">
-      Whether noise cancellation is enabled
+      Si la cancelación de ruido está habilitada.
     </ResponseField>
 
     <ResponseField name="endpoint_sensitivity" type="number">
-      Endpoint sensitivity level
+      Nivel de sensibilidad del punto final.
     </ResponseField>
 
     <ResponseField name="speech_speed" type="string">
-      Speech speed multiplier as string
+       Multiplicador de velocidad del habla como cadena.
     </ResponseField>
 
     <ResponseField name="endpoint_type" type="string">
-      Voice activity detection type (vad or ai)
+      Tipo de detección de actividad de voz (vad o ai).
     </ResponseField>
 
     <ResponseField name="wait_for_customer" type="boolean">
-      Whether to wait for customer to speak first
+      Si se debe esperar a que el cliente hable primero
     </ResponseField>
 
     <ResponseField name="mode" type="string">
-      The engine mode (pipeline or multimodal)
+      El modo del motor (pipeline o multimodal)
     </ResponseField>
 
     <ResponseField name="language_id" type="integer">
-      The ID of the language used by the assistant
+       ID del idioma utilizado por el asistente
     </ResponseField>
 
     <ResponseField name="transcriber_provider_id" type="integer">
-      ID of the transcriber provider
+       ID del proveedor de transcripción
     </ResponseField>
 
     <ResponseField name="synthesizer_provider_id" type="integer">
-      ID of the synthesizer provider
+      ID del proveedor del sintetizador
     </ResponseField>
 
     <ResponseField name="llm_model_id" type="integer">
-      ID of the LLM model used
+      ID del modelo LLM utilizado
     </ResponseField>
 
     <ResponseField name="multimodal_model_id" type="integer">
-      ID of the multimodal model used
+        ID del modelo multimodal utilizado
     </ResponseField>
 
     <ResponseField name="ambient_sound" type="string">
-      Ambient sound setting
+       Configuración del sonido ambiental
     </ResponseField>
 
     <ResponseField name="uuid" type="string">
-      Unique UUID for the assistant
+       UUID único para el asistente
     </ResponseField>
 
     <ResponseField name="send_webhook_only_on_completed" type="boolean">
-      Whether to send webhooks only on completed calls
+      Si se deben enviar webhooks solo en llamadas completadas.
     </ResponseField>
 
     <ResponseField name="include_recording_in_webhook" type="boolean">
-      Whether to include recording URL in webhook payload
+      Si se debe incluir la URL de la grabación en la carga útil del webhook.
     </ResponseField>
 
     <ResponseField name="interrupt_sensitivity" type="number">
-      Interrupt sensitivity level
+      Nivel de sensibilidad de interrupción.
     </ResponseField>
 
     <ResponseField name="filler_config" type="object">
-      Configuration for filler audio responses
+      Configuración de las respuestas de audio de relleno.
       <Expandable title="filler_config properties">
         <ResponseField name="neutral" type="array">
-          Array of neutral filler responses
+          Matriz de respuestas de relleno neutras.
         </ResponseField>
         <ResponseField name="negative" type="array">
-          Array of negative filler responses
+          Matriz de respuestas de relleno negativas
         </ResponseField>
         <ResponseField name="positive" type="array">
-          Array of positive filler responses
+          
+      Matriz de respuestas de relleno positivas
         </ResponseField>
         <ResponseField name="question" type="array">
-          Array of question filler responses
+          Matriz de respuestas de relleno con preguntas
         </ResponseField>
       </Expandable>
     </ResponseField>
 
     <ResponseField name="knowledgebase_id" type="integer">
-      ID of the associated knowledge base
+       ID de la base de conocimientos asociada
     </ResponseField>
 
     <ResponseField name="knowledgebase_mode" type="string">
-      Knowledge base mode setting
+      Configuración del modo de la base de conocimientos
     </ResponseField>
 
     <ResponseField name="min_interrupt_words" type="integer">
-      Minimum number of words before interruption is allowed
+      Número mínimo de palabras antes de que se permita la interrupción
     </ResponseField>
 
     <ResponseField name="ambient_sound_volume" type="string">
-      Ambient sound volume level as string
+      Nivel de volumen del sonido ambiental como cadena
     </ResponseField>
 
     <ResponseField name="widget_settings" type="object">
-      Settings for web widget integration
+      Configuración para la integración del widget web
     </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="current_page" type="integer">
-  The current page number
+  Número de página actual
 </ResponseField>
 
 <ResponseField name="per_page" type="integer">
-  Number of items per page
+  Número de elementos por página
 </ResponseField>
 
 <ResponseField name="total" type="integer">
-  Total number of assistants
+  Número total de asistentes
 </ResponseField>
 
 <ResponseField name="last_page" type="integer">
-  The last page number
+  Número de página anterior
 </ResponseField>
 
 <ResponseExample>
@@ -310,11 +312,11 @@ This endpoint allows you to retrieve all AI assistants belonging to the authenti
       "transcriber_id": null,
       "voice_id": 8,
       "instance_id": 1,
-      "name": "Sales Outreach Assistant",
+      "name": "Asistente de ventas",
       "variables": {
-        "company_name": "Your Company",
-        "product_line": "Premium Services",
-        "rep_name": "Assistant"
+        "company_name": "Tu empresa",
+        "product_line": "Servicios premium",
+        "rep_name": "Asistente"
       },
       "post_call_evaluation": true,
       "fillers": 1,
@@ -322,17 +324,17 @@ This endpoint allows you to retrieve all AI assistants belonging to the authenti
         {
           "name": "interest_level",
           "type": "string",
-          "description": "Customer's level of interest (high, medium, low)"
+          "description": "Nivel de interés del cliente (alto, medio, bajo)"
         },
         {
-          "name": "budget_qualified",
+          "name": "presupuesto_calificado",
           "type": "bool",
-          "description": "Whether the prospect has adequate budget"
+          "description": "Si el cliente potencial tiene un presupuesto adecuado"
         },
         {
           "name": "follow_up_date",
           "type": "string",
-          "description": "Preferred date for follow-up contact"
+          "description": "Fecha preferida para el contacto de seguimiento"
         }
       ],
       "tools": [],
@@ -344,8 +346,8 @@ This endpoint allows you to retrieve all AI assistants belonging to the authenti
       "status": "active",
       "max_duration": 900,
       "record": true,
-      "initial_message": "Hi, this is an assistant from Your Company. I hope I'm catching you at a good time. How are you doing today?",
-      "system_prompt": "You are a sales representative for Your Company. Be professional, friendly, and focus on qualifying leads for premium services.",
+      "initial_message": "Hola, soy un asistente de Su empresa. Espero que sea un buen momento para hablar con usted. ¿Cómo está hoy?",
+      "system_prompt": "Usted es representante de ventas de Su empresa. Sea profesional, amable y céntrese en calificar clientes potenciales para servicios premium.",
       "flows_platform_id": null,
       "timezone": "America/Los_Angeles",
       "created_at": "2025-07-15T14:32:15.000000Z",
@@ -376,29 +378,29 @@ This endpoint allows you to retrieve all AI assistants belonging to the authenti
       "interrupt_sensitivity": 1.2,
       "filler_config": {
         "neutral": [
-          "I see.",
-          "Understood.",
-          "Right.",
-          "Got it.",
-          "Okay."
+          "Entiendo.",
+          "De acuerdo.",
+          "De acuerdo.",
+          "Entendido.",
+          "Vale."
         ],
-        "negative": [
-          "I understand.",
+        "negativo": [
+          "Lo entiendo.",
           "Hmm.",
-          "I see.",
-          "Okay."
+          "Entiendo.",
+          "Vale."
         ],
-        "positive": [
-          "Excellent!",
-          "That's great!",
-          "Wonderful!",
-          "Perfect!"
+        "positivo": [
+          "Excelente!",
+          "Genial!",
+          "Maravilloso!",
+          "Perfecto!"
         ],
-        "question": [
-          "Let me think...",
-          "Good question.",
+        "pregunta": [
+          "Déjame pensar...",
+          "Buena pregunta.",
           "Hmm.",
-          "Right."
+          "Correcto."
         ]
       },
       "knowledgebase_id": 12,
@@ -412,29 +414,29 @@ This endpoint allows you to retrieve all AI assistants belonging to the authenti
       }
     }
   ],
-  "first_page_url": "https://app.autocalls.ai/api/user/assistants/get?page=1",
+  "first_page_url": "https://app.conecta2.ai/api/user/assistants/get?page=1",
   "from": 1,
   "last_page": 5,
-  "last_page_url": "https://app.autocalls.ai/api/user/assistants/get?page=5",
+  "last_page_url": "https://app.conecta2.ai/api/user/assistants/get?page=5",
   "links": [
     {
       "url": null,
-      "label": "&laquo; Previous",
+      "label": "&laquo; Anterior",
       "active": false
     },
     {
-      "url": "https://app.autocalls.ai/api/user/assistants/get?page=1",
+      "url": "https://app.conecta2.ai/api/user/assistants/get?page=1",
       "label": "1",
       "active": true
     },
     {
-      "url": "https://app.autocalls.ai/api/user/assistants/get?page=2",
+      "url": "https://app.conecta2.ai/api/user/assistants/get?page=2",
       "label": "2",
       "active": false
     }
   ],
-  "next_page_url": "https://app.autocalls.ai/api/user/assistants/get?page=2",
-  "path": "https://app.autocalls.ai/api/user/assistants/get",
+  "next_page_url": "https://app.conecta2.ai/api/user/assistants/get?page=2",
+  "path": "https://app.conecta2.ai/api/user/assistants/get",
   "per_page": 10,
   "prev_page_url": null,
   "to": 10,
