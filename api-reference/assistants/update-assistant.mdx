@@ -1,230 +1,230 @@
 ---
-title: "Update assistant"
-api: "PUT /user/assistant/{id}"
-description: "Update an existing AI assistant's configuration"
+título: "Asistente de actualización"
+API: "PUT /usuario/asistente/{id}"
+descripción: "Actualizar la configuración de un asistente de IA existente"
 ---
 
-This endpoint allows you to update an existing AI assistant's configuration. All fields are optional - only provide the fields you want to update.
+Este punto de conexión permite actualizar la configuración de un asistente de IA existente. Todos los campos son opcionales; proporcione únicamente los campos que desee actualizar.
 
-### Path Parameters
+### Parámetros de ruta
 
 <ParamField path="id" type="integer" required>
-  The unique identifier of the assistant to update
+  El identificador único del asistente que se va a actualizar
 </ParamField>
 
-### Request Body
+### Cuerpo de la solicitud
 
-#### Core Fields
+#### Campos centrales
 
 <ParamField body="assistant_name" type="string" optional>
-  The name of the assistant (max 255 characters)
+  Nombre del asistente (máximo 255 caracteres)
 </ParamField>
 
 <ParamField body="voice_id" type="integer" optional>
-  The voice ID to use for the assistant (must exist in available voices)
+  Identificador de voz del asistente (debe estar entre las voces disponibles)
 </ParamField>
 
 <ParamField body="language" type="string" optional>
-  The language name for the assistant (max 100 characters)
+  Idioma del asistente (máximo 100 caracteres)
 </ParamField>
 
 <ParamField body="llm_model" type="string" optional>
-  The LLM model name to use (max 100 characters)
+  Modelo LLM (máximo 100 caracteres).
 </ParamField>
 
 <ParamField body="calls_direction" type="string" optional>
-  The call direction type. Options: `receive`, `make`
+  Tipo de dirección de la llamada. Opciones: `receive`, `make`.
 </ParamField>
 
 <ParamField body="engine_type" type="string" optional>
-  The engine type to use. Options: `pipeline`, `multimodal`
+  Tipo de motor de voz. Opciones: `pipeline`, `multimodal`
 </ParamField>
 
 <ParamField body="timezone" type="string" optional>
-  The timezone for the assistant (e.g., "America/New_York")
+  Zona horaria del asistente (p. ej., "America/New_York").
 </ParamField>
 
 <ParamField body="initial_message" type="string" optional>
-  The initial message the assistant will speak when the call starts
+  Mensaje inicial del asistente al iniciar la llamada.
 </ParamField>
 
 <ParamField body="system_prompt" type="string" optional>
-  The system prompt that defines the assistant's behavior and personality
+  Indicador del sistema que define el comportamiento y la personalidad del asistente.
 </ParamField>
 
-#### Optional Configuration
+#### Configuración opcional
 
 <ParamField body="phone_number_id" type="integer" optional>
-  The ID of a phone number to assign to the assistant (set to null to unassign)
+  ID del número de teléfono que se asignará al asistente (establecer en nulo para desasignar).
 </ParamField>
 
 <ParamField body="endpoint_type" type="string" optional>
-  Voice activity detection type. Options: `vad`, `ai`
+  Tipo de detección de actividad de voz. Opciones: `vad`, `ai`
 </ParamField>
 
 <ParamField body="endpoint_sensitivity" type="number" optional>
-  Endpoint sensitivity level (0-5)
+  Nivel de sensibilidad del punto final (0-5)
 </ParamField>
 
 <ParamField body="interrupt_sensitivity" type="number" optional>
-  Interrupt sensitivity level (0-5)
+  Nivel de sensibilidad a interrupciones (0-5).
 </ParamField>
 
 <ParamField body="ambient_sound_volume" type="number" optional>
-  Ambient sound volume level (0-1)
+  Nivel de volumen del sonido ambiente (0-1)
 </ParamField>
 
 <ParamField body="post_call_evaluation" type="boolean" optional>
-  Whether to enable post-call evaluation
+  Habilitar la evaluación posterior a la llamada
 </ParamField>
 
 <ParamField body="send_webhook_only_on_completed" type="boolean" optional>
-  Whether to send webhooks only on completed calls
+  Enviar webhooks solo en llamadas completadas.
 </ParamField>
 
 <ParamField body="include_recording_in_webhook" type="boolean" optional>
-  Whether to include recording URL in webhook payload
+  Incluir la URL de grabación en la carga útil del webhook.
 </ParamField>
 
-#### Webhook Configuration
+#### Configuración de webhook
 
 <ParamField body="is_webhook_active" type="boolean" optional>
-  Whether webhook notifications are enabled
+  Indica si las notificaciones webhook están habilitadas.
 </ParamField>
 
 <ParamField body="webhook_url" type="string" optional>
-  The webhook URL for post-call notifications (can be set to null to remove)
+  La URL del webhook para las notificaciones posteriores a la llamada (se puede establecer en nulo para eliminarla).
 </ParamField>
 
-#### Interruption Settings
+#### Configuración de interrupción
 
 <ParamField body="use_min_interrupt_words" type="boolean" optional>
-  Whether to use minimum interrupt words setting
+  Si se debe utilizar la configuración de palabras mínimas de interrupción
 </ParamField>
 
 <ParamField body="min_interrupt_words" type="integer" optional>
-  Minimum number of words before interruption is allowed (0-10)
+  Número mínimo de palabras permitidas antes de la interrupción (0-10)
 </ParamField>
 
-#### Variables and Schema
+#### Variables y esquema
 
 <ParamField body="variables" type="object" optional>
-  Key-value pairs of custom variables for the assistant
+  Pares clave-valor de variables personalizadas para el asistente.
 </ParamField>
 
 <ParamField body="post_call_schema" type="array" optional>
-  Schema definition for post-call data extraction
+  Definición del esquema para la extracción de datos posterior a la llamada.
   <Expandable title="post_call_schema properties">
     <ParamField body="post_call_schema[].name" type="string" required>
-      The name of the schema field (alphanumeric and underscores only)
+      Nombre del campo del esquema (solo alfanuméricos y guiones bajos).
     </ParamField>
     <ParamField body="post_call_schema[].type" type="string" required>
-      The data type. Options: `string`, `number`, `bool`
+      Tipo de datos. Opciones: `string`, `number`, `bool`
     </ParamField>
     <ParamField body="post_call_schema[].description" type="string" required>
-      Description of what this field represents
+      Descripción de lo que representa este campo.
     </ParamField>
   </Expandable>
 </ParamField>
 
-#### End Call Tool
+#### Herramienta de fin de llamada
 
 <ParamField body="end_call_tool.description" type="string" optional>
-  Description for the end call tool functionality (max 500 characters)
+  Descripción de la funcionalidad de la herramienta de finalización de llamada (máximo 500 caracteres)
 </ParamField>
 
-#### Voice and Speech Settings
+#### Configuración de voz y habla
 
 <ParamField body="llm_temperature" type="number" optional>
-  LLM temperature setting (0-1)
+  Ajuste de temperatura LLM (0-1)
 </ParamField>
 
 <ParamField body="voice_stability" type="number" optional>
-  Voice stability setting (0-1)
+  Ajuste de estabilidad de voz (0-1)
 </ParamField>
 
 <ParamField body="voice_similarity" type="number" optional>
-  Voice similarity setting (0-1)
+  Ajuste de similitud de voz (0-1)
 </ParamField>
 
 <ParamField body="speech_speed" type="number" optional>
-  Speech speed multiplier (0.7-1.2)
+  Multiplicador de velocidad del habla (0,7-1,2)
 </ParamField>
 
-#### Call Behavior Settings
+#### Configuración del comportamiento de las llamadas
 
 <ParamField body="allow_interruptions" type="boolean" optional>
-  Whether to allow caller interruptions
+  Permitir interrupciones de la persona que llama. 
 </ParamField>
 
 <ParamField body="filler_audios" type="boolean" optional>
-  Whether to use filler audio during processing
+  Usar audio de relleno durante el procesamiento
 </ParamField>
 
 <ParamField body="re_engagement_interval" type="integer" optional>
-  Re-engagement interval in seconds (7-600)
+  Intervalo de reconexión en segundos (7-600).
 </ParamField>
 
 <ParamField body="max_call_duration" type="integer" optional>
-  Maximum call duration in seconds (20-1200)
+  Duración máxima de la llamada en segundos (20-1200)
 </ParamField>
 
 <ParamField body="max_silence_duration" type="integer" optional>
-  Maximum silence duration in seconds (1-120)
+  Duración máxima de silencio en segundos (1-120).
 </ParamField>
 
 <ParamField body="end_call_on_voicemail" type="boolean" optional>
-  Whether to end call when voicemail is detected
+  Finalizar la llamada al detectar el buzón de voz
 </ParamField>
 
 <ParamField body="noise_cancellation" type="boolean" optional>
-  Whether to enable noise cancellation
+  Habilitar la cancelación de ruido
 </ParamField>
 
 <ParamField body="record_call" type="boolean" optional>
-  Whether to record the call
+  Grabar la llamada.
 </ParamField>
 
 <ParamField body="who_speaks_first" type="string" optional>
-  Who speaks first in the call. Options: `AI assistant`, `Customer`
+  Quién habla primero en la llamada. Opciones: «Asistente de IA», «Cliente».
 </ParamField>
 
-### Response
+### Respuesta
 
 <ResponseField name="message" type="string">
-  Success message confirming assistant update
+  Mensaje de confirmación de la actualización del asistente
 </ResponseField>
 
 <ResponseField name="data" type="object">
   <Expandable title="properties">
     <ResponseField name="id" type="integer">
-      The unique identifier of the updated assistant
+      El identificador único del asistente actualizado.
     </ResponseField>
 
     <ResponseField name="name" type="string">
-      The name of the assistant
+      El nombre del asistente.
     </ResponseField>
 
     <ResponseField name="status" type="string">
-      The current status of the assistant
+      El estado actual del asistente.
     </ResponseField>
 
     <ResponseField name="type" type="string">
-      The type of assistant (`inbound` or `outbound`)
+      El tipo de asistente (`inbound` o `outbound`).
     </ResponseField>
 
     <ResponseField name="mode" type="string">
-      The engine mode (`pipeline` or `multimodal`)
+       El modo del motor (`pipeline` o `multimodal`)
     </ResponseField>
   </Expandable>
 </ResponseField>
 
-### Error Responses
+### Respuestas de error
 
 <ResponseField name="404 Not Found">
   <Expandable title="Error Response">
     <ResponseField name="message" type="string">
-      Error message when the assistant is not found or doesn't belong to the authenticated user
+      Mensaje de error cuando no se encuentra el asistente o no pertenece al usuario autenticado
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -232,10 +232,10 @@ This endpoint allows you to update an existing AI assistant's configuration. All
 <ResponseField name="422 Validation Error">
   <Expandable title="Error Response">
     <ResponseField name="message" type="string">
-      Error message indicating validation failure
+      Mensaje de error que indica un fallo de validación.
     </ResponseField>
     <ResponseField name="errors" type="object">
-      Detailed validation errors for each field
+      Errores de validación detallados para cada campo
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -243,7 +243,7 @@ This endpoint allows you to update an existing AI assistant's configuration. All
 <ResponseField name="500 Internal Server Error">
   <Expandable title="Error Response">
     <ResponseField name="message" type="string">
-      Error message indicating assistant update failure
+      Mensaje de error que indica un fallo en la actualización del asistente.
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -252,10 +252,10 @@ This endpoint allows you to update an existing AI assistant's configuration. All
 
 ```json 200 Success Response
 {
-  "message": "Assistant updated successfully",
+  "message": "Asistente actualizado correctamente",
   "data": {
     "id": 789,
-    "name": "Updated Sales Assistant",
+    "name": "Asistente de ventas actualizado",
     "status": "active",
     "type": "outbound",
     "mode": "pipeline"
@@ -265,19 +265,19 @@ This endpoint allows you to update an existing AI assistant's configuration. All
 
 ```json 404 Not Found
 {
-  "message": "Assistant not found"
+  "mensaje": "No se ha encontrado el asistente"
 }
 ```
 
 ```json 422 Validation Error
 {
-  "message": "Validation failed",
+  "mensaje": "Validación fallida",
   "errors": {
     "speech_speed": [
-      "The speech speed must be between 0.7 and 1.2."
+      "La velocidad del habla debe estar entre 0,7 y 1,2."
     ],
     "webhook_url": [
-      "The webhook url must be a valid URL."
+      "La URL del webhook debe ser una URL válida."
     ]
   }
 }
@@ -285,16 +285,16 @@ This endpoint allows you to update an existing AI assistant's configuration. All
 
 ```json 500 Internal Server Error
 {
-  "message": "Assistant update failed"
+  "mensaje": "Error en la actualización del asistente"
 }
 ```
 
 </ResponseExample>
 
-### Notes
+### Notas
 
-- Only the fields you provide in the request body will be updated
-- All validation rules apply the same as when creating an assistant
-- To remove a phone number assignment, set `phone_number_id` to `null`
-- To disable webhook, set `webhook_url` to `null` or `is_webhook_active` to `false`
-- The assistant must belong to the authenticated user to be updated
+- Solo se actualizarán los campos que proporcione en el cuerpo de la solicitud.
+- Todas las reglas de validación se aplican igual que al crear un asistente.
+- Para eliminar la asignación de un número de teléfono, configure `phone_number_id` a `null`
+- Para deshabilitar el webhook, `webhook_url` configure `null` o `is_webhook_active` to `false`
+- El asistente debe pertenecer al usuario autenticado que se va a actualizar.
