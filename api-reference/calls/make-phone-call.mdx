@@ -1,46 +1,46 @@
 ---
-title: "Make a phone call"
-api: "POST /user/make_call"
-description: "Make a phone call"
+título: "Realiza una llamada telefónica"
+API: "POST /user/make_call"
+descripción: "Realiza una llamada telefónica"
 ---
 
-This endpoint allows you to make a phone call.
+Este punto de conexión le permite realizar una llamada telefónica.
 
-### Request body
+### Cuerpo de la solicitud
 
 <ParamField body="phone_number" type="string" required>
-  The phone number of the customer in E.164 format (e.g. +1234567890)
+  El número de teléfono del cliente en formato E.164 (p. ej., +1234567890)
 </ParamField>
 
 <ParamField body="assistant_id" type="integer" required>
-  The ID of the assistant to make the call with
+  El ID del asistente que realizará la llamada
 </ParamField>
 
 <ParamField body="variables" type="object">
-  The variables to pass to the lead
+  Las variables que se pasarán al cliente potencial.
   
   <Expandable title="variables properties">
     <ParamField body="customer_name" type="string" default="<string>">
-      The name of the customer
+      El nombre del cliente.
     </ParamField>
     
     <ParamField body="email" type="string" default="<string>">
-      The email of the customer
+      El correo electrónico del cliente
     </ParamField>
   </Expandable>
 </ParamField>
 
-### Response
+### Respuesta
 
 <ResponseField name="message" type="string" default="Call initiated successfully">
-  The message of the response
+  El mensaje de la respuesta
 </ResponseField>
 
 <ResponseExample>
 
 ```json 200 Response
 {
-  "message": "Call initiated successfully",
+  "message": "Llamada iniciada correctamente",
   "data": {}
 }
 ```
