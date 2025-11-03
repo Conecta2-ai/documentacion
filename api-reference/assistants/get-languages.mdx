@@ -1,25 +1,25 @@
 ---
-title: "Get available languages"
-api: "GET /user/assistants/languages"
-description: "Retrieve all available languages for assistant configuration"
+título: "Obtenga los idiomas disponibles"
+API: "OBTENER /usuario/asistentes/idiomas"
+descripción: "Recuperar todos los idiomas disponibles para la configuración del asistente"
 ---
 
-This endpoint returns a list of all available languages that can be used when creating or updating assistants.
+Este punto de conexión devuelve una lista de todos los idiomas disponibles que se pueden usar al crear o actualizar asistentes.
 
-### Response fields
+### Campos de respuesta
 
 <ResponseField name="data" type="array">
   <Expandable title="properties">
     <ResponseField name="id" type="integer">
-      The unique identifier of the language
+      El identificador único del idioma
     </ResponseField>
 
     <ResponseField name="name" type="string">
-      The display name of the language
+      El nombre para mostrar del idioma.
     </ResponseField>
 
     <ResponseField name="iso_2" type="string">
-      The ISO 639-1 two-letter language code
+      The ISO 639-1 de dos letras del idioma.
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -30,12 +30,12 @@ This endpoint returns a list of all available languages that can be used when cr
 [
   {
     "id": 1,
-    "name": "English",
+    "name": "Inglés",
     "iso_2": "en"
   },
   {
     "id": 2,
-    "name": "Spanish",
+    "name": "Español",
     "iso_2": "es"
   },
   {
@@ -58,9 +58,9 @@ This endpoint returns a list of all available languages that can be used when cr
 
 </ResponseExample>
 
-### Notes
+### Notas
 
-- This endpoint does not require any parameters
-- Use the `name` field when creating or updating assistants
-- The `iso_2` code can be useful for language-specific functionality
-- All available languages are returned in a single request
+- Este punto de conexión no requiere ningún parámetro.
+- Utilice este `name` campo al crear o actualizar asistentes.
+- El `iso_2` código puede ser útil para funcionalidades específicas del lenguaje.
+- En una sola solicitud se devuelven todos los idiomas disponibles.
