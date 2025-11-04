@@ -1,124 +1,125 @@
 ---
-title: "Knowledge Bases"
-icon: "database"
-description: "Learn how to provide your AI assistant with access to FAQs, documents, and other knowledge sources"
+título: "Bases de conocimiento"
+icono: "base de datos"
+descripción: "Aprende cómo proporcionar a tu asistente de IA acceso a preguntas frecuentes, documentos y otras fuentes de conocimiento."
 ---
 
-Knowledge bases enable your AI assistant to access and reference custom information from various sources like websites, documents, and files. This powerful feature allows your assistant to provide accurate, context-specific responses based on your own content.
+Las bases de conocimiento permiten que tu asistente de IA acceda a información personalizada de diversas fuentes, como sitios web, documentos y archivos, y la consulte. Esta potente función le permite proporcionar respuestas precisas y contextualizadas basadas en tu propio contenido.
 
-## Approaches for Knowledge Integration
+## Enfoques para la integración del conocimiento
 
-### 1. Copy-Paste into Prompt
+### 1. Copiar y pegar en la ventana emergente
 
-- **Pros**: Quick to set up, immediate availability.
-- **Cons**: Large texts can slow down responses or risk partial "hallucination."
-- **Usage**: Useful for short references, like top 10 FAQs.
+- **Ventajas**: Configuración rápida, disponibilidad inmediata.
+- **Desventajas**: Los textos largos pueden ralentizar las respuestas o provocar el riesgo de "alucinaciones" parciales.
+- **Uso**: Útil para referencias breves, como las 10 preguntas más frecuentes..
 
-### 2. Knowledge Base Feature
+### 2. Función de base de conocimientos
 
-Our dedicated Knowledge Base feature allows you to store and manage documents that the AI can query on demand:
+Nuestra función específica de Base de Conocimiento le permite almacenar y gestionar documentos que la IA puede consultar bajo demanda:
 
 <CardGroup cols={2}>
   <Card title="Website Content" icon="globe">
-    **Scrape entire websites** to capture all available information
-    - Company websites
-    - Product documentation
-    - FAQ pages
-    - Blog content
+    **Extrae toda la información** disponible de sitios web completos
+    - sitios web de empresas
+    - documentación de productos,
+    - páginas de preguntas frecuentes y 
+    - contenido de blogs
   </Card>
   
   <Card title="Document Files" icon="file">
-    **Upload various file formats** with your information
-    - **PDF files:** Manuals, guides, reports
-    - **Word documents (.docx):** Policies, procedures
-    - **Text files (.txt):** Simple content, notes
+    **Sube archivos en diversos formatos** con tu información
+    - **PDF:** manuales, guías e informes; 
+    - **documentos de Word (.docx):** políticas y procedimientos; 
+    - **archivos de texto (.txt):** políticas y procedimientos; **archivos de texto (.txt):** texto simple y notas.
+
   </Card>
 </CardGroup>
 
-#### Processing Status
+#### Estado de procesamiento
 
-Every knowledge base goes through different processing stages:
+Cada base de conocimiento pasa por diferentes etapas de procesamiento:
 
 <AccordionGroup>
   <Accordion title="Empty" icon="folder-open">
-    No documents added yet. Add content to activate the knowledge base.
+    Aún no se han añadido documentos. Añade contenido para activar la base de conocimientos
   </Accordion>
   
   <Accordion title="Processing" icon="clock">
-    Documents are being analyzed and indexed. Processing time varies by content size.
+    Los documentos se están analizando e indexando. El tiempo de procesamiento varía según el tamaño del contenido. size.
   </Accordion>
   
   <Accordion title="Active" icon="check">
-    Knowledge base is ready. Your AI assistant can now search and reference this information.
+    La base de conocimientos está lista. Tu asistente de IA ya puede buscar y consultar esta información
   </Accordion>
   
   <Accordion title="Failed" icon="x">
-    Processing failed. Common causes: protected websites, inaccessible content, corrupted files.
+    Error en el procesamiento. Causas comunes: sitios web protegidos, contenido inaccesible, archivos dañados.
   </Accordion>
 </AccordionGroup>
 
-#### Integration Modes
+#### Modos de integración
 
-Choose how your AI assistant accesses knowledge base information:
+Elige cómo accede tu asistente de IA a la información de la base de conocimientos:
 
 <CardGroup cols={2}>
   <Card title="Function Call" icon="function">
-    **Recommended:** Searches only when needed. More efficient and faster.
+    **Recomendación:** Realiza búsquedas solo cuando sea necesario. Más eficiente y rápido.
     
-    **Best for:** General conversations
+    **Ideal para:** Conversaciones generales
   </Card>
   
   <Card title="Prompt Injection" icon="syringe">
-    **Comprehensive:** Searches after every customer message. More accurate but slower.
+    **Exhaustivo:** Realiza búsquedas después de cada mensaje del cliente. Más preciso, pero más lento.
     
-    **Best for:** Support-focused assistants. Use with [filler audio](/ai-assistants/filler-audio)
+    **Ideal para:** Asistentes centrados en la asistencia. Utilizar con [audio de relleno](/ai-assistants/filler-audio)
   </Card>
 </CardGroup>
 
-## Best Practices
+## Mejores prácticas
 
-- Keep info concise, use bullet points.
-- Separate topics with clear headings so the AI can parse more effectively.
-- Monitor call transcripts to confirm the AI references your data correctly.
-- Use publicly accessible URLs for website scraping
-- Consider file size and processing time for large documents
+- Mantén la información concisa, utiliza viñetas.
+- Separe los temas con títulos claros para que la IA pueda analizarlos con mayor eficacia.
+- Supervisa las transcripciones de las llamadas para confirmar que la IA referencia tus datos correctamente.
+- Utilice URL de acceso público para el rastreo web.
+- Tenga en cuenta el tamaño del archivo y el tiempo de procesamiento para documentos grandes.
 
-## Website Scraping Considerations
+## Consideraciones sobre el web scraping
 
 <Warning>
-**Website Protection:** Some websites have anti-scraping protection that can cause processing to fail. If you own the website, temporarily disable protection during scraping.
+**Protección del sitio web:** Algunos sitios web cuentan con protección anti-scraping que puede provocar fallos en el procesamiento. Si usted es el propietario del sitio web, desactive temporalmente la protección durante el proceso de scraping.
 </Warning>
 
-**Common issues:**
-- Cloudflare protection, rate limiting, login requirements
-- JavaScript-heavy sites, protected content
+**Problemas comunes:**
+- Protección de Cloudflare, limitación de velocidad, requisitos de inicio de sesión
+- Sitios con uso intensivo de JavaScript, contenido protegido
 
-**Solutions:**
-- Use publicly accessible URLs
-- Export content manually and upload as documents
-- Contact support for protected content assistance
+**Soluciones:**
+- Utilice URL de acceso público.
+- Exporta el contenido manualmente y súbelo como documentos.
+- Contacta con el soporte técnico para obtener ayuda con el contenido protegido.
 
-## Setup Process
+## Proceso de configuración
 
-1. Navigate to Knowledge Bases in your dashboard
-2. Click "Create Knowledge Base"
-3. Add name and description
-4. Upload documents (PDF, DOCX, TXT) or add website URLs
-5. Wait for processing to complete
-6. Assign to your assistant in [Assistant Settings](/ai-assistants/settings/prompt-and-tools#knowledge-base)
+1. Navegue a las Bases de conocimiento en su panel de control.
+2. Haz clic en "Crear base de conocimientos"
+3. Agregar nombre y descripción
+4. Sube documentos (PDF, DOCX, TXT) o añade URLs de sitios web.
+5. Espere a que finalice el procesamiento.
+6. Asignar a tu asistente en [la configuración del asistente](/ai-assistants/settings/prompt-and-tools#knowledge-base)
 
-## Usage
+## Uso
 
-Once connected, your assistant automatically searches the knowledge base during conversations to provide accurate, informed responses based on your content.
+Una vez conectado, tu asistente buscará automáticamente en la base de conocimientos durante las conversaciones para proporcionar respuestas precisas e informadas basadas en tu contenido.
 
-**Search functionality:** The AI searches through all documents in your knowledge base to find relevant information based on the customer's question and provides context-aware responses.
+**Funcionalidad de búsqueda:** La IA busca en todos los documentos de su base de conocimientos para encontrar información relevante en función de la pregunta del cliente y proporciona respuestas contextualizadas.
 
-## Troubleshooting
+## Solución de problemas
 
-**Processing fails:** Check if URLs are publicly accessible, disable website protection if you own it
-**No search results:** Verify content relevance, ensure processing is complete (Active status)
-**Slow responses:** Switch from Prompt Injection to Function Call mode
+**El procesamiento falla:** compruebe si las URL son de acceso público; desactive la protección del sitio web si es de su propiedad.
+**No hay resultados de búsqueda:** verifique la relevancia del contenido y asegúrese de que el procesamiento se haya completado (estado activo)
+**Respuestas lentas:** cambie del modo de inyección de prompts al modo de llamada a función.
 
 ---
 
-**Note:** For detailed configuration and advanced settings, see the [Assistant Settings Guide](/ai-assistants/settings/prompt-and-tools#knowledge-base).
+**Nota:** Para obtener información detallada sobre la configuración y los ajustes avanzados, consulte la [Guía de configuración del asistente .](/ai-assistants/settings/prompt-and-tools#knowledge-base).
