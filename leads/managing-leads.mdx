@@ -1,187 +1,187 @@
 ---
-title: "Managing Leads"
-icon: "user-gear"
-description: "Create, edit, and organize leads with custom variables and secondary contacts"
+título: "Gestión de clientes potenciales"
+icono: "equipo de usuario"
+descripción: "Crea, edita y organiza clientes potenciales con variables personalizadas y contactos secundarios."
 ---
 
-Learn how to create, edit, and manage leads effectively for your campaigns with proper variable setup and secondary contact management.
+Aprende a crear, editar y gestionar leads de forma eficaz para tus campañas con una configuración adecuada de variables y una gestión de contactos secundarios.
 
-## Creating a New Lead
+## Creación de un nuevo cliente potencial
 
-### Basic Information
-1. **Phone Number:** Enter the primary contact number in international format
-2. **Campaign Assignment:** Select which campaign this lead belongs to
-3. **Status:** Automatically set to "Created" for new leads
+### Información básica
+1. **Número de teléfono:** Introduzca el número de contacto principal en formato internacional.
+2. **Asignación de campaña:** Seleccione a qué campaña pertenece este cliente potencial.
+3. **Estado:** Se establece automáticamente en "Creado" para los nuevos clientes potenciales
 
 <Note>
-**Phone number format:** Use international format without spaces or parentheses (+1234567890) for automation imports and file uploads.
+**Formato del número de teléfono:** Utilice el formato internacional sin espacios ni paréntesis (+1234567890) para importaciones automatizadas y cargas de archivos.
 </Note>
 
-### Variable Setup
+### Configuración de variables
 
-#### Assistant Default Variables
-When you select a campaign, the lead automatically inherits variables from the [assistant configuration](/ai-assistants/settings/prompt-and-tools#call-variables):
-- **Pre-filled values:** Assistant's default variables appear in the form
-- **Customization:** Modify values specific to this lead
-- **Required fields:** Some variables may be required for campaign functionality
+#### Variables predeterminadas del asistente
+Al seleccionar una campaña, el cliente potencial hereda automáticamente las variables de la [configuración del asistente](/ai-assistants/settings/prompt-and-tools#call-variables):
+- **Valores predefinidos:** Las variables predeterminadas del asistente aparecen en el formulario
+- **Personalización:** Modifique los valores específicos de este cliente potencial.
+- **Campos obligatorios:** Algunas variables pueden ser necesarias para el funcionamiento de la campaña.
 
-#### Custom Variables
-Add personalized information for your AI assistant to use:
+#### Variables personalizadas
+Agrega información personalizada para que la use tu asistente de IA:
 
-**Common variable types:**
-- **customer_name:** Person's name for personalized greetings
-- **company:** Business name for B2B conversations  
-- **last_interaction:** Previous conversation context
-- **preferences:** Customer preferences or requirements
-- **budget_range:** Financial information for sales calls
+**Tipos de variables comunes:**
+- **nombre_cliente:** Nombre de la persona para los saludos personalizados
+- **Empresa:** Nombre comercial para conversaciones B2B  
+- **última_interacción:** Contexto de la conversación anterior
+- **Preferencias:** Preferencias o requisitos del cliente
+- **rango_presupuesto:** Información financiera para llamadas de ventas
 
-**Variable format example:**
+**Ejemplo de formato de variable:**
 ```json
 {
-  "customer_name": "Sarah Johnson",
-  "company": "TechStart Solutions", 
-  "last_interaction": "Requested demo of premium features",
-  "preferred_contact_time": "Afternoon EST",
-  "industry": "Software Development"
+  "nombre_del_cliente": "Sara Parker",
+  "empresa": "TechStart Solutions", 
+  "última_interacción": "Solicitó una demostración de las funciones premium",
+  "hora_de_contacto_preferida": "Por la tarde, hora del Este",
+  "sector": "Desarrollo de software"
 }
 ```
 
-### Secondary Contacts
+### Contactos secundarios
 
-Add additional phone numbers for the same lead when you have multiple ways to reach them.
+Agrega números de teléfono adicionales para el mismo contacto cuando tengas varias formas de comunicarte con él.
 
-#### When to Use Secondary Contacts
-- **Decision makers:** Multiple people involved in the decision
-- **Backup numbers:** Mobile, office, home numbers for same person
-- **Department contacts:** Different departments in same company
-- **Time-based contacts:** Different numbers for different times
+#### Cuándo usar contactos secundarios
+- **Responsables de la toma de decisiones:** Varias personas involucradas en la decisión
+- **Números de respaldo:** móvil, oficina y casa de la misma persona
+- **Contactos departamentales:** Diferentes departamentos en la misma empresa
+- **Contactos basados ​​en el tiempo:** Números diferentes para diferentes momentos
 
-#### Secondary Contact Setup
-1. **Add Secondary Contact:** Click "Add Secondary Contact" in the form
-2. **Phone Number:** Enter additional phone number
-3. **Variables:** Set specific variables for this contact (optional)
-4. **Order:** Contacts are tried in the order you add them
+#### Configuración de contacto secundario
+1. **Agregar contacto secundario:** Haga clic en "Agregar contacto secundario" en el formulario.
+2. **Número de teléfono:** Introduzca un número de teléfono adicional
+3. **Variables:** Establezca variables específicas para este contacto (opcional)
+4. **Orden:** Los contactos se prueban en el orden en que los agregas.
 
 <Tip>
-**Contact order matters:** Campaign will try contacts in sequence. Put the most likely to answer first.
+**El orden de los contactos es importante:** La campaña intentará contactar a los usuarios en secuencia. Coloque primero a los que tengan más probabilidades de responder.
 </Tip>
 
-#### Secondary Contact Variables
-Each secondary contact can have unique variables:
-- **Different person:** Use different name and role variables
-- **Same person:** Use same personal info but different contact preferences
-- **Department-specific:** Customize for specific department needs
+#### Variables de contacto secundarias
+Cada contacto secundario puede tener variables únicas:
+- **Persona diferente:** usar variables de nombre y rol diferentes
+- **Misma persona:** Utilizar la misma información personal pero diferentes preferencias de contacto.
+- **Específico del departamento:** Personalizar según las necesidades específicas del departamento
 
-**Example - Multiple decision makers:**
+**Ejemplo - Múltiples responsables de la toma de decisiones:**
 ```json
-// Primary: CEO
+// Primario: CEO
 {
-  "contact_name": "John Smith",
+  "contact_name": "Jhon Perez",
   "role": "CEO", 
-  "decision_authority": "Final approval"
+  "decision_authority": "Aprobación final"
 }
 
-// Secondary: CTO  
+// Secundario: CTO  
 {
-  "contact_name": "Jane Doe",
+  "contact_name": "Pedro Rojas",
   "role": "CTO",
-  "decision_authority": "Technical decisions"
+  "decision_authority": "Decisiones técnicas"
 }
 ```
 
-## Editing Existing Leads
+## Edición de clientes potenciales existentes
 
-### Modifying Lead Information
-- **Phone number:** Update if contact information changes
-- **Campaign:** Move lead to different campaign if needed
-- **Status:** Manually change status for campaign control
+### Modificar la información de los clientes potenciales
+- **Número de teléfono:** Actualizar si cambia la información de contacto
+- **Campaña:** Trasladar el cliente potencial a otra campaña si es necesario.
+- **Estado:** Cambiar manualmente el estado para el control de la campaña
 
-### Variable Management
-- **Update values:** Modify existing variable values
-- **Add variables:** Include new information for better AI context
-- **Remove variables:** Delete outdated or irrelevant data
+### Gestión de variables
+- **Actualizar valores:** Modificar los valores de las variables existentes
+- **Agregar variables:** Incluir nueva información para un mejor contexto de IA
+- **Eliminar variables:** Borrar datos obsoletos o irrelevantes
 
 <Warning>
-**Campaign compatibility:** When changing campaigns, ensure variables match the new assistant's configuration.
+**Compatibilidad de campañas:** Al cambiar de campaña, asegúrese de que las variables coincidan con la configuración del nuevo asistente.
 </Warning>
 
-### Secondary Contact Management
-- **Add contacts:** Include additional phone numbers
-- **Remove contacts:** Delete invalid or unnecessary numbers  
-- **Reorder contacts:** Change calling sequence priority
-- **Update variables:** Modify contact-specific information
+### Gestión de contactos secundarios
+- **Agregar contactos:** Incluir números de teléfono adicionales
+- **Eliminar contactos:** Borre los números no válidos o innecesarios.  
+- **Reordenar contactos:** Cambiar la prioridad de la secuencia de llamadas
+- **Actualizar variables:** Modificar información específica del contacto
 
-## Lead Status Management
+## Gestión del estado de los líderes
 
-### Understanding Status Changes
-Lead status automatically updates based on campaign activity:
-- **Created → Processing:** When campaign starts calling
-- **Processing → Completed:** When call succeeds or goal achieved  
-- **Processing → Rescheduled:** When call needs retry
-- **Rescheduled → Max Retries:** When retry limit reached
+### Comprensión de los cambios de estado
+El estado de los clientes potenciales se actualiza automáticamente en función de la actividad de la campaña:
+- **Creado → Procesando:** Cuando la campaña comienza a llamar
+- **Procesando → Completado:** Cuando la llamada se realiza correctamente o se alcanza el objetivo.  
+- **Procesando → Reprogramado:** Cuando la llamada necesita reintentarse
+- **Reprogramado → Máximo de reintentos:** Cuando se alcanza el límite de reintentos
 
-### Manual Status Control
-You can manually change lead status when needed:
+### Control de estado manual
+Puedes cambiar manualmente el estado del cliente potencial cuando sea necesario:
 
-#### Reset for Re-calling
-**Set to "Created":** Resets lead to be called again
-- **Use case:** Lead requested callback at specific time
-- **Effect:** Lead rejoins campaign queue
-- **Considerations:** Respects campaign retry limits
+#### Restablecer para volver a llamar
+**Establecido en "Creado":** Los reinicios provocan que se vuelva a llamar.
+- **Caso de uso:** El cliente potencial solicitó una llamada de seguimiento a una hora específica.
+- **Efecto:** El cliente potencial se reincorpora a la cola de campaña.
+- **Consideraciones:** Respeta los límites de reintentos de la campaña
 
-#### Mark as Complete
-**Set to "Completed":** Stops campaign from calling this lead
-- **Use case:** Goal achieved through other channels
-- **Effect:** Lead excluded from future campaign calls
-- **Considerations:** Cannot be automatically reset by campaign
+#### Marcar como completado
+**Marcado como "Completado":** Impide que la campaña llame a este cliente potencial.
+- **Caso práctico:** Objetivo alcanzado a través de otros canales
+- **Efecto:** El cliente potencial queda excluido de futuras llamadas de campaña
+- **Consideraciones:** No se puede restablecer automáticamente mediante una campaña.
 
-#### Other Status Changes
-- **"Scheduled":** Queue for next retry attempt
-- **"Max Retries":** Manually mark as exhausted
-- **"Rescheduled":** Reset retry timer
+#### Otros cambios de estado
+- **"Programado":** En cola para el siguiente intento de reintento
+- **"Máximo de reintentos":** Marcar manualmente como agotado
+- **"Reprogramado":** Restablecer el temporizador de reintentos
 
 <Tip>
-**Status strategy:** Use manual status changes sparingly. Let campaign automation handle most status updates for consistent behavior.
+**Estrategia de estado:** Utilice los cambios de estado manuales con moderación. Deje que la automatización de campañas gestione la mayoría de las actualizaciones de estado para un comportamiento coherente.
 </Tip>
 
-## Bulk Operations
+## Operaciones masivas
 
-### Bulk Delete
-Select multiple leads and delete them:
-1. **Filter leads:** Use table filters to select specific leads
-2. **Select leads:** Check boxes for leads to delete
-3. **Bulk delete:** Choose delete action from bulk actions menu
-4. **Confirm:** Review changes before applying
+### eliminación masiva
+Seleccione varios clientes potenciales y elimínelos:
+1. **Filtrar clientes potenciales:** Utilice los filtros de la tabla para seleccionar clientes potenciales específicos.
+2. **Seleccionar clientes potenciales:** Marque las casillas de los clientes potenciales que desea eliminar.
+3. **Eliminación masiva:** Seleccione la acción de eliminación en el menú de acciones masivas.
+4. **Confirma:** Revisa los cambios antes de aplicarlos.
 
-### Bulk Export
-Export filtered lead data for external processing:
-- **Apply filters:** Filter by campaign, status, date range
-- **Select columns:** Choose which data to export
-- **Include secondary:** Option to include secondary contacts
-- **Download:** CSV format for spreadsheet compatibility
+### Exportación a granel
+Exportar datos de clientes potenciales filtrados para su procesamiento externo:
+- **Aplicar filtros:** Filtrar por campaña, estado, rango de fechas
+- **Seleccionar columnas:** Elija qué datos exportar
+- **Incluir contactos secundarios:** Opción para incluir contactos secundarios
+- **Descargar:** Formato CSV para compatibilidad con hojas de cálculo
 
-## Lead Organization
+## Organización de clientes
 
-Use table filters, sorting, and search to organize leads by campaign, status, date range, or variable content.
+Utilice filtros de tabla, ordenación y búsqueda para organizar los clientes potenciales por campaña, estado, rango de fechas o contenido variable.
 
-## Campaign Integration
+## Integración de campaña
 
-- **Single campaign** assignment per lead
-- **Variable inheritance** from assistant configuration
-- **Automatic coordination** with campaign schedule and retry logic
+- **Una sola campaña** por cliente potencial
+- **Herencia de variables** desde la configuración del asistente
+- **Coordinación automática** con la programación de la campaña y la lógica de reintento
 
-## Best Practices
+## Mejores prácticas
 
-### Key Points
-- **Phone format:** International format without spaces (+1234567890)
-- **Variables:** Use consistent naming and relevant information
-- **Secondary contacts:** Order by priority, avoid duplicates
-- **Privacy:** Follow data protection requirements
+### Puntos clave
+- **Formato de teléfono:** Formato internacional sin espacios (+1234567890)
+- **Variables:** Utilice nombres coherentes e información relevante.
+- **Contactos secundarios:** Ordenar por prioridad, evitar duplicados
+- **Privacidad:** Cumplir con los requisitos de protección de datos
 
 <Note>
-For troubleshooting common lead issues, see [Leads Troubleshooting](/troubleshooting/leads).
+Para solucionar problemas comunes con los clientes potenciales, consulte [Solución de problemas con clientes potenciales](/troubleshooting/leads).
 </Note>
 
 <Note>
-For information about importing leads in bulk, see [Importing Leads](/leads/importing-leads).
+Para obtener información sobre la importación masiva de clientes potenciales, consulte [Importación de clientes potenciales](/leads/importing-leads).
 </Note>
