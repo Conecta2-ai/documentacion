@@ -1,116 +1,116 @@
 ---
-title: "Leads Overview"
-icon: "users"
-description: "Manage your campaign contacts with primary leads, secondary contacts, and custom variables"
+título: "Resumen de clientes potenciales"
+icono: "usuarios"
+descripción: "Gestiona los contactos de tu campaña con clientes potenciales principales, contactos secundarios y variables personalizadas."
 ---
 
-Leads are the contacts that your campaigns will call. Each lead can have multiple phone numbers (secondary contacts) and custom variables that your AI assistant can use during conversations.
+Los clientes potenciales son los contactos a los que llamarán tus campañas. Cada cliente potencial puede tener varios números de teléfono (contactos secundarios) y variables personalizadas que tu asistente de IA puede usar durante las conversaciones.
 
-## What are Leads?
+## ¿Qué son los clientes potenciales?
 
-Leads represent the people or businesses you want to contact through your campaigns. The lead system supports:
+Los clientes potenciales representan a las personas o empresas con las que deseas contactar a través de tus campañas. El sistema de clientes potenciales admite:
 
 <CardGroup cols={2}>
   <Card title="Primary Contacts" icon="user">
-    **Main contact** for each lead
+    **Contacto principal** para cada cliente potencial
     
-    The primary phone number and contact information
+    El número de teléfono principal y la información de contacto.
   </Card>
   
   <Card title="Secondary Contacts" icon="users">
-    **Additional phone numbers** for the same lead
+    **Números de teléfono adicionales** para el mismo cliente potencial
     
-    Backup contacts, decision makers, or alternative numbers
+    Copias de seguridad de contactos, responsables de la toma de decisiones o números alternativos.
   </Card>
   
   <Card title="Custom Variables" icon="code">
-    **Personalized information** for AI conversations
+    **Información personalizada** para conversaciones con IA
     
-    Names, preferences, history, or any data your assistant needs
+    Nombres, preferencias, historial o cualquier dato que necesite tu asistente.
   </Card>
   
   <Card title="Status Tracking" icon="chart-line">
-    **Progress monitoring** through campaign lifecycle
+    **Seguimiento del progreso** a lo largo del ciclo de vida de la campaña
     
-    Track call attempts, completions, and retry status
+    Realizar un seguimiento de los intentos de llamada, las llamadas completadas y el estado de los reintentos.
   </Card>
 </CardGroup>
 
-## Lead Status System
+## Sistema de estado de clientes potenciales
 
-Every lead moves through different statuses during campaign execution:
+Cada cliente potencial pasa por diferentes estados durante la ejecución de la campaña:
 
 <AccordionGroup>
   <Accordion title="Created" icon="plus">
-    **Ready to call** - Lead is queued for first contact attempt
+    **Listo para llamar** - El cliente potencial está en cola para el primer intento de contacto
   </Accordion>
   
   <Accordion title="Scheduled" icon="calendar">
-    **Queued for retry** - Scheduled for next call attempt based on campaign settings
+    **En cola para reintento** - Programado para el siguiente intento de llamada según la configuración de la campaña.
   </Accordion>
   
   <Accordion title="Processing" icon="phone">
-    **Currently being called** - Call is in progress
+    **Llamada en curso** - La llamada está en progreso
   </Accordion>
   
   <Accordion title="Rescheduled" icon="clock">
-    **Waiting for retry** - Will be called again after retry interval
+    **Esperando reintento** - Se volverá a llamar tras el intervalo de reintentos
   </Accordion>
   
   <Accordion title="Max Retries" icon="ban">
-    **Retry limit reached** - Maximum call attempts exceeded
+    **Límite de reintentos alcanzado** - Se ha superado el número máximo de intentos de llamada.
   </Accordion>
   
   <Accordion title="Completed" icon="check">
-    **Successfully contacted** - Call completed or goal achieved
+    **Contacto exitoso** - Llamada completada o se ha alcanzado el objetivo.
   </Accordion>
 </AccordionGroup>
 
-## Primary vs Secondary Contacts
+## Contactos primarios frente a contactos secundarios
 
-### Primary Contacts
-- **Main lead record** with complete information
-- **First to be called** in campaign sequence  
-- **Inherits campaign variables** from assistant settings
-- **Controls overall lead status** and completion
+### Contactos principales
+- **Registro principal** con información completa
+- **Primero en ser llamado** en la secuencia de campaña  
+- **Hereda las variables de campaña** de la configuración del asistente
+- **Controla el estado general de los clientes potenciales** y su finalización.
 
-### Secondary Contacts
-- **Additional phone numbers** for the same person/business
-- **Called if primary doesn't answer** (based on campaign retry settings)
-- **Independent status tracking** from primary contact
-- **Can have unique variables** different from primary
+### Contactos secundarios
+- **Números de teléfono adicionales** de la misma persona/empresa
+- **Se llama si el servidor principal no responde** (según la configuración de reintento de campaña)
+- **Seguimiento independiente del estado** desde el contacto principal
+- **Puede tener variables únicas** diferentes de la primaria
 
 <Tip>
-**Use case example:** A business lead might have the main office number as primary contact, with the decision maker's direct line and mobile as secondary contacts.
+**Ejemplo de caso de uso:** Un cliente potencial podría tener el número de la oficina principal como contacto primario, con la línea directa y el móvil del responsable de la toma de decisiones como contactos secundarios.
 </Tip>
 
-## Variables System
+## Sistema de variables
 
-Variables personalize AI conversations with lead-specific information. They are inherited from [assistant configuration](/ai-assistants/settings/prompt-and-tools#call-variables) and can be customized per lead.
+Las variables personalizan las conversaciones de IA con información específica de cada cliente potencial. Se heredan de [la configuración del asistente](/ai-assistants/settings/prompt-and-tools#call-variables) y se pueden personalizar para cada cliente potencial.
 
-**Usage in conversations:** Assistant uses variables like `{customer_name}` and `{company}` for personalized responses.
+**Uso en conversaciones:** El Asistente utiliza variables como `{customer_name}` and `{company}` para respuestas personalizadas.
 
-## Key Features
+## Características clave
 
-### Lead Management
-- **Manual creation** or **CSV/Excel import** with validation
-- **Status tracking** through campaign lifecycle
-- **Export capabilities** with filtering options
+### Gestión de clientes potenciales
+- **Creación manual** o **importación de CSV/Excel** con validación
+- **Seguimiento del estado** a lo largo del ciclo de vida de la campaña
+- **Capacidades de exportación** con opciones de filtrado
 
-### Campaign Integration
-- **Single campaign** assignment per lead
-- **Automatic status updates** based on call outcomes  
-- **Manual status control** for campaign management
+### Integración de campaña
+- **Una sola campaña** por cliente potencial
+- **Actualizaciones automáticas del estado** basadas en los resultados de las llamadas 
+- **Control manual del estado** para la gestión de campañas
 
-### Best Practices
-- **Phone format:** International format without spaces (+1234567890)
-- **Clean data:** Accurate, current contact information
-- **Logical organization:** Prioritize secondary contacts appropriately
+### Mejores prácticas
+- **Formato de teléfono:** Formato internacional sin espacios (+1234567890)
+- **Datos limpios:** Información de contacto precisa y actualizada.
+- **Organización lógica:** Priorizar adecuadamente los contactos secundarios.
 
 <Note>
-For troubleshooting lead management issues, see [Leads Troubleshooting](/troubleshooting/leads).
+Para solucionar problemas de gestión de clientes potenciales, consulte [Solución de problemas de clientes potenciales](/troubleshooting/leads).
 </Note>
 
 <Note>
-For detailed setup instructions, see [Managing Leads](/leads/managing-leads) and [Importing Leads](/leads/importing-leads).
+Para obtener instrucciones de configuración detalladas, consulte [Gestión de clientes potenciales](/leads/managing-leads) e [Importación de clientes potenciales](/leads/importing-leads).
 </Note>
