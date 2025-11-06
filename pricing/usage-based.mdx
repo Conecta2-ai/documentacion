@@ -1,108 +1,107 @@
 ---
-title: "Pricing Breakdown"
-icon: "calculator"
-description: "Detailed explanation of how call minutes are calculated and billed"
+título: "Desglose de precios"
+icono: "calculadora"
+descripción: "Explicación detallada de cómo se calculan y facturan los minutos de llamadas."
 ---
 
-# Pricing Breakdown
+# Desglose de precios
 
-Autocalls.ai uses a **minutes-based** system for billing. These minutes (or tokens/credits) get **deducted** from your balance each time you make or receive a call. The actual “per-minute cost” depends on your plan, and **carrier costs** are also converted into minutes. Below is how it works.
-
----
-
-## 1. Inbound vs. Outbound Calls
-
-- **Inbound**: You spend minutes as soon as the AI assistant picks up and is engaged in a call.
-- **Outbound**: Minutes start deducting once the customer answers the call and stays connected. Dial time is not billed.
-
-> **Note**: A call is considered active until the AI or the user hangs up, **or** until voicemail detection ends the call if the user’s voicemail answers (for outbound).
+Conecta2.ai utiliza un sistema de facturación **por minutos**. Estos minutos (o tokens/créditos) se **deducen** de tu saldo cada vez que realizas o recibes una llamada. El coste real por minuto depende de tu plan, y **los costes de la operadora** también se convierten a minutos. A continuación te explicamos cómo funciona.
 
 ---
 
-## 2. How Minutes Are Used
+## 1.Llamadas entrantes frente a llamadas salientes
 
-### a) AI Spoken Time
+- **Llamadas entrantes**: Dedicas unos minutos desde el momento en que el asistente de IA contesta la llamada y se involucra en ella.
+- **Llamadas salientes**: Los minutos comienzan a descontarse una vez que el cliente contesta la llamada y permanece conectado. El tiempo de marcación no se factura.
 
-- If your AI assistant is actively on the call for 1 minute, you consume **1 minute** of AI time.
-- The cost is **prorated** by the second, so a 30-second call uses 0.5 minutes from your plan (for AI time).
-
-### b) Carrier Conversion
-
-- **Carrier cost** (the telecom network fee) is also deducted from your balance **but** is typically **rounded up** to the next minute.
-- We convert the carrier’s dollar amount to minutes at your plan’s rate.
-  - **Example**: If your carrier charge is \$0.05 for a 1-minute call, and your plan’s AI rate is \$0.10/min, we convert that \$0.05 to 0.5 minutes from your balance.
-
-**So a single 1-minute conversation might consume:**
-
-- **1 AI minute** (for the assistant)
-- **+ 0.5 “carrier minutes”** (converted from the carrier’s \$0.05 to half your AI cost).
-- **= 1.5 minutes total** deducted from your plan balance.
+> **Nota**: Una llamada se considera activa hasta que la IA o el usuario cuelguen, **o** hasta que la detección del buzón de voz finalice la llamada si el buzón de voz del usuario responde (para llamadas salientes).
 
 ---
 
-## 3. Per-Second Billing vs. Rounding
+## 2. Cómo se utilizan los minutos
 
-1. **AI Time**
+### a) Tiempo hablado por IA
 
-   - **Measured per second**, so 70 seconds is ~1.17 minutes of AI usage.
-   - Deducted exactly from your plan’s minute balance.
+- Si tu asistente de IA está activo en la llamada durante 1 minuto, consumes **1 minuto** de tiempo de IA.
+- El costo se **prorratea** por segundo, por lo que una llamada de 30 segundos consume 0,5 minutos de su plan (para el tiempo de IA).
 
-2. **Carrier Time**
-   - **Rounded to next full minute** for the network fee.
-   - Then converted into a fraction of your AI plan cost to decide how many “minutes” to deduct from your credit balance.
+### b) Conversión de portadora
+
+- **El coste de la operadora** (the telecom network fee) (la tarifa de la red de telecomunicaciones) también se deduce de su saldo, **pero** normalmente se **redondea** al minuto siguiente.
+- Convertimos el importe en dólares de la compañía telefónica a minutos según la tarifa de su plan.
+  - **Ejemplo**: Si su operador cobra 0,05 dólares por una llamada de 1 minuto y la tarifa de IA de su plan es de 0,10 dólares por minuto, convertimos esos 0,05 dólares en 0,5 minutos de su saldo.
+
+**Así, una sola conversación de 1 minuto podría consumir:**
+
+- **1 minuto de IA** (para el asistente)
+- **+ 0,5 “minutos de operador”** (convertidos de los 0,05 dólares del operador a la mitad de su costo de IA).
+- **= 1,5 minutos en total** deducidos del saldo de su plan.
 
 ---
 
-## 4. Included Minutes & Top-Ups
+## 3. Facturación por segundo frente a redondeo
 
-- **Each Plan**: Usually includes a monthly allotment of minutes.
-- **Using Up Minutes**: Once you exceed included minutes, you can **top up** your wallet with additional minutes at your plan’s rate.
-- **No Rollover**: Unused minutes typically don’t roll over to the next month.
+1. **Tiempo de IA**
 
-**Example**
+   - **Medido por segundo**, por lo que 70 segundos son aproximadamente 1,17 minutos de uso de IA.
+   - Se deduce exactamente del saldo de minutos de su plan.
 
-> You’re on the **Starter Plan** with 200 included minutes:
+2. **Tiempo de transporte**
+   - La tarifa de red **se redondea al siguiente minuto completo** 
+   - Luego, se convierte en una fracción del costo de su plan de IA para decidir cuántos “minutos” se deducirán de su saldo de crédito.
+
+---
+
+## 4. Minutos incluidos y recargas
+
+- **Cada plan**: Generalmente incluye una asignación mensual de minutos.
+- **Uso de minutos**: Una vez que exceda los minutos incluidos, puede **recargar** su billetera con minutos adicionales a la tarifa de su plan.
+- **Sin acumulación**: Los minutos no utilizados normalmente no se acumulan para el mes siguiente.
+
+**Ejemplo**
+
+> Estás en el **Plan Básico** con 200 minutos incluidos:
 >
-> - If you make enough calls that total 180 AI minutes + carrier conversions = 180 used, you have 20 left this month.
-> - Next month, you reset to 200. If you need 210 minutes, you pay for 10 extra minutes at your plan’s rate.
+> - Si realizas suficientes llamadas que sumen 180 minutos de IA + conversiones de operador = 180 usados, te quedan 20 este mes.
+> - El próximo mes, su plan se restablecerá a 200 minutos. Si necesita 210 minutos, pagará 10 minutos adicionales a la tarifa de su plan.
 
 ---
 
-## 5. Volume Discounts or Tiers
+## 5. Descuentos por volumen o niveles
 
-- Plans vary (e.g., **Starter** at \$0.20/min, **Pro** at \$0.15/min, **Agency** at \$0.09/min).
-- High-volume usage (like 50,000+ minutes/month) can often get **bulk discounts** by contacting sales.
-
----
-
-## 6. Quick Usage Examples
-
-### Example A (Outbound Call, Starter Plan)
-
-- **AI Rate**: \$0.20/min
-- **Call Duration**: 30 seconds → 0.5 AI minutes = \$0.10 AI cost.
-- **Carrier**: \$0.01/min, but 30 seconds → 1 minute rounded up → \$0.01.
-  - \$0.01 at your plan’s \$0.20 rate = 0.05 “plan minutes” used (Or if you do a simpler approach, \$0.01 / \$0.20 = 0.05 minutes)
-- **Total**: 0.5 (AI) + 0.05 (carrier) = 0.55 minutes from your plan. If you had 200 included, you’d have 199.45 left.
-
-### Example B (Inbound Call, Pro Plan)
-
-- **AI Rate**: \$0.15/min
-- **Call Duration**: 90 seconds → 1.5 AI minutes = \$0.225 AI cost.
-- **Carrier**: Suppose inbound is \$0.015/min, rounding up to 2 minutes if the call was 1.5 min. That’s \$0.03 total.
-  - \$0.03 / \$0.15 = 0.2 minutes from your plan.
-- **Total**: 1.5 (AI) + 0.2 (carrier) = 1.7 minutes deducted.
+- Los planes varían (por ejemplo, **Starter** a \$0.20/min, **Pro** a \$0.15/min, **Agencia** a \$0.09/min).
+- El uso de alto volumen (como más de 50.000 minutos al mes) a menudo puede obtener **descuentos por volumen** contactando con el departamento de ventas.
 
 ---
 
-### FAQ
+## 6. Ejemplos de uso rápido
 
-- **Do I pay double if user + AI talk simultaneously?**  
-  **No**, it’s based on total call duration, not per speaker concurrency.
-- **What if someone picks up then instantly hangs up?**  
-  The AI might register a few seconds; cost is fractional for the AI, but carrier may round up to 1 minute.
+### Ejemplo A (Llamada saliente, Plan básico)
+
+- **Tarifa de IA**: \$0.20/min
+- **Duración de la llamada**: 30 segundos → 0.5 minutos de IA = \$0.10 de coste de IA.
+- **Operador**: \$0.01/min, pero 30 segundos → minuto redondeado hacia arriba → \$0.01.
+  - \$0.01 a la tarifa de  \$0.20 de tu plan = 0.05 “minutos del plan” utilizados (O, si prefieres un método más sencillo, 0,01 $ / 0,20 $ = 0,05 minutos).
+- **Total**: 0.5 (AI) + 0.05 (operador) = 0.55 minutos de tu plan. Si tenías 200 minutos incluidos, te quedarían 199,45.
+
+### Ejemplo B (Llamada entrante, Plan Pro)
+- **Tarifa de IA **: \$0.15/minuto
+- **Duración de la llamada**: 90 segundos → 1.5 minutos de IA = \$0.225 de coste de IA.
+- **Operador**: Supongamos que la tarifa entrante es de $0.015/min, redondeando a 2 minutos si la llamada duró 1.5 minutos. Eso da un total de $0.03.
+$0.03 / $0.15 = 0.2 minutos de su plan.
+- **Total**: 1.5 (AI) + 0.2 (portadora) = 1.7 minutos deducidos.
 
 ---
 
-**Bottom Line**  
-All calls burn **AI time** plus a **converted carrier cost** from your plan’s minute balance. Keep track of usage in your dashboard, top up if needed, and choose the plan that best suits your volume.
+### Preguntas frecuentes
+
+- **¿Pago el doble si el usuario y la IA hablan simultáneamente?**  
+  **No**, se basa en la duración total de la llamada, no en la concurrencia por hablante.
+- **¿Qué ocurre si alguien contesta y cuelga inmediatamente?**  
+  La IA podría registrar unos segundos; el coste es fraccionario para la IA, pero la operadora podría redondearlo a 1 minuto.
+
+---
+
+**Resultado final**  
+todas las llamadas consumen **tiempo de IA** más el **costo de conversión de tu operador, que se deduce** del saldo de minutos de tu plan. Controla tu consumo en tu panel de control, recarga si es necesario y elige el plan que mejor se ajuste a tu volumen de llamadas.
