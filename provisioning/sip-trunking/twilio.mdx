@@ -1,11 +1,11 @@
 ---
-title: "Twilio Integration"
-description: "A step by step guide to connect to your Twilio account via SIP trunking"
+título: "Integración de Twilio"
+descripción: "Guía paso a paso para conectarse a su cuenta de Twilio mediante troncales SIP."
 ---
 
-## Step 1: Create Elastic SIP Trunking
+## Paso 1: Crear un enlace troncal SIP elástico
 
-1. Create the trunk, give it a name, and toggle some general settings
+1. Crea el tronco, asígnale un nombre y activa o desactiva algunos ajustes generales.
    <Frame>
      <img
        src="/resources/twillio-create-elastic-sip1.jpeg"
@@ -13,9 +13,9 @@ description: "A step by step guide to connect to your Twilio account via SIP tru
      />
    </Frame>
 
-2. Setup termination (this is for outbound)
+2. Finalización de configuración (esto es para salida)
 
-- the termination SIP URI here is important, we would use it in later steps. You might want to use a localized termination uri that’s near your region. You can expand and view your localized uris in the twilio console.
+- El URI SIP de terminación es importante, ya que lo utilizaremos más adelante. Puede usar un URI de terminación local, cercano a su región. Puede expandir y ver sus URI locales en la consola de Twilio.
     <Frame>
       <img
         src="/resources/twillio-setup-termination1.jpeg"
@@ -23,9 +23,9 @@ description: "A step by step guide to connect to your Twilio account via SIP tru
       />
     </Frame>
 
-- For your elastic SIP trunk to accept our outbound request, you need to whitelist IP address or create a auth with username and password.
+- Para que su troncal SIP elástica acepte nuestra solicitud saliente, debe incluir la dirección IP en la lista blanca o crear una autenticación con nombre de usuario y contraseña.
 
-{/* - If you opt for the auth route, you need to specify the username and password in the next step when importing the number to Autocalls.
+{/* - Si opta por la ruta de autenticación, deberá especificar el nombre de usuario y la contraseña en el siguiente paso al importar el número a Conecta2.ai
    <Frame>
      <img
        src="/resources/twillio-auth-route.jpeg"
@@ -33,7 +33,7 @@ description: "A step by step guide to connect to your Twilio account via SIP tru
      />
    </Frame> */}
 
-- Currently Autocalls SIP server does not have a static IP, so if you opt for the IP route, you need to whitelist all the IP addresses in the range like following:
+- Actualmente, el servidor SIP de Conecta2.ai no tiene una IP estática, por lo que si opta por la ruta IP, deberá incluir en la lista blanca todas las direcciones IP del rango, como se muestra a continuación:
 
    <Frame>
      <img
@@ -49,9 +49,9 @@ description: "A step by step guide to connect to your Twilio account via SIP tru
      />
    </Frame>
 
-3. Setup origination (this is for inbound)
+3. Configurar origen (esto es para entradas)
 
-- Here you will specify Autocalls SIP server address as the origination SIP URI: ```sip:5wed79aeavr.sip.livekit.cloud ``` 
+-Aquí especificará la dirección del servidor SIP de Conecta2.ai como URI SIP de origen:```sip:5wed79aeavr.sip.livekit.cloud ``` 
 
     <Frame>
       <img
@@ -60,9 +60,9 @@ description: "A step by step guide to connect to your Twilio account via SIP tru
       />
     </Frame>
 
-## Step 2: Move numbers to Elastic SIP Trunking
+## Paso 2: Trasladar los números a Elastic SIP Trunking
 
-You’ve created the elastic SIP trunk, now you would need to purchase numbers / move existing numbers to this trunk.
+Ya has creado el enlace troncal SIP elástico, ahora necesitas comprar números o transferir los números existentes a este enlace.
 
    <Frame>
      <img
@@ -71,13 +71,13 @@ You’ve created the elastic SIP trunk, now you would need to purchase numbers /
      />
    </Frame>
 
-## Step 3: Import numbers to Autocalls
+## Paso 3: Importar números a Conecta2.ai
 
-Now the number is set up with your elastic SIP trunking, you need to import the number to Autocalls so that we will know how to route the call.
+Ahora que el número está configurado con su troncal SIP elástica, debe importarlo a Conecta2.ai para que sepamos cómo enrutar la llamada.
 
-1. Go to your Autocalls.ai dashboard
-2. Navigate to ** Your Phone Numbers**
-3. Click “Integrate SIP trunk”
+1. Acceda a su panel de control de Conecta2.ai
+2. Navegue hasta **Sus números de teléfono**
+3. Haga clic en “Integrar troncal SIP”
 
    <Frame>
      <img
@@ -85,11 +85,11 @@ Now the number is set up with your elastic SIP trunking, you need to import the 
        alt="Import numbers to Autocalls"
      />
    </Frame>
-4. Fill in your details based on your integration type 
+4. Complete sus datos según su tipo de integración.
 ```
-Phone number: e.g., +1 555 0123
-Username: Your extension username
-Password: Your extension password
+Número de teléfono: por ejemplo, +1 555 0123
+Nombre de usuario: el nombre de usuario de su extensión
+Contraseña: la contraseña de su extensión
 ```
    <Frame>
      <img
@@ -98,9 +98,9 @@ Password: Your extension password
      />
    </Frame>
 
-5. Here you will supply the termination SIP URI you set up in Step 1.
+5. Aquí deberá proporcionar el URI SIP de terminación que configuró en el Paso 1.
 ```
-Server address: e.g., xxx.pstn.twillio.com
+Dirección del servidor: por ejemplo, xxx.pstn.twillio.com
 ```
 
    <Frame>
@@ -110,9 +110,9 @@ Server address: e.g., xxx.pstn.twillio.com
      />
    </Frame>
 
-6. Here select Authorization type as you opted in step 2. 
+6. Aquí seleccione el tipo de autorización que eligió en el paso 2.
 
-{/* - If you opted for auth route select Username and password.
+{/* - Si optó por la ruta de autenticación, seleccione Nombre de usuario y contraseña.
 
    <Frame>
      <img
@@ -121,7 +121,7 @@ Server address: e.g., xxx.pstn.twillio.com
      />
    </Frame> */}
 
-- If IP type is the option you have selected, add the IPs 
+- Si ha seleccionado la opción de tipo IP, añada las direcciones IP.
 ```
 54.244.51.0
   54.244.51.1  
@@ -139,7 +139,7 @@ Server address: e.g., xxx.pstn.twillio.com
      />
    </Frame> 
    
-7. Select the country of where your SIP trunk is located. 
+7. Seleccione el país donde se encuentra su troncal SIP.
 
     <Frame>
       <img
@@ -148,30 +148,31 @@ Server address: e.g., xxx.pstn.twillio.com
       />
     </Frame>
 
-### Step 4: Verify Setup
+### Paso 4: Verificar la configuración
 
-After configuration:
+Tras la configuración:
 
-1. Make a test call to your number/extension
-2. Check that the AI assistant answers
-3. Use the test call feature to verify outbound calling
+1. Realiza una llamada de prueba a tu número/extensión.
+2. Comprueba que el asistente de IA responda
+3. Utilice la función de llamada de prueba para verificar las llamadas salientes.
 
-## Security Requirements
+## Requisitos de seguridad
 
-Your SIP credentials need to be secure:
+Sus credenciales SIP deben ser seguras:
 
-- **Username**: Your extension number or provider-supplied username
-- **Password must have**:
-  - 12 or more characters
-  - Numbers
-  - Upper and lowercase letters
-  - Special characters recommended
-## Common Issues
+- **Nombre de usuario**: Su número de extensión o nombre de usuario proporcionado por el proveedor
+- **La contraseña debe contener**:
+  - 12 o más caracteres
+  - Números
+  - Letras mayúsculas y minúsculas
+  - Se recomiendan caracteres especiales
+
+## Problemas comunes
 
 <AccordionGroup>
   <Accordion title="After connecting, inbound works but outbound does not work?">
-    - Check your Termination SIP URI If there’s a space in it, please remove. Also you should use a localized termination uri that’s near your region. Check out this [doc](https://www.twilio.com/docs/global-infrastructure/localized-uris/termination) to select one.
-    - Check your user name and credentials Please make sure you entered the right user name and credentials which shows in this dialog. Please note the user name is not the friendly name that shows in the credential list. The friendly is different to user name, you need to double check if you happen to give a different name.
+    - Comprueba tu URI SIP de terminación. Si contiene un espacio, elimínalo. Además, debes usar una URI de terminación localizada, cercana a tu región. Consulta este [doc](https://www.twilio.com/docs/global-infrastructure/localized-uris/termination) para seleccionar una.
+    - Comprueba tu nombre de usuario y credenciales. Asegúrate de haber introducido correctamente el nombre de usuario y las credenciales que se muestran en este cuadro de diálogo. Ten en cuenta que el nombre de usuario no es el nombre descriptivo que aparece en la lista de credenciales. El nombre descriptivo es diferente del nombre de usuario; revísalo si has introducido uno distinto.
     
     <Frame>
      <img
@@ -184,14 +185,14 @@ Your SIP credentials need to be secure:
 {" "}
 
 <Accordion title="How do I set up dialing to international countries?">
-- Search “geo” to find the “Voice Geographic Permissions” setting.  
+- Busca “geo” para encontrar la configuración de “Permisos geográficos de voz”.  
     <Frame>
      <img
        src="/resources/twillio-setup-dialing-international.png"
        alt="Twillio setup dialing international"
      />
    </Frame>
-- Choose “Elastic Sip Trunking” in selector, and select the countries you would like to dial. 
+- Elija “Elastic SIP Trunking” en el selector y seleccione los países a los que desea llamar. 
     <Frame>
      <img
        src="/resources/twillio-choose-elastic-sip-trunking.png"
@@ -206,7 +207,5 @@ Your SIP credentials need to be secure:
 ---
 
 <Note>
-  Need help setting up? Our support team specializes in helping customers
-  integrate their phone systems. We'll guide you through the entire process,
-  ensuring a smooth setup with your specific phone system configuration.
+  ¿Necesita ayuda con la configuración? Nuestro equipo de soporte se especializa en ayudar a los clientes a integrar sus sistemas telefónicos. Le guiaremos durante todo el proceso, garantizando una configuración sencilla y adaptada a las necesidades específicas de su sistema telefónico.
 </Note>
