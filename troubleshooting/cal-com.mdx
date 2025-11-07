@@ -1,70 +1,70 @@
 ---
-title: "Cal.com Issues"
-icon: "calendar-days"
-description: "Troubleshoot common problems with Cal.com integration for appointment scheduling"
+título: "Problemas de Cal.com"
+icono: "días del calendario"
+descripción: "Solucione problemas comunes con la integración de Cal.com para la programación de citas."
 ---
 
-This guide provides solutions for common issues encountered when integrating Cal.com with your AI assistant.
+Esta guía proporciona soluciones para problemas comunes que se presentan al integrar Cal.com con su asistente de IA.
 
-## Appointment Scheduling Issues
+## Problemas de programación de citas
 
-### Missing API Key Error
+### Error de clave API faltante
 
-**Problem:** Getting error "missing api_key or event_id for Cal.com"
+**Problema:** Se produce el error "falta la clave API o el ID del evento para Cal.com".
 
-**Solution:**
-1. Go to [assistant settings](/ai-assistants/settings/prompt-and-tools#default-tools)
-2. Navigate to **Appointment Scheduling** section
-3. **Enter correct API key** from your Cal.com developer settings
-4. **Enter correct event ID** from your Cal.com event URL
-5. **Click Save** to apply the configuration
-6. **Verify** the connection shows as active
+**Solución:**
+1. Ve a [la configuración del asistente](/ai-assistants/settings/prompt-and-tools#default-tools)
+2. Diríjase a la sección **de Programación de citas** 
+3. **Introduce la clave API correcta** de tu configuración de desarrollador de Cal.com.
+4. **Introduce el ID de evento correcto** de la URL de tu evento de Cal.com
+5. **Haz clic en Guardar** para aplicar la configuración.
+6. **Verifique que** la conexión aparezca como activa.
 
-### Connection Problems
+### Problemas de conexión
 
-**API Configuration Issues:**
-- **Verify API key** is active and has correct permissions in Cal.com
-- **Check event ID** is correct from your Cal.com event URL
-- **Confirm account access** to the Cal.com account
+**Problemas de configuración de la API:**
+- **Verifique que la clave API** esté activa y tenga los permisos correctos en Cal.com.
+- **Comprueba que el ID del evento** sea correcto en la URL de tu evento de Cal.com.
+- **Confirma el acceso ** a la cuenta de Cal.com
 
-### Event Configuration Issues
+### Problemas de configuración del evento
 
-**Events not being scheduled:**
-- **No required custom fields:** Ensure you haven't added any required custom fields in Cal.com event settings. Only default fields and optional phone field are supported
-- **Phone field identifier:** Verify the phone field identifier is exactly "phone" (case-sensitive)
-- **Event availability:** Check that your Cal.com event has proper availability configured
+**Eventos no programados:**
+- **No se requieren campos personalizados:** Asegúrese de no haber agregado ningún campo personalizado obligatorio en la configuración de eventos de Cal.com. Solo se admiten los campos predeterminados y el campo de teléfono opcional.
+- **Identificador del campo de teléfono:** Verifique que el identificador del campo de teléfono sea exactamente "phone" (distingue entre mayúsculas y minúsculas).
+- **Disponibilidad del evento:** Comprueba que tu evento de Cal.com tenga configurada la disponibilidad correctamente.
 
-### Booking Failures
+### Fallos en las reservas
 
-**Appointments not being scheduled:**
-- **Email Required:** Ensure the assistant has an email defined in [assistant settings](/ai-assistants/settings/prompt-and-tools#call-variables) and the lead has an email in inbound variables or from conversation
-- **Phone field setup:** Add phone field in Cal.com event settings with identifier "phone". See [Phone Number in Calendar Events](/ai-assistants/cal-com-scheduling#phone-number-in-calendar-events) for detailed setup.
-- **Test with real phone calls:** Make test calls using **phone call** (not web call) to ensure proper variable transmission
-- **Check time zones** - ensure correct time zone configuration in both systems
-- **Review assistant logs** - check call transcripts for booking attempts
-- **Verify event settings** in Cal.com for booking restrictions
+**Citas que no se programan:**
+- **Asegúrese de que el asistente tenga un correo electrónico definido en [la configuración del asistente](/ai-assistants/settings/prompt-and-tools#call-variables) y que el cliente potencial tenga un correo electrónico en las variables de entrada o en la conversación.
+- **Configuración del campo de teléfono:** Agregue el campo de teléfono en la configuración del evento de Cal.com con el identificador "phone". Consulte [Número de teléfono en eventos del calendario](/ai-assistants/cal-com-scheduling#phone-number-in-calendar-events) para obtener información detallada sobre la configuración.
+- **Prueba con llamadas reales:** Realiza llamadas de prueba utilizando una llamada telefónica (no una llamada web) para asegurar la correcta transmisión de variables.
+- **Verifique las zonas horarias** - asegúrese de que la configuración de la zona horaria sea correcta en ambos sistemas.
+- **Revisar los registros del asistente** - consultar las transcripciones de llamadas para ver los intentos de reserva.
+- **Verifica la configuración del evento** en Cal.com para conocer las restricciones de reserva.
 
-### Customer Contact Issues
+### Problemas de contacto con el cliente
 
-**Calendar invites not sent:**
-- **Email variable:** Confirm `email` variable is properly set in [assistant settings](/ai-assistants/settings/prompt-and-tools#call-variables)
-- **Lead email:** Verify customer email is being passed correctly when creating leads
-- **Email format:** Ensure email addresses are in valid format
+**No se enviaron las invitaciones del calendario:**
+- **Variable de correo electrónico:** Confirme que `email` la variable esté configurada correctamente en[los ajustes del asistente.](/ai-assistants/settings/prompt-and-tools#call-variables)
+- **Correo electrónico del cliente potencial:** Verifique que el correo electrónico del cliente se esté enviando correctamente al crear clientes potenciales.
+- **Formato de correo electrónico:** Asegúrese de que las direcciones de correo electrónico tengan un formato válido.
 
-**Phone number not appearing in events:**
-- **Phone field setup:** Verify phone field is configured in Cal.com event settings with identifier "phone". See [Phone Number in Calendar Events](/ai-assistants/cal-com-scheduling#phone-number-in-calendar-events) for setup details.
-- **Test call method:** Use phone call (not web call) for testing to ensure phone variable transmission
+**Número de teléfono que no aparece en los eventos:**
+- **Configuración del campo de teléfono: ** Verifique que el campo de teléfono esté configurado en los ajustes del evento de Cal.com con el identificador "phone". Consulte [ Número de teléfono en eventos del calendario](/ai-assistants/cal-com-scheduling#phone-number-in-calendar-events) para obtener más detalles sobre la configuración.
+- **Método de llamada de prueba:** Utilice una llamada telefónica (no una llamada web) para realizar las pruebas y asegurar la transmisión de variables telefónicas.
 
-## Getting Help
+## Obtener ayuda
 
-If these solutions don't resolve your issue:
+Si estas soluciones no resuelven su problema:
 
-1. **Check call transcripts** to see exactly what the AI attempted
-2. **Test the integration** with a simple appointment booking using phone calls
-3. **Contact support** with specific error messages and screenshots
+1. **Revisa las transcripciones de las llamadas** para ver exactamente qué intentó la IA.
+2. **Prueba la integración** con una reserva de citas sencilla mediante llamadas telefónicas.
+3. **Contacta con el servicio de asistencia técnica** e incluye mensajes de error específicos y capturas de pantalla.
 
-**Common Support Information Needed:**
-- Screenshot of the error message
-- Cal.com event configuration details
-- Assistant settings configuration
-- Call transcript showing booking attempt
+**Información de soporte común necesaria:**
+- Captura de pantalla del mensaje de error
+- Detalles de configuración del evento de Cal.com
+- Configuración del asistente
+- Transcripción de llamada que muestra el intento de reserva
