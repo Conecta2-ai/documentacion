@@ -1,27 +1,27 @@
 ---
-title: "General Setup Issues"
-icon: "wrench"
-description: "Troubleshoot common setup problems including AI response issues, OTP verification, and credential errors"
+título: "Problemas generales de configuración"
+icono: "llave inglesa"
+descripción: "Solucione problemas comunes de configuración, incluidos problemas de respuesta de la IA, verificación de OTP y errores de credenciales."
 ---
 
-Some common pitfalls when first configuring Autocalls.ai:
+Algunos errores comunes al configurar Conecta2.ai por primera vez:
 
-## 1. AI Not Responding or Call Dropping
+## 1. La IA no responde o se corta la llamada
 
-- **Check the System Prompt**: Possibly missing instructions.
-- **Voice Activity Detection**: If set too low or high, it may cause awkward silences or interruptions.
-- **Connection**: If your internet or SIP trunk is unstable, calls might drop.
+- **Compruebe el mensaje del sistema**: es posible que falten instrucciones.
+- **Detección de actividad de voz**: Si se configura demasiado baja o alta, puede provocar silencios incómodos o interrupciones.
+- **Conexión**: Si su conexión a Internet o troncal SIP es inestable, las llamadas podrían interrumpirse.
 
-## 2. Not Receiving OTP (for Caller ID Verification)
+## 2. No recibo el OTP (para la verificación del identificador de llamadas)
 
-- **Carrier Blocks**: Some operators filter out short codes or unknown international SMS.
-- **Try Alternate Method**: Ask support if you can verify by a quick voice call or another phone line.
+- **Bloqueos de operador**: Algunos operadores filtran los códigos cortos o los SMS internacionales desconocidos.
+- **Prueba un método alternativo**: Pregunta al soporte si puedes verificarlo mediante una llamada de voz rápida o desde otra línea telefónica.
 
-## 3. Credential Errors
+## 3. Errores de credenciales
 
-- **SIP**: Wrong username/password? Double-check with your PBX provider.
-- **API/Webhooks**: Ensure you copied the correct token or endpoint URL.
+- **SIP**: ¿Nombre de usuario o contraseña incorrectos? Verifique con su proveedor de PBX.
+- **API/Webhooks**: Asegúrese de haber copiado el token o la URL del punto de conexión correctos.
 
 ---
 
-**Tip:** Look at call logs for error codes if a call fails. Usually, it'll show a reason like "Number not found" or "Network unreachable."
+**Consejo:** Si una llamada falla, revise los registros de llamadas para ver si hay códigos de error. Normalmente, mostrará un motivo como "Número no encontrado" o "Red inaccesible".
