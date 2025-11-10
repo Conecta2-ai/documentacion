@@ -1,196 +1,196 @@
 ---
-title: "Leads Issues"
-icon: "user-gear"
-description: "Solve common lead management issues and import problems"
+título: "Problemas de clientes potenciales "
+icono: "equipo de usuario"
+descripción: "Solucione problemas comunes de gestión de clientes potenciales y problemas de importación."
 ---
 
-Quick solutions for common lead management problems and import issues.
+Soluciones rápidas para problemas comunes de gestión de clientes potenciales y problemas de importación.
 
-## Lead Import Issues
+## Problemas de importación de clientes potenciales
 
-### Import Fails Completely
-**Error:** "Import failed" or "File format not supported"
+### La importación falla completamente.
+**Error:** "Error al importar" o "Formato de archivo no compatible"
 
-**Solutions:**
-1. **Check file format:** Use CSV or Excel files only
-2. **Verify campaign selection:** Ensure a campaign is selected for import
-3. **File size limits:** Keep files under 10MB for optimal performance
-4. **Encoding issues:** Save CSV with UTF-8 encoding
+**Soluciones:**
+1. **Verifique el formato del archivo:** Solo se permiten archivos CSV o Excel.
+2. **Verifique la selección de la campaña:** asegúrese de que se haya seleccionado una campaña para importar.
+3. **Límites de tamaño de archivo:** Para un rendimiento óptimo, mantenga los archivos por debajo de 10 MB.
+4. **Problemas de codificación:** Guardar el archivo CSV con codificación UTF-8
 
-### No Leads Imported
-**Issue:** Import completes but no leads appear
+### No se importan clientes potenciales
+**Problema:** La importación se completa, pero no aparecen clientes potenciales.
 
-**Solutions:**
-1. **Column headers:** Verify headers match required format (phone, name, etc.)
-2. **Data validation:** Check that phone numbers are in correct format
-3. **Empty rows:** Remove empty rows from file
-4. **Required fields:** Ensure phone number column contains valid data
+**Soluciones:**
+1. **Encabezados de columna:** Verifique que los encabezados coincidan con el formato requerido (teléfono, nombre, etc.).
+2. **Validación de datos:** Compruebe que los números de teléfono tengan el formato correcto.
+3. **Filas vacías:** Eliminar las filas vacías del archivo
+4. **Campos obligatorios:** Asegúrese de que la columna del número de teléfono contenga datos válidos.
 
-### Partial Import Success
-**Issue:** Some leads imported, others failed
+### Importación parcial exitosa
+**Problema:** Algunos leads se importaron correctamente, otros fallaron.
 
-**Solutions:**
-1. **Download error report:** Check failed rows for specific issues
-2. **Phone number format:** Ensure international format (+1234567890)
-3. **Duplicate detection:** Remove duplicate phone numbers
-4. **Invalid data:** Fix malformed phone numbers or missing required data
+**Soluciones:**
+1. **Descargar informe de errores:** revise las filas con errores para detectar problemas específicos.
+2. **Formato del número de teléfono:** Asegúrese de que sea en formato internacional (+1234567890)
+3. **Detección de duplicados:** Eliminar números de teléfono duplicados
+4. **Datos no válidos:** Corrija los números de teléfono malformados o los datos obligatorios faltantes.
 
-### Processing Delays
-**Issue:** Import shows as processing for extended time
+### Retrasos en el procesamiento
+**Problema:** La importación se muestra como en proceso durante un tiempo prolongado.
 
-**Explanation:**
-- Large files are processed in background
-- Processing time increases with file size
-- System queues multiple imports
+**Explicación:**
+- Los archivos grandes se procesan en segundo plano.
+- El tiempo de procesamiento aumenta con el tamaño del archivo.
+- El sistema pone en cola múltiples importaciones.
 
-**Solutions:**
-1. **Wait for completion:** Check notifications for updates
-2. **Break up large files:** Split into smaller batches (500-1000 leads)
-3. **Contact support:** If processing exceeds 30 minutes
+**Soluciones:**
+1. **Espere a que finalice:** revise las notificaciones para ver las actualizaciones.
+2. **Divida los archivos grandes:** divídalos en lotes más pequeños (500-1000 contactos).
+3. **Contacta con soporte:** Si el procesamiento supera los 30 minutos
 
-## Lead Management Issues
+## Problemas de gestión de clientes potenciales
 
-### Lead Not Appearing in Campaign
-**Issue:** Imported lead doesn't show in campaign
+### Los clientes potenciales no aparece en la campaña
+**Problema:** El cliente potencial importado no se muestra en la campaña.
 
-**Check:**
-- Lead status (should be "Created" or "Scheduled")
-- Campaign filters or search settings
-- Lead marked as completed accidentally
+**Verificar:**
+- Estado del cliente potencial (debe ser "Creado" o "Programado")
+- Filtros de campaña o configuración de búsqueda
+- El cliente potencial se marcó como completado por error.
 
-**Solutions:**
-1. **Reset lead status:** Change status to "Created" to re-queue
-2. **Verify campaign assignment:** Check lead is assigned to correct campaign
-3. **Refresh interface:** Reload campaign page
+**Soluciones:**
+1. **Restablecer el estado del cliente potencial:** Cambiar el estado a "Creado" para volver a ponerlo en cola.
+2. **Verificar la asignación de la campaña:** Comprobar que el cliente potencial esté asignado a la campaña correcta.
+3. **Actualizar interfaz:** Recargar la página de la campaña
 
-### Invalid Phone Numbers
-**Issue:** Phone numbers rejected during import
+### Números de teléfono no válidos
+**Problema:** Números de teléfono rechazados durante la importación
 
-**Common formats:**
-- **Correct:** +1234567890 (international format)
-- **Incorrect:** (123) 456-7890, 123-456-7890, 1234567890
+**Formatos comunes:**
+- **Correcto:** +1234567890 (formato internacional)
+- **Incorrecto:** (123) 456-7890, 123-456-7890, 1234567890
 
-**Solutions:**
-1. **Standardize format:** Convert all numbers to +1234567890 format
-2. **Remove formatting:** Strip spaces, parentheses, dashes
-3. **Country codes:** Add appropriate country code prefix
-4. **Validation tools:** Use phone validation before import
+**Soluciones:**
+1. **Formato estandarizado:** Convertir todos los números al formato +1234567890
+2. **Eliminar formato:** Eliminar espacios, paréntesis y guiones.
+3. **Códigos de país:** Añada el prefijo del código de país correspondiente.
+4. **Herramientas de validación:** Utilice la validación del teléfono antes de importar
 
-### Duplicate Leads
-**Issue:** Same person appears multiple times
+### Clientes potenciales duplicados
+**Problema:** La misma persona aparece varias veces
 
-**Prevention:**
-1. **Data cleanup:** Remove duplicates before import
-2. **Phone validation:** Check for format variations of same number
-3. **Name matching:** Identify potential duplicates by name + phone
-4. **Lead deduplication:** Use tools to identify similar entries
+**Prevención:**
+1. **Limpieza de datos:** Eliminar duplicados antes de importar
+2. **Validación telefónica:** Comprobar variaciones de formato del mismo número
+3. **Coincidencia de nombres:** Identifica posibles duplicados por nombre + teléfono
+4. **Eliminación de duplicados:** Utilice herramientas para identificar entradas similares.
 
-### Secondary Contacts Not Working
-**Issue:** Secondary contacts not being called
+### Los contactos secundarios no funcionan
+**Problema:** No se llama a los contactos secundarios.
 
-**Requirements:**
-- Secondary contact must have valid phone number
-- Primary contact must reach max retries first
-- Campaign must be configured for secondary contacts
+**Requisitos:**
+- El contacto secundario debe tener un número de teléfono válido.
+- El contacto principal debe alcanzar primero el número máximo de reintentos.
+- La campaña debe configurarse para contactos secundarios.
 
-**Solutions:**
-1. **Verify setup:** Check secondary contact configuration
-2. **Lead status:** Ensure primary contact has been attempted
-3. **Campaign settings:** Confirm secondary contact calling is enabled
+**Soluciones:**
+1. **Verificar la configuración:** Comprobar la configuración del contacto secundario
+2. **Estado del contacto principal:** Asegúrese de que se haya intentado contactar con el contacto principal
+3. **Configuración de la campaña:** Confirme que la llamada a contactos secundarios está habilitada.
 
-## Variable and Data Issues
+## Problemas de variables y datos
 
-### Variable Mapping Errors
-**Issue:** Custom variables not importing correctly
+### Errores de asignación de variables
+**Problema:** Las variables personalizadas no se importan correctamente.
 
-**Solutions:**
-1. **Column headers:** Match exactly with [assistant configuration](/ai-assistants/settings/prompt-and-tools#call-variables)
-2. **Data types:** Ensure data matches expected variable types
-3. **Required variables:** Include all variables defined in assistant
-4. **Default values:** Check if default values are being applied
+**Soluciones:**
+1. **Encabezados de columna:** Deben coincidir exactamente con [ la configuración del asistente](/ai-assistants/settings/prompt-and-tools#call-variables)
+2. **Tipos de datos:** Asegúrese de que los datos coincidan con los tipos de variables esperados.
+3. **Variables requeridas:** Incluir todas las variables definidas en el asistente.
+4. **Valores predeterminados:** Compruebe si se están aplicando los valores predeterminados.
 
-### Missing Lead Information
-**Issue:** Leads missing names, emails, or custom data
+### Información de contacto faltante
+**Problema:** Faltan nombres, correos electrónicos o datos personalizados en los clientes potenciales.
 
-**Solutions:**
-1. **Column mapping:** Verify all columns are mapped correctly
-2. **Optional fields:** Confirm optional fields are included in import
-3. **Data validation:** Check source data for completeness
-4. **Re-import:** Add missing data and re-import if needed
+**Soluciones:**
+1. **Asignación de columnas:** Verifique que todas las columnas estén asignadas correctamente.
+2. **Campos opcionales:** Confirme que los campos opcionales se incluyen en la importación.
+3. **Validación de datos:** Comprobar que los datos de origen estén completos.
+4. **Reimportar:** Agregue los datos faltantes y vuelva a importar si es necesario.
 
-## Campaign Integration Issues
+## Problemas de integración de campañas
 
-### Lead Status Problems
-**Issue:** Leads stuck in wrong status
+### Problemas de estado de cliente potencial
+**Problema:** Los clientes potenciales se quedan atascados en un estado incorrecto.
 
-**Status meanings:**
-- **Created:** Ready to be called
-- **Scheduled:** Queued for next attempt
-- **Processing:** Currently being called
-- **Completed:** Finished or goal achieved
-- **Max Retries:** Reached retry limit
+**Significados de los estados:**
+- **Creado:** Listo para ser llamado
+- **Programado:** En cola para el próximo intento
+- **Procesando:** Actualmente se está llamando
+- **Completado:** Finalizado o meta alcanzada
+- **Máximo de reintentos:** Se ha alcanzado el límite de reintentos.
 
-**Solutions:**
-1. **Manual status change:** Update status in leads table
-2. **Campaign restart:** Pause and restart campaign if needed
-3. **Retry settings:** Adjust max retries or intervals
+**Soluciones:**
+1. **Cambio de estado manual:** Actualizar el estado en la tabla de clientes potenciales.
+2. **Reinicio de campaña:** Pause y reinicie la campaña si es necesario.
+3. **Configuración de reintentos:** Ajuste el número máximo de reintentos o intervalos
 
-### Variable Inheritance Issues
-**Issue:** Lead variables not working in calls
+### Problemas de herencia de variables
+**Problema:** Las variables principales no funcionan en las llamadas
 
-**Solutions:**
-1. **Assistant setup:** Verify variables defined in [assistant settings](/ai-assistants/settings/prompt-and-tools#call-variables)
-2. **Variable names:** Ensure exact match between lead data and assistant variables
-3. **Data format:** Check variable data is in expected format
-4. **Test calls:** Use manual test calls to verify variable passing
+**Soluciones:**
+1. **Configuración del asistente:** Verifique las variables definidas en [la configuración del asistente.](/ai-assistants/settings/prompt-and-tools#call-variables)
+2. **Nombres de variables:** Asegurar la coincidencia exacta entre los datos del cliente potencial y las variables del asistente.
+3. **Formato de datos:** Compruebe que los datos de la variable tengan el formato esperado.
+4. **Llamadas de prueba:** Utilice llamadas de prueba manuales para verificar el paso de variables.
 
-## File Format Issues
+## Problemas con el formato de archivo
 
-### CSV Problems
-**Common issues:**
-- Wrong delimiter (use comma, not semicolon)
-- Missing headers in first row
-- Quoted fields with unescaped quotes
-- Mixed encoding (use UTF-8)
+### Problemas con CSV
+**Problemas comunes:**
+- Delimitador incorrecto (use coma, no punto y coma)
+- Faltan encabezados en la primera fila
+- Campos entrecomillados con comillas sin escape
+- Codificación mixta (usar UTF-8)
 
-**Solutions:**
-1. **Standard format:** Use comma-separated values
-2. **Headers required:** First row must contain column names
-3. **Text qualification:** Use double quotes for text fields
-4. **Encoding:** Save as UTF-8 encoded CSV
+**Soluciones:**
+1. **Formato estándar:** Utilice valores separados por comas
+2. **Encabezados obligatorios:** La primera fila debe contener los nombres de las columnas.
+3. **Calificación del texto:** Utilice comillas dobles para los campos de texto.
+4. **Codificación:** Guardar como CSV codificado en UTF-8
 
-### Excel Problems
-**Common issues:**
-- Multiple sheets (only first sheet imported)
-- Merged cells causing data misalignment
-- Formulas instead of values
-- Hidden characters or formatting
+### Problemas de Excel
+**Problemas comunes:**
+- Varias hojas (solo se importa la primera hoja)
+- Celdas fusionadas que provocan desalineación de datos
+- Fórmulas en lugar de valores
+- Caracteres ocultos o formato
 
-**Solutions:**
-1. **Single sheet:** Use only first worksheet
-2. **Unmerge cells:** Separate merged cells
-3. **Values only:** Convert formulas to values
-4. **Clean format:** Remove special formatting
+**Soluciones:**
+1. **Una sola hoja:** Utilice únicamente la primera hoja de cálculo.
+2. **Separar celdas:** Separar celdas fusionadas
+3. **Solo valores:** Convertir fórmulas a valores
+4. **Formato limpio** Eliminar formato especial
 
-## Getting Help
+## Obtener ayuda
 
-### Before Contacting Support
-1. **Download error report:** Review specific error messages
-2. **Check file format:** Verify CSV/Excel format compliance
-3. **Test small batch:** Try importing 5-10 leads first
-4. **Review documentation:** Check import requirements
+### Antes de contactar con el soporte técnico
+1. **Descargar informe de errores:** Revisar mensajes de error específicos
+2. **Comprobar formato de archivo:** Verificar la compatibilidad con el formato CSV/Excel
+3. **Prueba con un lote pequeño:** Intenta importar primero entre 5 y 10 clientes potenciales.
+4. **Revisar la documentación:** Verificar los requisitos de importación
 
-### Information to Provide
-- Error messages received
-- Sample of import file (with sensitive data removed)
-- Campaign settings and requirements
-- Expected vs actual behavior
-- Assistant variable configuration
+### Información que se debe proporcionar
+- Mensajes de error recibidos
+- Ejemplo de archivo de importación (con datos confidenciales eliminados)
+- Configuración y requisitos de la campaña
+- Comportamiento esperado frente al comportamiento real
+- Configuración de variables del asistente
 
 <Warning>
-**Data privacy:** Remove sensitive information from sample files before sharing with support.
+**Privacidad de datos:** Elimine la información confidencial de los archivos de muestra antes de compartirlos con el soporte.
 </Warning>
 
 <Note>
-For lead management best practices, see [Managing Leads](/leads/managing-leads) and [Campaign Setup](/campaigns/creating-campaigns).
+Para conocer las prácticas recomendadas de gestión de clientes potenciales, consulte [Gestión de clientes potenciales](/leads/managing-leads) and [Configuración de campañas](/campaigns/creating-campaigns).
 </Note>
