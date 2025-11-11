@@ -1,6 +1,6 @@
-# White‑Label the Documentation (Mintlify)
+# Personaliza la documentación con tu marca (Mintlify)
 
-Autocalls is a voice AI platform for automated outbound/inbound calls, SMS, and workflow automation. You can fully white‑label the product and these docs to your own brand. To learn more about white‑labeling the platform beyond documentation, see our [White‑Label program](https://autocalls.ai/white-label).
+Conecta2 es una plataforma de IA de voz para la automatización de llamadas entrantes y salientes, SMS y flujos de trabajo. Puede personalizar completamente el producto y la documentación con su propia marca. Para obtener más información sobre la personalización de la plataforma (más allá de la documentación), consulte nuestro [programa de marca blanca](https://autocalls.ai/white-label).
 
 This guide walks you through creating your own white‑labeled copy of our documentation using Mintlify, updating the branding (colors, logos, name), deploying it to your Mintlify subdomain or custom domain, and finally linking the live docs in your admin panel.
 
