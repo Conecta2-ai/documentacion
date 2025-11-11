@@ -1,133 +1,133 @@
 ---
-title: "SIP Integration Issues"
-icon: "phone-volume"
-description: "Troubleshoot SIP trunk connection problems and configuration issues"
+título: "Problemas de integración SIP"
+icono: "volumen del teléfono"
+descripción: "Solucionar problemas de conexión y configuración de troncales SIP"
 ---
 
-This guide helps resolve common SIP integration issues when connecting your SIP provider to Autocalls.ai.
+Esta guía ayuda a resolver problemas comunes de integración SIP al conectar su proveedor SIP a Conecta2.ai.
 
-## Testing Strategy
+## Estrategia de prueba
 
-1. **Test Outbound calls first** - easier to configure
-2. **Test Inbound calls second** - after outbound works
+1. **Primero prueba las llamadas salientes** - son más fáciles de configurar.
+2. **Prueba las llamadas entrantes en segundo lugar** - después de que funcionen las salientes.
 
-## Outbound SIP Issues
+## Problemas de SIP saliente
 
-### Connection Problems
+### Problemas de conexión
 
-**SIP trunk not connecting for outbound calls:**
+**El enlace troncal SIP no se conecta para llamadas salientes:**
 
-1. **Verify SIP Credentials** - username, password, server details
-2. **Phone Type Selection** - check with provider for correct type
-3. **Fixed IP Configuration** - usually enable and enter provider's IP address
-4. **Provider Settings** - verify codec, transport, port settings
+1. **Verificar credenciales SIP** - nombre de usuario, contraseña, detalles del servidor.
+2. **Selección del tipo de teléfono** - consulte con su proveedor para obtener el tipo correcto
+3. **Configuración de IP fija** - normalmente se activa e introduce la dirección IP del proveedor.
+4. **Configuración del proveedor** - verifique la configuración del códec, el transporte y el puerto.
 
-### SIP Registration Issues
+### Problemas de registro SIP
 
-**Important:** Autocalls.ai platform:
-- **Does NOT send SIP REGISTER** messages to your provider
-- **Does NOT require receiving SIP REGISTER** from your provider
-- Uses **direct call authentication** instead
+**Importante:** Plataforma Conecta2.ai:
+- **No envía** mensajes SIP REGISTER a su proveedor
+- **No requiere** recibir el registro SIP de su proveedor.
+- Utiliza **la autenticación de llamada directa** en su lugar
 
-### Testing Outbound
+### Pruebas de salida
 
-1. Configure SIP trunk settings
-2. **Make a direct test call** through platform
-3. Check call logs for errors
+1. Configurar los ajustes del enlace troncal SIP
+2. **Realiza una llamada de prueba directa** a través de la plataforma.
+3. Revise los registros de llamadas para detectar errores.
 
-## Inbound SIP Issues
+## Problemas de SIP entrante
 
-### Authentication Setup
+### Configuración de autenticación
 
-**For inbound calls:**
+**Para llamadas entrantes:**
 
-1. **Use IP Authentication** - instead of username/password
-2. **Whitelist Provider IPs** - add ALL provider IPs in our platform
-3. **Provider Configuration - IMPORTANT**
-   - **Use our FQDN domain** for routing (NOT the outbound IP)
-   - **Send to domain** - ensures correct routing
-   - **Do NOT send to IP** - causes routing issues
+1. **Utilice la autenticación por IP** - en lugar de nombre de usuario/contraseña.
+2. **Lista blanca de direcciones IP de proveedores** - añade TODAS las direcciones IP de los proveedores a nuestra plataforma.
+3. **Configuración del proveedor - IMPORTANTE**
+   - **Utilice nuestro dominio FQDN** para el enrutamiento (NO la IP de salida).
+   - **Enviar al dominio** - garantiza el enrutamiento correcto
+   - **NO enviar a esta IP** - causa problemas de enrutamiento.
 
-### Common Inbound Issues
+### Problemas comunes de entrada
 
-**Calls not reaching assistant:**
-- Verify all provider IPs whitelisted
-- Ensure provider sends to FQDN domain (not IP)
-- Check destination number format
+**Las llamadas no llegan al asistente:**
+- Verifique que todas las direcciones IP de los proveedores estén en la lista blanca.
+- Asegúrese de que el proveedor envíe la información al dominio FQDN (no a la IP).
+- Comprobar formato del número de destino
 
-## General Issues
+## Cuestiones generales
 
-**Network problems:**
-- Check internet connectivity
-- Verify no firewall blocking SIP traffic
+**Problemas de red:**
+- Comprobar la conexión a internet
+- Verifique que ningún firewall esté bloqueando el tráfico SIP.
 
-**Provider compatibility:**
-- Verify provider supports direct calling (no registration)
-- Check IP authentication support
+**Compatibilidad con proveedores:**
+- Verifique que el proveedor admita llamadas directas (sin registro).
+- Comprobar compatibilidad con autenticación IP
 
-## Testing Checklist
+## Lista de verificación de pruebas
 
-### Before Contacting Support
+### Antes de contactar con el soporte técnico
 
-1. **Outbound Test:**
-   - [ ] Credentials verified
-   - [ ] Phone type selected correctly
-   - [ ] Fixed IP enabled with provider's IP address
-   - [ ] Direct test call attempted
+1. **Prueba de salida:**
+   - [ ] Credenciales verificadas
+   - [ ] Tipo de teléfono seleccionado correctamente
+   - [ ] IP fija habilitada con la dirección IP del proveedor
+   - [ ] Se intentó realizar una llamada de prueba directa
 
-2. **Inbound Test:**
-   - [ ] IP authentication configured
-   - [ ] All provider IPs whitelisted in our platform
-   - [ ] Provider configured to send to FQDN domain (not direct IP)
-   - [ ] Test call from external number
+2. **Prueba de entrada:**
+   - [ ] Autenticación IP configurada
+   - [ ] Todas las direcciones IP de los proveedores incluidas en la lista blanca de nuestra plataforma
+   - [ ] Proveedor configurado para enviar al dominio FQDN (no a la IP directa)
+   - [ ] Prueba de llamada desde un número externo
 
 3. **General:**
-   - [ ] Network connectivity verified
+   - [ ] Conectividad de red verificada
 
-## FAQ
+## Preguntas frecuentes
 
-### Transfer Phone Call Not Working
+### La transferencia de llamadas no funciona
 
-**Q: Why is the Transfer Phone Call function not working?**
+**P: ¿Por qué no funciona la función de transferencia de llamadas?**
 
-**A:** If call transfers are failing, try these solutions:
+**A:** Si las transferencias de llamadas fallan, pruebe estas soluciones:
 
-1. **Check SIP Transfer Settings:**
-   - Set transfer call to "Advanced" mode
-   - Use SIP URI format: `sip:number@sip-server`
-   - Example: `sip:+1234567890@sip.provider.com:5060`
+1. **Comprobar la configuración de transferencia SIP:**
+   - Configurar la transferencia de llamada en modo "Avanzado"
+   - Utilice el formato URI SIP: `sip:number@sip-server`
+   - Ejemplo: `sip:+1234567890@sip.provider.com:5060`
 
-2. **Verify Provider Support:**
-   - Confirm your SIP provider supports SIP REFER
-   - Check if transfer functionality is enabled on your account
-   - Some providers require specific configuration for transfers
+2. **Verifique el soporte del proveedor:**
+   - Confirma que tu proveedor SIP admite SIP REFER.
+   - Comprueba si la función de transferencia está habilitada en tu cuenta.
+   - Algunos proveedores requieren una configuración específica para las transferencias.
 
-3. **Test Different Formats:**
-   - Try with port: `sip:+1234567890@sip-server:5060`
-   - Try without port: `sip:+1234567890@sip-server`
-   - Try simple format: `sip:+1234567890`
+3. **Prueba diferentes formatos:**
+   - Prueba con el puerto: `sip:+1234567890@sip-server:5060`
+   - Prueba sin puerto: `sip:+1234567890@sip-server`
+   - Prueba con un formato sencillo: `sip:+1234567890`
 
-4. **Verify Destination:**
-   - Ensure the target number is reachable
-   - Test if the number answers calls normally
-   - Check if the number is blocked or restricted
+4. **Verificar destino:**
+   - Asegúrese de que el número objetivo sea alcanzable.
+   - Comprueba si el número responde a las llamadas con normalidad.
+   - Comprueba si el número está bloqueado o restringido.
 
-5. **Common Issues:**
-   - Provider doesn't support SIP REFER
-   - Incorrect SIP URI format
-   - Network/firewall blocking transfer requests
-   - Destination number not answering
+5. **Problemas comunes:**
+   - El proveedor no admite SIP REFER.
+   - Formato URI SIP incorrecto
+   - Solicitudes de transferencia que bloquean la red/firewall
+   - El número de destino no responde
 
-**Troubleshooting steps:**
-1. Test with a known working number first
-2. Try different SIP URI formats
-3. Contact your SIP provider to confirm transfer support
-4. Check call logs for specific error messages
+**Pasos para la resolución de problemas:**
+1. Primero, prueba con un número que sepas que funciona.
+2. Pruebe con diferentes formatos de URI SIP.
+3. Póngase en contacto con su proveedor de SIP para confirmar la compatibilidad con las transferencias.
+4. Revise los registros de llamadas para ver mensajes de error específicos.
 
-## Getting Help
+## Obtener ayuda
 
-**When contacting support, provide:**
-- Error messages from call logs
-- SIP trunk configuration
-- Test results (outbound and inbound)
-- Transfer attempt details and SIP URI format used
+**Al contactar con el servicio de asistencia, proporcione:**
+- Mensajes de error de los registros de llamadas
+- Configuración de troncal SIP
+- Resultados de las pruebas (salientes y entrantes)
+- Detalles del intento de transferencia y formato URI SIP utilizado
