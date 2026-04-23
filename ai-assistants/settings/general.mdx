@@ -269,17 +269,18 @@ Controle el tiempo y los límites de llamadas para optimizar la experiencia del 
 
     **Default:** Empty (hangs up immediately without leaving a message)
 
-**Use case:** Leave a brief message before hanging up so the recipient knows who called.
+    **Use case:** Leave a brief message before hanging up so the recipient knows who called.
 
-**Example:** "Leave a brief voicemail message saying you called and ask them to call back."
+    **Example:** "Leave a brief voicemail message saying you called and ask them to call back."
 
-<Warning>
-Variables like `{company_name}` cannot be injected directly in this prompt. The AI has access to the conversation history and main system prompt, so it can reference information from there.
-</Warning>
+    <Warning>
+    Variables like `{company_name}` cannot be injected directly in this prompt. The AI has access to the conversation history and main system prompt, so it can reference information from there.
+    </Warning>
 
-<Note>
-Only applies when "End Call on Voicemail" is enabled. Leave empty to hang up without a message.
-</Note>
+    <Note>
+    Only applies when "End Call on Voicemail" is enabled. Leave empty to hang up without a message.
+    </Note>
+  </Accordion>
   
   <Accordion title="Max Call Duration" icon="timer">
     **Rango:** 20 - 1200 segundos | **Predeterminado:** 600 segundos (10 minutos)
