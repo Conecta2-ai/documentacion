@@ -102,42 +102,42 @@ Idiomas adicionales que tu asistente puede entender y hablar. Útil para:
 
 **Nota:** La IA puede detectar qué idioma habla el cliente y responder de forma adecuada.
 
-## TTS Provider & Voice Selection
+## Proveedor de TTS y selección de voz
 
-### TTS Provider
+### Proveedor de TTS
 
-Select your Text-to-Speech provider. Available in **Pipeline** and **Dualplex** modes.
+Seleccione su proveedor de texto a voz. Available in **Pipeline** and **Dualplex** modes.
 
-**Available Providers:**
-- **ElevenLabs** - High-quality voices
-- **Cartesia** - Fast, low-latency synthesis
+**Proveedores disponibles:**
+- **ElevenLabs** - Voces de alta calidad
+- **Cartesia** - Síntesis rápida y de baja latencia
 
-Your assistant can choose from existing voices, clone custom voices, or request voices from the ElevenLabs library.
+Su asistente puede elegir entre voces existentes, clonar voces personalizadas o solicitar voces de la biblioteca ElevenLabs.
 
 ### Opciones de voz
 Tienes tres formas de conseguir la voz perfecta para tu asistente:
 
 **1. Elija entre las voces existentes:**
-- **Voces profesionales:** Opciones de alta calidad y previamente entrenadas de ElevenLabs
+- **Voces profesionales:** Opciones de alta calidad y preentrenadas de ElevenLabs
 - **Acentos múltiples:** Disponible para la mayoría de los idiomas
 - **Opciones de género:** Voces masculinas y femeninas para cada idioma
 - **Variedad de tonos:** Desde un tono formal de negocios hasta una conversación informal.
 
 **2. Clonar una voz personalizada:**
-Crea una voz personalizada cargando muestras de audio:
+Crea una voz personalizada cargando muestras de audio. Disponible en los modos Pipeline y Dualplex.
 
-**Requisitos:**
-- Muestra de audio clara y de alta calidad (se recomienda de 1 a 5 minutos)
-- Formato MP3 o WAV
-- Ritmo y tono de habla consistentes
-- Ruido de fondo mínimo
-- La misma voz utilizada en todo momento
+**Requisitos por proveedor:**
+- **Cartesia** - Single audio file, at least 10 seconds, 1 speaker, no background noise
+- **ElevenLabs** - Samples over 1 minute, 1 speaker, no background noise. Max 5 minutes total.
 
 **Proceso:**
-1. Grábate a ti mismo o a un actor de voz leyendo un texto de muestra
-2. Sube el archivo de audio en la configuración del asistente
-3. Espere a que se complete el entrenamiento (desde unos minutos hasta horas)
-4. Pruebe la voz clonada antes de usarla en producción
+1. Haga clic en "Clonar voz" junto al selector de voz
+2. Seleccionar proveedor (Cartesia o ElevenLabs)
+3. Elige el idioma de voz
+4. Introduce un nombre para tu voz
+5. Record or upload audio
+6. Wait for processing
+7. Select your new voice from dropdown
 
 **Casos de uso:**
 - Coherencia de marca con el portavoz de la empresa
@@ -145,9 +145,9 @@ Crea una voz personalizada cargando muestras de audio:
 - Adaptación de la voz a la personalidad empresarial específica
 
 **3. Solicitar voces de la biblioteca pública de ElevenLabs:**
-Puede solicitar voces específicas de la biblioteca pública de ElevenLabs. Contacte con el equipo de soporte para añadirlas a su cuenta. Explore la biblioteca de voces de ElevenLabs y descubra miles de voces profesionales en diferentes idiomas, acentos y casos de uso.
+You can request specific voices from the ElevenLabs public library - contact support to add them to your account. Browse the [ElevenLabs Voice Library](https://elevenlabs.io/docs/product-guides/voices/voice-library) to discover thousands of professional voices across different languages, accents, and use cases.
 
-Consulte la guía de selección de voz para obtener instrucciones de configuración detalladas.
+CSee [Voice selection guide](/ai-assistants/voice-selection) for detailed setup instructions.
 
 
 ## Configuración de zona horaria
@@ -168,7 +168,7 @@ Establezca la zona horaria en la que opera su asistente. Esto afecta a:
 Sonido de fondo opcional mezclado con la voz de su asistente para enmascarar retrasos en el procesamiento y crear una experiencia de audio más natural.
 
 **Opciones:**
-- **Ninguno:** Sin sonido de fondo (predeterminado)
+- **Ninguno:** Sin sonido de fondo (por defecto)
 - **Oficina:** Sonidos sutiles del entorno de oficina
 
 **Control de volumen:** Ajusta el nivel del sonido ambiental en relación con la voz. Los valores bajos suelen ser mejores; demasiado ruido de fondo puede interferir con el reconocimiento de voz.
@@ -178,7 +178,7 @@ Apague o baje el volumen si el asistente no escucha claramente al cliente.
 </Tip>
 
 ### Audio de relleno
-Frases conversacionales cortas como "mhm", "vale", "entiendo" que se reproducen durante el procesamiento de la IA. Consulta la audioguía de relleno para más detalles.
+Frases cortas de conversación como "mhm", "vale", "entiendo" que se reproducen durante el tiempo de procesamiento de la IA. Consulte la audioguía de Filler para obtener todos los detalles.
 
 <Título de la tarjeta="Beneficios" icono="estrella">
 - Elimina silencios incómodos durante el procesamiento
