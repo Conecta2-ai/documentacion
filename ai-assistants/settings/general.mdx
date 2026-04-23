@@ -263,6 +263,26 @@ Controle el tiempo y los límites de llamadas para optimizar la experiencia del 
     
     **Recomendado:** 30-60 segundos para llamadas profesionales.
   </Accordion>
+
+  <Accordion title="Re-engagement Prompt" icon="message"
+    Custom prompt used when the AI tries to re-engage the user after silence.
+
+    **Default:** Uses a standard re-engagement phrase like "Are you still there?"
+
+    **Customization:** Write a prompt that instructs the AI how to re-engage.
+
+     **Examples:**
+     - "Gently ask if they are still there and if they need more time."
+     - "Politely check if they have any questions."
+
+    <Warning>
+     Variables like `{customer_name}` cannot be injected directly in this prompt. The AI has access to the conversation history and main system prompt, so it can reference information from there.
+    </Warning>
+
+    <Tip>
+    Leave empty to use the default re-engagement behavior.
+    </Tip>
+  </Accordion>
   
   <Accordion title="Max Call Duration" icon="timer">
     **Rango:** 20 - 1200 segundos | **Predeterminado:** 600 segundos (10 minutos)
