@@ -324,28 +324,26 @@ Controle el tiempo y los límites de llamadas para optimizar la experiencia del 
     Finaliza inmediatamente la llamada si se detecta el buzón de voz durante las llamadas salientes (ahorra costos).
   </Accordion>
 
-
   <Accordion title="Voicemail Message" icon="voicemail">
-   Prompt for the message the AI will say when voicemail is detected before ending the call.
+    Prompt for the message the AI will say when voicemail is detected before ending the call.
 
-   **Por defecto:** Vacío (cuelga inmediatamente sin dejar un mensaje)
+    **Por defecto:** Vacío (cuelga inmediatamente sin dejar un mensaje)
 
-   **Caso de uso:** Deja un breve mensaje antes de colgar para que el destinatario sepa quién llamó.
+    **Caso de uso:** Deja un breve mensaje antes de colgar para que el destinatario sepa quién llamó.
 
-   **Ejemplo:** "Deja un breve mensaje de voz diciendo que llamaste y pídeles que vuelvan a llamar".
+    **Ejemplo:** "Deja un breve mensaje de voz diciendo que llamaste y pídeles que vuelvan a llamar".
 
-   <Warning>
-  Variables como `{nombre_empresa}` no pueden ser inyectadas directamente en este prompt. La IA tiene acceso al historial de las conversaciones y a la consulta principal del sistema, por lo que puede hacer referencia a la información desde allí.
+    <Warning>
+    Variables como `{nombre_empresa}` no pueden ser inyectadas directamente en este prompt. La IA tiene acceso al historial de las conversaciones y a la consulta principal del sistema, por lo que puede hacer referencia a la información desde allí.
    </Warning>
-
 
   <Note>
   Solo se aplica cuando "Finalizar llamada en buzón de voz" está activado. Dejar vacío para colgar sin mensaje
   </Note>
  </Accordion>
   
-  <Accordion title="Record Calls" icon="record-vinyl">
-    **Predeterminado:** Habilitado
+<Accordion title="Record Calls" icon="record-vinyl">
+  **Predeterminado:** Habilitado
     
     Los registros llaman al audio para su revisión y análisis. **Asegúrese de cumplir con las leyes locales sobre grabación.**
   </Accordion>
