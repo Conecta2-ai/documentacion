@@ -345,7 +345,7 @@ Controle el tiempo y los límites de llamadas para optimizar la experiencia del 
    </Warning>
 
     <Note>
-    Solo se aplica cuando "Finalizar llamada en buzón de voz" está activado. Dejar vacío para colgar sin mensaje
+     Solo se aplica cuando "Finalizar llamada en buzón de voz" está activado. Dejar vacío para colgar sin mensaje
     </Note>
   </Accordion>
   
@@ -369,14 +369,29 @@ Controle el tiempo y los límites de llamadas para optimizar la experiencia del 
 
 Configure los parámetros de voz de texto a voz para lograr conversaciones que suenen naturales.
 
-**Disponible solo para:** los modos Pipeline y Dualplex. El modo de voz a voz utiliza generación de voz nativa.
+**Disponible solo para:** los modos Pipeline y Dualplex. El modo de voz a voz utiliza la generación de voz nativa.
 
 ### Parámetros de ajuste de voz
 
 Ajuste las características de voz de su asistente para un rendimiento óptimo:
 
-
 <AccordionGroup>
+  <Accordion title="TTS Emotion" icon="face-smile">
+    **Default:** Enabled
+
+    When enabled, the AI will add emotional cues to the synthesized speech based on the context of the conversation. This makes the voice sound more natural and expressive.
+
+    **Effects:**
+    - Adjusts tone based on conversation context (happy, concerned, empathetic)
+    - Adds natural inflections and emphasis
+    - Makes the assistant sound more human-like
+
+    <Note>
+     Disable if you prefer a more neutral, consistent tone across all conversations.
+    </Note>
+  </Accordion>
+
+
   <Accordion title="Voice Stability" icon="wave-square">
     **Rango:** 0.0 - 1.0 | **Predeterminado:** 0.7
     
