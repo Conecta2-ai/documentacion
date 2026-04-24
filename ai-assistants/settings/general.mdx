@@ -449,7 +449,7 @@ Ajuste las características de voz de su asistente para un rendimiento óptimo:
 
 Configure el reconocimiento de voz a texto para lograr una precisión y velocidad óptimas.
 
-**Disponible solo para:** Modo canalización. Los modos de voz a voz y Dualplex utilizan transcripción integrada.
+**Disponible solo para:** Modo canalización. Los modos Voz a Voz y Dualplex utilizan la transcripción integrada.
 
 ### Selección de proveedores
 
@@ -486,11 +486,11 @@ Los diferentes idiomas, acentos o ruido de fondo pueden afectar a cada proveedor
 
 <CardGroup cols={2}>
   <Card title="AI Turn Detection" icon="brain">
-    Utiliza IA para detectar de forma inteligente cuándo la persona que llama ha terminado de hablar 
+    Utiliza la IA para detectar de forma inteligente cuándo la persona que llama ha terminado de hablar 
   </Card>
   
   <Card title="Voice Activity Detection (VAD)" icon="microphone">
-    **Predeterminado:** Detección de actividad de voz tradicional
+    **Predeterminado:** Detección tradicional de la actividad de voz
     
     Elige cómo detectará la IA el final de la frase del usuario.
   </Card>
@@ -498,7 +498,7 @@ Los diferentes idiomas, acentos o ruido de fondo pueden afectar a cada proveedor
 
 ### Detección de actividad de voz (VAD)
 
-Controla cuándo tu asistente empieza y termina de hablar. Consulta la guía "Gestión de interrupciones" para obtener información detallada sobre la configuración del VAD.
+Controla cuándo tu asistente empieza y termina de hablar. See [Handling interruptions guide](/conversation-design/interruptions) for detailed VAD configuration.
 
 <Warning>
 Ajuste esta configuración si experimenta problemas de interrupción o respuestas lentas. 
@@ -520,10 +520,23 @@ Ajuste esta configuración si experimenta problemas de interrupción o respuesta
   
   <Accordion title="Minimum Interrupt Words" icon="list-ol">
     Requiere al menos N palabras de la persona que llama antes de interrumpir al asistente. 
-    **Uso:** Evita falsas alarmas por ruido de fondo o sonidos breves
+    **Uso:** Evita falsas alarmas por ruido de fondo o sonidos breves. **Disponible para:** Solo los modos Speech-to-Speech y Dualplex
   </Accordion>
 </AccordionGroup>
 
+**Rango:** 0 - 1 | **Por defecto:** Automático (el modelo decide)
+
+Controla la sensibilidad del modelo multimodal para detectar cuando ha terminado de hablar la persona que llama. Los valores más bajos hacen que el asistente responda más rápido, los valores más altos esperan más tiempo a que la persona que llama termine.
+
+- **Baja (0.3-0.5):** Respuestas más rápidas, bueno para conversaciones rápidas
+- **Más alto (0.7-0.9):** Espera más tiempo, mejor para respuestas detalladas
+- **Automático:** Deja que el modelo decida basándose en el contexto de la conversación
+
+<Nota>
+Solo visible cuando se utilizan los modos «Voz a voz» o «Dualplex».
+</Nota>
+
+
 <Tip>
-**Consejo:** Comienza con la configuración predeterminada del VAD y ajústala según pruebas de llamadas reales. Aumenta la sensibilidad del terminal si la llamada se corta y disminúyela si las respuestas son lentas.
+**Consejo profesional:** Empieza con la configuración predeterminada del VAD y ajústala en función de las pruebas con llamadas reales. Aumenta la sensibilidad del terminal si se cortan las llamadas, y redúcela si las respuestas parecen lentas.
 </Tip>
