@@ -520,22 +520,26 @@ Ajuste esta configuración si experimenta problemas de interrupción o respuesta
   
   <Accordion title="Minimum Interrupt Words" icon="list-ol">
     Requiere al menos N palabras de la persona que llama antes de interrumpir al asistente. 
-    **Uso:** Evita falsas alarmas por ruido de fondo o sonidos breves. **Disponible para:** Solo los modos Speech-to-Speech y Dualplex
+    **Uso:** Evita falsas alarmas por ruido de fondo o sonidos breves. 
   </Accordion>
 </AccordionGroup>
 
-**Rango:** 0 - 1 | **Por defecto:** Automático (el modelo decide)
+  <Accordion title="Turn Detection Threshold" icon="sliders">
+    **Available for:** Speech-to-Speech and Dualplex modes only
 
-Controla la sensibilidad del modelo multimodal para detectar cuando ha terminado de hablar la persona que llama. Los valores más bajos hacen que el asistente responda más rápido, los valores más altos esperan más tiempo a que la persona que llama termine.
+    **Rango:** 0 - 1 | **Por defecto:** Automático (el modelo decide)
 
-- **Baja (0.3-0.5):** Respuestas más rápidas, bueno para conversaciones rápidas
-- **Más alto (0.7-0.9):** Espera más tiempo, mejor para respuestas detalladas
-- **Automático:** Deja que el modelo decida basándose en el contexto de la conversación
+    Controla la sensibilidad del modelo multimodal para detectar cuando ha terminado de hablar la persona que llama. Los valores más bajos hacen que el asistente responda más rápido, los valores más altos   esperan más tiempo a que la persona que llama termine.
 
-<Nota>
-Solo visible cuando se utilizan los modos «Voz a voz» o «Dualplex».
-</Nota>
+    - **Baja (0.3-0.5):** Respuestas más rápidas, bueno para conversaciones rápidas
+    - **Más alto (0.7-0.9):** Espera más tiempo, mejor para respuestas detalladas
+    - **Automático:** Deja que el modelo decida basándose en el contexto de la conversación
 
+    <Nota>
+    Solo visible cuando se utilizan los modos «Voz a voz» o «Dualplex».
+    </Nota>
+  </Accordion>
+</AccordionGroup>
 
 <Tip>
 **Consejo profesional:** Empieza con la configuración predeterminada del VAD y ajústala en función de las pruebas con llamadas reales. Aumenta la sensibilidad del terminal si se cortan las llamadas, y redúcela si las respuestas parecen lentas.
