@@ -1,6 +1,6 @@
 ---
 título: "Acciones posteriores a la llamada"
-icono: "webhook"
+icono: "Webhook"
 descripción: "Extraiga datos de la llamada y envíelos a una aplicación/webhook para flujos de trabajo de automatización."
 ---
 
@@ -10,7 +10,7 @@ Configure lo que sucede después de que finalizan las llamadas: extraiga informa
 
 Acciones posteriores a la llamada de forma automática:
 - Extraer datos estructurados de conversaciones mediante IA
-- Enviar variables extraídas a webhooks para automatización
+- Enviar variables extraídas a webhooks para su automatización
 - Activar flujos de trabajo en plataformas conectadas
 - Actualizar registros y bases de datos de CRM
 - Habilite escenarios de automatización complejos
@@ -69,7 +69,7 @@ Configura qué información debe extraer la IA de cada conversación:
       **Llamadas de asistencia:**
     - `tipo_incidencia` (cadena): categoría del problema
     - `nivel_urgencia` (número): puntuación de prioridad (1-10)
-    - `resolution_status` (Verdadero/Falso): ¿Se resolvió el problema?
+    - `estado_de_la_resolución` (Verdadero/Falso): ¿Se resolvió el problema?
   </Accordion>
 </AccordionGroup>
 
@@ -93,7 +93,7 @@ Configura qué información debe extraer la IA de cada conversación:
   </Accordion>
 </AccordionGroup>
 
-### Mejores prácticas
+### Buenas prácticas
 
 <Warning>
 **Nombre de variables:** Use solo caracteres alfanuméricos en minúscula. No se permiten espacios ni caracteres especiales, excepto guiones bajos.
@@ -143,34 +143,28 @@ Realizar una solicitud a una URL que envíe las variables extraídas a sistemas 
 
 ### Carga útil del webhook
 
-El webhook recibirá una carga útil JSON completa con los detalles de la llamada, las variables extraídas y la transcripción. Para consultar la documentación completa de la API, consulte la API de webhooks posteriores a la llamada.
+El webhook recibirá una carga útil JSON completa con los detalles de la llamada, las variables extraídas y la transcripción. Para consultar la documentación completa de la API, visita, [Post-Call Webhook API](/api-reference/webhooks/post-call-webhook).
 
 **Campos de carga útil clave:**
 
 <AccordionGroup>
   <Accordion title="Call Information" icon="phone">
     - **id:** Identificador único de llamada
-    - **customer_phone:** Número de teléfono del cliente (formato E.164)
-    - **assistant_phone:** Número de teléfono del asistente
-    - **duration:** Duración de la llamada en segundos
-    - **status:** Estado de la llamada (iniciada, sonando, ocupada, en curso, finalizada, completada, finalizada por el cliente, finalizada por el asistente, sin respuesta, fallida)
-    - **created_at/finished_at:** Marcas de tiempo ISO 8601
+    - **teléfono_del_cliente:** Número de teléfono del cliente (formato E.164)
+    - **teléfono_del_asistente:** Número de teléfono del asistente
+    - **duración:** Duración de la llamada en segundos
+    - **estado:** Estado de la llamada (iniciada, sonando, ocupada, en curso, finalizada, completada, finalizada por el cliente, finalizada por el asistente, sin respuesta, fallida)
+    - **fecha_de_creación/fecha_de_finalización:** Marcas de tiempo ISO 8601
   </Accordion>
   
   <Accordion title="Extracted Variables" icon="code">
-    - **extracted_variables:** Datos extraídos por IA basados ​​en la configuración del esquema posterior a la llamada (consulte la sección [Variables posteriores a la llamada](#post-call-variables) más arriba) 
-    - **input_variables:** Variables pasadas antes de la llamada (consulte [Variables de llamada](/ai-assistants/settings/prompt-and-tools#call-variables))
+    - **variables_extraídas:** Datos extraídos por la IA basados ​​en la configuración del esquema posterior a la llamada (consulte la sección [Variables posteriores a la llamada](#post-call-variables) más arriba) 
+    - **variables:** Variables pasadas antes de la llamada (consulte [Variables de llamada](/ai-assistants/settings/prompt-and-tools#call-variables))
     - Incluye variables predeterminadas (estado, resumen) más sus variables personalizadas
   </Accordion>
   
-  <Accordion title="Conversation Data" icon="message">
-    - **transcripción:** Conversación detallada transcripción con marcas de tiempo
-    - **formatted_transcript:** formato de conversación legible para humanos
-    - **recording_url:** URL de grabación de llamadas (si está habilitada)
-  </Accordion>
   
   <Accordion title="Campaign & Lead Data" icon="users">
-    - **lead:** nformación del cliente potencial (para llamadas de campaña)
     - **campaign:** detalles y configuraciones de la campaña
     - Solo se incluye para las llamadas que forman parte de las campañas
   </Accordion>
@@ -181,7 +175,7 @@ El webhook recibirá una carga útil JSON completa con los detalles de la llamad
 ```json
 {
   "id": 12345,
-  "customer_phone": "+1234567890",
+  "teléfono_del_cliente": "+1234567890",
   "assistant_phone": "+1987654321",
   "duration": 125,
   "status": "completado",
