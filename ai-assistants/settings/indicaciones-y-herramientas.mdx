@@ -1,6 +1,6 @@
 ---
 título: "Indicaciones y herramientas"
-icono: "llave inglesa"
+icono: "Llave inglesa"
 descripción: "Configure la base de conocimientos, las herramientas, las variables y los indicadores del sistema de su asistente para definir sus capacidades y comportamiento."
 ---
 
@@ -14,7 +14,7 @@ Proporcionar información al asistente para que la utilice como base de conocimi
 
 <AccordionGroup>
   <Accordion title="Choose Knowledge Base" icon="book-open">
-    Seleccione un almacén de base de conocimientos que contenga información relevante para que la utilice el asistente.
+    Seleccione una tienda de base de conocimientos que contenga información relevante para que la utilice el asistente.
     
     **Requisitos:**
     - Debe crearse primero en la sección [Bases de conocimiento](/knowledgebases).
@@ -30,13 +30,13 @@ Proporcionar información al asistente para que la utilice como base de conocimi
     Elija cómo la IA utilizará la base de conocimientos.
     
     <CardGroup cols={2}>
-      <Card title="Llamada a función" icon="function">
+      <Card title="Llamada a función" icono="función">
         **Recomendado para la mayoría de los casos**
         
         Utiliza una llamada a función para buscar información en la base de conocimientos, solo cuando es necesario. Más preciso y eficiente.
       </Card>
       
-      <Card title="Inyección de indicaciones" icon="syringe">
+      <Card title="Inyección de indicaciones" icono="Inyección">
         **Para casos de uso sencillos**
         
         Realiza una búsqueda después de cada intervención del cliente. Más preciso, pero puede ser más lento sin audios de relleno.
@@ -44,7 +44,7 @@ Proporcionar información al asistente para que la utilice como base de conocimi
     </CardGroup>
     
     <Note>
-    **Disponibilidad del modo:** los modos Speech-to-Speech y Dualplex solo admiten el modo Llamada de función.
+    **Disponibilidad del modo:** los modos Voz a Voz y Dualplex solo admiten el modo Llamada de función.
     </Note>
   </Accordion>
 </AccordionGroup>
@@ -136,14 +136,21 @@ Elija herramientas integradas que la IA pueda usar durante la llamada con el cli
     Integración de programación de reservas en tiempo real con múltiples plataformas de calendario.
     
     **Integraciones disponibles:**
-    - **https://Cal.com:** Guía de configuración completa disponible en [https://Cal.com Scheduling](https://docs.conecta2.ai/ai-assistants/cal-com-scheduling#cal-com-appointment-scheduling)
+    - **Cal.com:** Guía de configuración completa disponible en [Cal.com Scheduling](/ai-assistants/cal-com-scheduling)
     - **GoHighLevel:** Guía de integración completa en [GoHighLevel Scheduling](/ai-assistants/gohighlevel-scheduling)
+    - **Calendly:** Guía de configuración completa disponible en  [Programación con Calendly](/ai-assistants/calendly-scheduling)
     
     **Casos de uso:**
     - Reservar citas con calendarios
     - Comprobar la disponibilidad en tiempo real
     - Enviar detalles de confirmación automáticos
     - Sincronizar con sistemas de calendario existentes
+
+     **Setup:**
+    1. Seleccione su proveedor de calendario (Cal.com, GoHighLevel, or Calendly)
+    2. Autenticar con su cuenta de calendario.
+    3. Elija el tipo/calendario de evento que se utilizará para las reservas
+    4. La IA comprobará automáticamente la disponibilidad y reservará citas
     
     <Note>
     Disponible cuando la integración del calendario está habilitada en la configuración de su plataforma.
