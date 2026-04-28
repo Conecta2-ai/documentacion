@@ -6,3 +6,28 @@ Descripción: "Edita y mejora las indicaciones de tu asistente utilizando sugere
 
 El editor de indicaciones de IA es una herramienta inteligente que te permite editar y mejorar las indicaciones de tu asistente de IA mediante lenguaje natural. En lugar de editar el texto manualmente, puedes conversar con un asistente de IA que comprende tus peticiones y sugiere modificaciones inteligentes.
 
+##Descripción general
+
+El editor de indicaciones de IA proporciona:
+
+- **Edición conversacional** Describa los cambios en lenguaje sencillo
+- **Sugerencias inteligentes**: la IA entiende el contexto y realiza los cambios pertinentes
+- **Revisar antes de aplicar** - Aceptar o rechazar cada cambio por separado
+- **Gestión de variables** - Gestiona fácilmente los datos previos y posteriores a las llamadas
+- **Biblioteca de plantillas** - Empieza con plantillas de indicaciones probadas
+
+
+<Marco>
+  <img src="/resources/ai-assistants/ai-prompt-editor-overview.png" alt="AI Prompt Editor Interface" />
+</Frame>
+
+## Introducción
+
+<Pasos>
+  <Paso título="Abre tu asistente">
+   Ve a **Asistentes** en la barra lateral y haz clic en el asistente que quieras editar.
+  </Step>
+  <Step title="Find the AI Prompt Editor">
+    En el formulario de edición, desplázate hasta la sección **Mensajes del sistema** y busca la pestaña **Editor de mensajes de IA**.
+  </Step>
+  <Step title="Launch the editor">
