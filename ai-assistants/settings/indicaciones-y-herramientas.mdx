@@ -22,7 +22,7 @@ Proporcionar información al asistente para que la utilice como base de conocimi
     - Solo están disponibles sus propias bases de conocimiento.
     
     <Tip>
-    Cree bases de conocimiento a partir del contenido del sitio web, archivos PDF o documentos personalizados para proporcionar a su asistente información específica del dominio. Para obtener una guía de configuración completa que incluye tipos de contenido, estado de procesamiento, extracción de datos de sitios web y solución de problemas, consulte la [Guía completa de bases de conocimiento](/conversation-design/knowledge-bases).
+    Cree bases de conocimiento a partir del contenido del sitio web, archivos PDF o documentos personalizados para proporcionar a su asistente información específica de cada ámbito. Para obtener una guía de configuración completa que incluye tipos de contenido, estado de procesamiento, extracción de datos de sitios web y solución de problemas, consulte la [Guía completa de bases de conocimiento](/conversation-design/knowledge-bases).
     </Tip>
   </Accordion>
   
@@ -33,7 +33,7 @@ Proporcionar información al asistente para que la utilice como base de conocimi
       <Card title="Llamada a función" icono="función">
         **Recomendado para la mayoría de los casos**
         
-        Utiliza una llamada a función para buscar información en la base de conocimientos, solo cuando es necesario. Más preciso y eficiente.
+        Utiliza una llamada en función para buscar información en la base de conocimientos, solo cuando es necesario. Más preciso y eficiente.
       </Card>
       
       <Card title="Inyección de indicaciones" icono="Inyección">
@@ -49,7 +49,7 @@ Proporcionar información al asistente para que la utilice como base de conocimi
   </Accordion>
 </AccordionGroup>
 
-## Herramientas personalizadas de mitad de llamada
+## Herramientas personalizadas a mitad de la llamada
 
 Cree y asigne sus propias herramientas personalizadas que la IA pueda usar durante la llamada con el cliente.
 
@@ -289,9 +289,36 @@ Configura lo primero que dice tu asistente cuando comienza la llamada.
 Consulte nuestra [guía de mensaje inicial](/ai-assistants/initial-message) para conocer las mejores prácticas y ejemplos detallados.
 </Note>
 
-## Indicador del sistema
+## Mensaje del sistema
 
 Definir la personalidad, objetivos y pautas de comportamiento del asistente.
+
+### Herramientas de edición
+
+Elige la forma de editar que mejor se adapte a ti:
+
+<CardGroup cols={2}>
+  <Card title="AI Prompt Editor" icon="sparkles" href="/ai-assistants/ai-prompt-editor">
+    **Edición basada en chat con asistencia de IA**
+
+    Describe los cambios en un lenguaje sencillo y deja que la IA te sugiera modificaciones inteligentes. Revisa y acepta o rechaza cada cambio por separado.
+
+    **Ideal para:** iteraciones rápidas, mejorar indicaciones existentes, edición centrada en el texto
+  </Card>
+
+  <Card title="Flow Builder" icon="share-nodes" href="/ai-assistants/flow-builder">
+    **Editor visual de arrastrar y soltar**
+
+    Diseña flujos de conversación conectando nodos en un lienzo. Crea lógicas de ramificación y árboles de decisión con múltiples rutas de forma visual.
+
+    **Ideal para:** flujos de llamadas complejos, guiones estructurados, personas con un pensamiento visual
+  </Card>
+</CardGroup>
+
+<Note>
+Ambas herramientas guardan el mensaje de solicitud en el mismo campo; es posible cambiar de una a otra, pero puede que haya que hacer algunos ajustes.
+</Note>
+
 
 ### Configuración del mensaje
 
