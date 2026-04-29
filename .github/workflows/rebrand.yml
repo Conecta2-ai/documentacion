@@ -1,6 +1,6 @@
-name: Rebrand Documentation
+nombre: Documentación de cambio de marca
 
-on:
+en:
   workflow_dispatch:
     inputs:
       brand_name:
