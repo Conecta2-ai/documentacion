@@ -6,17 +6,17 @@ descripción: "Guía rápida para ajustar el modo, el transcriptor, el modelo y 
 
 > **Última actualización:** 1 de septiembre de 2025
 
-GObtener buenos resultados suele depender de la configuración correcta del motor . Utilice esta lista de verificación al configurar un asistente:
+Para obtener excelentes resultados, a menudo es fundamental elegir la configuración correcta del motor. Utilice esta lista de verificación al configurar un asistente:
 
 ## 1. Elige un modo
 
 |Modo | ¿Por qué elegirlo? | Notas |
 | --- | --- | --- |
-| **Doble plexo (Beta)** | Turnos rápidos + voces premium/clonadas | Valor predeterminado recomendado. Emparejar con **Gemini Flash 2.0/2.5** o **GPT‑5 Realtime**. |
-| **Voz a voz (Multimodal)** | El turno más rápido y el flujo más natural | Modelo recomendado:**GPT‑5 Realtime**. |
-| **Pipeline** | Máximo control sobre la voz y las respuestas largas | Modelo recomendado: **GPT‑5 Mini**. Si selecciona Pipeline, continúe con el paso **Transcriptor** a continuación.|
+| **Dualplex (Beta)** | Turnos rápidos + voces premium/clonadas | Configuración predeterminada recomendada. Emparejar con **Gemini Flash 2.0/2.5** o **GPT‑5 Realtime**. |
+| **Conversión de Voz a voz (Multimodal)** | Turnos más rápidos y un flujo más natural. | Modelo recomendado:**GPT‑5 Realtime**. |
+| **Pipeline** | Máximo control sobre la voz y las respuestas largas | Modelo recomendado: **GPT‑5 Mini**. Si selecciona Pipeline, continúe con el paso **Transcriptor que se describe** a continuación.|
 
-¿Quieres saber más sobre las diferencias entre los modos? Lee la guía  de modos del Asistente .
+¿Quieres saber más sobre las diferencias entre los modos? Lee la guía  <a href="/ai-assistants/assistant-modes">Assistant modes</a>
 
 <Note>
 Experimente con los tres modos: registre el mismo escenario en cada uno y compare el tiempo de respuesta y la satisfacción de la persona que llama.
@@ -27,17 +27,17 @@ Experimente con los tres modos: registre el mismo escenario en cada uno y compar
 | Transcriptor | Exactitud | Estado latente | Mejor para |
 | --- | --- | --- | --- |
 | **Azur** | ⭐⭐⭐⭐ | ⏱️⏱️⏱️ (más lento) | Cuando necesita la máxima fidelidad de transcripción. |
-| **Gladia** | ⭐⭐⭐ | ⏱️ (más rápido) | Buen todoterreno para la mayoría de los idiomas.|
+| **Gladia** | ⭐⭐⭐ | ⏱️ (más rápido) | Un programa muy completo para la mayoría de los idiomas.|
 | **Deepgram** | ⭐⭐⭐ | ⏱️ (más rápido) | Otra opción sólida: prueba qué funciona mejor para tu idioma y configuración de audio. |
 
-> **Consejo:** Los distintos idiomas, acentos o ruido de fondo pueden afectar a cada motor de forma distinta. Realiza una prueba A/B rápida y quédate con el mejor rendimiento.
+> **Consejo:** Los distintos idiomas, acentos o ruido de fondo pueden afectar a cada motor de forma distinta. Realiza una prueba A/B rápida y quédate con el ue mejor funcione.
 
 ## 3. Seleccione un modelo LLM
 
 | Modelo | Fortalezas | Compensaciones |
 | --- | --- | --- |
-| **GPT-5 Mini** | Razonamiento equilibrado con baja latencia| Puede ser más lento que los modelos en tiempo real para turnos rápidos. |
-| **GPT-5 en Tiempo real** | Diseñado para giros de voz de latencia ultrabaja | Ideal para **conversión de voz a voz** y **Dualplex**. |
+| **GPT-5 Mini** | Razonamiento equilibrado con baja latencia| Puede ser más lento que los modelos en tiempo real para la toma rápida de turnos. |
+| **GPT-5 en Tiempo real** | Diseñado para cambios de voz de latencia ultrabaja | Ideal para **conversión de voz a voz** y **Dualplex**. |
 | **GPT-4o** | Razonamiento sólido y comprensión multimodal | Mayor latencia. |
 | **Gemini Flash 2.0 / 2.5** | Ultrarrápido para giros de voz en Dualplex/Multimodal | Excelente para minimizar la latencia percibida. |
 
@@ -45,7 +45,7 @@ Si la velocidad es crucial, use **GPT‑5 Realtime** (ideal para la conversión 
 
 ## 4. Cancelación de ruido
 
-Si la persona que llama está en altavoz o en un entorno silencioso, mantenga activada la cancelación de ruido . Si el volumen de la llamada es bajo o algunas palabras se entrecortan, desactívela para que el transcriptor reciba la forma de onda completa.
+Si la persona que llama está en altavoz o en un entorno silencioso, mantenga activada la cancelación de ruido . Si el volumen de la llamada es bajo o algunas palabras se entrecortan, desactívela para que el transcriptor obtenga la señal completa.
 
 <Note>
 Si tu asistente no te escucha bien, puedes intentar desactivar la cancelación de ruido.
@@ -55,22 +55,22 @@ Si tu asistente no te escucha bien, puedes intentar desactivar la cancelación d
 
 Parámetro | Recomendado | Por qué
 --- | --- | ---
-**Reenganche** | `≈ 30 s` | Da tiempo suficiente para que los usuarios reflexionen. Los valores bajos pueden resultar insistentes.
-**Duración máxima del silencio** | `≈ 60 s` | Previene cortes prematuros de llamadas y al mismo tiempo finaliza llamadas verdaderamente silenciosas.
+**Reenganche** | `≈ 30 s` | Les da a los usuarios tiempo suficiente para pensar.¿. Los valores bajos pueden resultar intrusivos.
+**Duración máxima del silencio** | `≈ 60 s` | Evita que las llamadas se cuelguen prematuramente y al mismo tiempo finaliza llamadas verdaderamente silenciosas.
 
-Pruebe diferentes valores en llamadas reales: uno demasiado bajo puede interrumpir, uno demasiado alto deja espacios incómodos.
+Pruebe diferentes valores en llamadas reales: uno demasiado bajo puede provocar interrupciones, mientras que un valor demasiado alto deja pausas incómodas.
 
 ## 6. Mensaje inicial
 
 Modo | Cómo se utiliza | Mejores prácticas
 --- | --- | ---
 **Pipeline** | Lea  **exactamente** como está escrito (convertido por TTS). | Escribe el saludo textualmente: "Hola, soy Alex de ..."
-**Doble plex** | Lea **exactamente** como está escrito (procesado mediante ElevenLabs TTS). | Escribe el saludo palabra por palabra y luego selecciona tu voz clonada.
-**Voz a voz** | Interpretado como un **mensaje** por parte del modelo. | ncluya instrucciones como "Salude al cliente y diga ..." _o_ anteponga el texto `say exactly: ` para garantizar una salida literal.
+**Dualplex** | Lea **exactamente** como está escrito (generado mediante ElevenLabs TTS). | Escribe el saludo tal cual, y luego selecciona tu voz clonada.
+**Voz a voz** | Interpretado como un **mensaje** por parte del modelo. | Incluya instrucciones como "Salude al cliente y diga ..." _o_ anteponga el texto `say exactly: ` para garantizar una salida literal.
 
 ## 7. Sonido ambiental
 
-Habilitado de forma predeterminada, el sonido ambiental es una función que agrega ruido de fondo a la voz del asistente.
+El sonido ambiental, que viene activado por defecto, es una función que añade ruido de fondo a la voz del asistente.
 
 <Note>
 Si el asistente no te escucha bien, puedes intentar apagar el sonido ambiente o bajar el volumen.
@@ -78,7 +78,7 @@ Si el asistente no te escucha bien, puedes intentar apagar el sonido ambiente o 
 
 ## 8. Controles deslizantes de puntos finales
 
-**Controle cuándo su asistente comienza a hablar** con el control deslizante de sensibilidad de punto final en la parte inferior de la configuración del asistente.
+**Controle cuándo su asistente comienza a hablar** con el control deslizante de sensibilidad de detección de extremos que se encuentra en la parte inferior de la configuración del asistente.
 
 | Configuración | Efecto | Úselo cuando |
 | --- | --- | --- |
@@ -86,7 +86,7 @@ Si el asistente no te escucha bien, puedes intentar apagar el sonido ambiente o 
 | **Mayor sensibilidad** | El asistente espera **más tiempo** antes de responder | Las personas que llaman dan respuestas más largas y detalladas |
 
 <Tip>
-**Consejo profesional:** Si tu asistente interrumpe a quien te llama a mitad de frase, **aumenta** la sensibilidad. Si las respuestas se sienten lentas, **disminúyela**.
+**Consejo práctico:** Si tu asistente interrumpe a quien te llama a mitad de frase, **aumenta** la sensibilidad. Si las respuestas se sienten lentas, **disminúyela**.
 </Tip>
 
 ## 9. Depuración mediante transcripción de llamadas
@@ -94,8 +94,8 @@ Si el asistente no te escucha bien, puedes intentar apagar el sonido ambiente o 
 Si tiene problemas con su asistente, puede usar la transcripción de la llamada para solucionar el problema.
 
 1. Vaya a la página Historial de llamadas.
-2. Haga clic en la última llamada que probó
-3. Se mostrará la transcripción de la llamada, incluidas las llamadas de función y sus parámetros.
+2. Haga clic en la última llamada que  realizaste.
+3. Se mostrará la transcripción de la llamada, incluidas las llamadas a funciones y sus parámetros.
 
 ## 10. ¿Aún tienes preguntas?
 
