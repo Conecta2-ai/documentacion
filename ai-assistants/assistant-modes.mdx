@@ -4,7 +4,7 @@ icono: "pulso de onda"
 descripción: "Comprenda los tres modos de generación de voz disponibles para sus asistentes de IA y cuándo usar cada uno."
 ---
 
-Los asistentes de IA de Conecta2.ai pueden hablar en **tres modos distintos**. Cada modo determina cómo se entiende el habla de quien llama y cómo se genera la respuesta del asistente:
+Los asistentes de IA de Conecta2.ai pueden hablar en **tres modos distintos**. Cada modo determina cómo se entiende el habla de la persona que llama y cómo se genera la respuesta del asistente:
 
 <Callout>
 Elegir el modo correcto puede mejorar el tiempo de respuesta, la naturalidad y la experiencia general de la llamada.
@@ -15,19 +15,19 @@ Elegir el modo correcto puede mejorar el tiempo de respuesta, la naturalidad y l
 | | |
 |---|---|
 | **Etiqueta en la interfaz de usuario** | `Pipeline` |
-| **Cómo funciona** | Voz a texto → LLM → Texto a voz |
+| **Cómo funciona** | Conversión de Voz a texto → LLM → Texto a voz |
 | **Estado latente** | ~800 – 1500 ms (depende del idioma y el modelo) |
 | **Mejor para** | Razonamiento complejo, indicaciones dinámicas, respuestas de varias oraciones. |
 
 El modo pipeline transcribe primero las palabras de la persona que llama a texto, procesa ese texto a través del modelo de lenguaje y luego convierte la respuesta de nuevo a audio. Es un enfoque de eficacia comprobada que ofrece máxima flexibilidad:
 
 - Admite **todas las voces** de la biblioteca (incluidas las voces clonadas personalizadas).
-- Maneja bien **respuestas de formato largo** o en formato de párrafo.
+- Maneja bien **respuestas de formato largo** o las respuestas en formato de párrafo.
 - Permite que el LLM  **inyecte variables** y haga referencia al contexto anterior de forma limpia.
 
 ### Cuándo elegir Pipeline
 
-1. Necesita respuestas completas y de varias oraciones (por ejemplo, consultas de soporte, explicaciones detalladas).
+1. Necesita respuestas completas y de varias frases (por ejemplo, consultas de soporte, explicaciones detalladas).
 2. El asistente debe razonar sobre **datos estructurados** o indicaciones complejas.
 3. Prefieres el control absoluto de la voz hablada (voz clon o de marca).
 
@@ -40,20 +40,20 @@ El modo pipeline transcribe primero las palabras de la persona que llama a texto
 | **Estado latente** | ~300 – 600 ms (ultra bajo) |
 | **Mejor para** | Intercambio natural, respuestas breves y reactivas. |
 
-El modo de voz a voz omite la transcripción y el TTS por separado. En su lugar, utiliza un **modelo multimodal** que escucha y habla directamente, lo que produce una mayor fluidez conversacional:
+El modo de conversión de voz a voz omite la transcripción y el TTS por separado. En su lugar, utiliza un **modelo multimodal** que escucha y habla directamente, lo que produce una mayor fluidez conversacional:
 
-- **Turnos rápidos** – las personas que llaman reciben respuestas casi instantáneas.
+- **Turnos de llamada rápidos** – las personas que llaman reciben respuestas casi instantáneas.
 - Genera **prosodia más expresiva** de forma nativa (entonación, rellenos).
 - Actualmente admite un **conjunto de voces limitado**, pero se agregan más periódicamente.
 
-### Cuándo elegir Speech-to-Speech
+### ¿Cuándo elegir la conversión de voz a voz?
 
-1. TLa conversación debe ser **ágil** (ventas, confirmaciones de reservas).
+1. La conversación debe ser **ágil y dinámica** (ventas, confirmaciones de reservas).
 2. Sus respuestas suelen ser **frases cortas** o reconocimientos rápidos.
 3. Está satisfecho con las opciones de voz proporcionadas por el sistema para una interacción más rápida.
 
 <Note>
-La conversión de voz a voz está evolucionando rápidamente. Si necesita una voz clonada personalizada con baja latencia, pruebe **Dualplex**.
+La tecnología de conversión de voz a voz está evolucionando rápidamente. Si necesita una voz clonada personalizada con baja latencia, pruebe **Dualplex**.
 </Note>
 
 ## 3. Dualplex (Beta)
@@ -65,23 +65,23 @@ La conversión de voz a voz está evolucionando rápidamente. Si necesita una vo
 | **Estado latente** | Bajo (varía según la voz y el modelo) |
 | **Mejor para** | Respuestas rápidas y naturales con voces de marca/alta calidad (clonadas) |
 
-Dualplex combina la capacidad de respuesta de voz a voz con las voces premium y la clonación de ElevenLabs utilizadas en Pipeline. El asistente utiliza el modelo multimodal para comprender a la persona que llama y planificar la respuesta, y luego reproduce el discurso final a través de ElevenLabs para obtener una salida consistente y de alta fidelidad.
+Dualplex combina la capacidad de respuesta de la conversión de voz a voz con las voces premium y la clonación de ElevenLabs utilizadas en Pipeline. El asistente utiliza el modelo multimodal para comprender a la persona que llama y planificar la respuesta, y luego reproduce el discurso final a través de ElevenLabs para obtener una salida consistente y de alta fidelidad.
 
-- **Toma de turnos casi instantánea** similar a la conversión de voz a voz.
-- Acceso a la biblioteca de voces **ElevenLabs**, incluidas **voces clonadas personalizadas **.
-- Ideal para respuestas **cortas a medianas** con prosodia expresiva..
+- **Intercambio de turnos casi instantáneo** similar al de la comunicación de voz a voz.
+- Acceso a la biblioteca de voces **ElevenLabs**, incluidas **voces clonadas personalizadas**.
+- Ideal para respuestas **cortas o medianas** con prosodia expresiva..
 - **Valor predeterminado recomendado** para la mayoría de los casos de uso en la actualidad; **Versión Beta**.
 
-### Cuándo elegir Dualplex
+### ¿Cuándo elegir Dualplex?
 
-1. Quiere una comunicación rápida pero necesita una voz de marca o clonada.
-2. Desea una entrega más expresiva sin renunciar a la elección precisa de la voz.
+1. Quiere una comunicación fluida y rápida pero necesita una voz con marca propia o clonada.
+2. Quieres una interpretación más expresiva sin renunciar a una elección de voz precisa.
 3. Se siente cómodo utilizando una nueva función que todavía está en versión Beta.
  
-## Modos de conmutación
+## Cambio de modos
 
 Puedes elegir el modo de cada asistente en **Asistente → Configuración → Motor de Voz**. Prueba los tres modos para ver cuál ofrece el mejor equilibrio entre velocidad y calidad para tu caso de uso. `Dualplex` Actualmente está en versión **Beta**.
 
 ---
 
-**Consejo profesional:** grabe dos llamadas, una en cada modo, y compare la latencia percibida y el nivel de participación de la persona que llama para decidir cuál se adapta a su flujo. 
+**Consejo práctico:** grabe dos llamadas, una en cada modo, y compare la latencia percibida y el nivel de participación de la persona que llama para decidir cuál se adapta a su flujo. 
