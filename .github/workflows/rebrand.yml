@@ -1,19 +1,19 @@
 nombre: Documentación de cambio de marca
 
 en:
-  workflow_dispatch:
-    inputs:
-      brand_name:
-        description: 'Your brand name (e.g., "MyCompany")'
-        required: true
-        type: string
-      primary_color:
-        description: 'Primary color hex (e.g., "#3B82F6")'
-        required: true
-        type: string
-        default: "#3B82F6"
+  despacho de flujo de trabajo:
+    entradas:
+      nombre_de_marca:
+        descripción: 'El nombre de tu marca (por ejemplo, "Mi empresa")'
+        requerido: true
+        tipo: cadena
+      color_primario:
+        descripción: 'Código hexadecimal del color primario (por ejemplo., "#3B82F6")'
+        requerido: true
+        tipo: cadena
+        por defecto: "#3B82F6"
       website_url:
-        description: 'Your website URL (e.g., "https://mycompany.com")'
+        descripción: 'La URL de tu sitio web (por ejemplo, "https://mycompany.com")'
         required: true
         type: string
       dashboard_url:
