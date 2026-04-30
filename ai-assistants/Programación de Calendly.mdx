@@ -1,1 +1,67 @@
+---
+Título: "Programación de citas con Calendly"
+icono: "días calendario"
+descripción: "Permite que tu asistente de IA programe citas usando Calendly."
+---
 
+Permite que tu asistente de IA programe reuniones mediante la integración con Calendly. La IA comprobará la disponibilidad y reservará citas directamente durante las llamadas.
+
+## Requisitos previos
+
+- Una cuenta activa de Calendly
+- Al menos un tipo de evento activo configurado en Calendly.
+
+## Configuración
+
+### 1. Conectar Calendly
+
+1. En la configuración de tu asistente, ve a la pestaña **Herramientas** tab → **Programación de citas.**
+2. Seleccione **Calendly** como tipo de calendario.
+3. Haz clic en **Conectar con Calendly**
+4. Autoriza la aplicación en la página de OAuth de Calendly.
+5. Se te redirigirá de nuevo a la configuración de tu asistente.
+
+<Note>
+Si tiene problemas para conectarse, intente usar una **ventana de incógnito/privada del navegador** para resolver los conflictos de autenticación.
+</Note>
+
+### 2. Seleccionar tipo de evento
+
+1. Una vez conectado, haga clic en **"Cargar eventos"** para obtener sus tipos de eventos de Calendly.
+2. Seleccione el tipo de evento que desea que la IA utilice para las reservas.
+3. Guarda a tu asistente
+
+### 3. Configurar la ubicación en Calendly
+
+La configuración de ubicación del tipo de evento de Calendly debe ser compatible con el agente de voz.
+
+1. Ve a [calendly.com](https://calendly.com) → **Tipos de eventos**
+2. Edita el tipo de evento vinculado a tu asistente.
+3. En la sección **Ubicación** seleccione una de las siguientes opciones:
+   - **"Personalizado"** — recomendado, funciona en todos los casos
+   - **"Llamada telefónica" → "Llamada entrante"** — también funciona para la IA de voz
+
+<Warning>
+Si tu evento solo utiliza videoconferencias (Google Meet, Zoom, Teams), las reservas fallarán. El asistente de voz no puede generar enlaces de reunión. Cambia a "Personalizado" o agrégalo como una opción de ubicación adicional.
+</Warning>
+
+## Calendarios múltiples
+
+Haz clic en el signo **"+"** junto a Programación de citas para añadir más herramientas de calendario (por ejemplo, diferentes tipos de eventos para distintos fines). Utiliza la descripción "Cuándo programar" para ayudar a la IA a seleccionar el calendario adecuado.
+
+## Cuentas de la organización
+
+Si tu cuenta de Calendly forma parte de una organización:
+
+- **Las cuentas de administrador/propietario** pueden ver todos los tipos de eventos de los miembros del equipo, incluidos los eventos Round Robin y Collective.
+- **Los miembros regulares** solo pueden ver sus propios tipos de eventos.
+
+## Pruebas
+
+1. Realice una llamada de prueba y solicite programar una reunión.
+2. Verifica que la reserva aparezca en tu panel de control de Calendly.
+3. Comprueba que se haya enviado la invitación del calendario.
+
+<Note>
+Para solucionar problemas, consulte [Problemas con Calendly](/troubleshooting/calendly).
+</Note>
