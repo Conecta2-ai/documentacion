@@ -1,1 +1,349 @@
+---
+título: "Generador de flujo"
+icono: "nodos compartidos"
+descripción: "Diseña flujos de conversación de forma visual con una interfaz intuitiva de arrastrar y soltar"
+---
 
+Flow Builder es un editor visual de flujos de conversación con función de arrastrar y soltar que te permite diseñar guiones para asistentes de IA sin necesidad de escribir código. Crea flujos de conversación de varios pasos conectando nodos que representan diferentes acciones y puntos de decisión.
+
+## Descripción general
+
+Flow Builder ofrece:
+
+- **Diseño visual** - arrastrar y soltar nodos en un lienzo.
+- **Múltiples tipos de nodos** - mensajes, indicaciones, acciones y más.
+- **Lógica de ramificación** - crea diferentes rutas en función de las respuestas.
+- **Panel de configuración** - configure la personalidad y el comportamiento del agente.
+- **Importar/Exportar** - guarda y comparte flujos como archivos JSON.
+
+<Frame>
+  <img src="/resources/ai-assistants/flow-builder-overview.png" alt="Flow Builder Interface" />
+</Frame>
+
+## Cuándo usar Flow Builder
+
+<CardGroup cols={2}>
+  <Card title="Use Flow Builder for" icon="check">
+    - Guiones de conversación estructurados
+    - Árboles de decisión con múltiples rutas
+    - Flujos de llamadas complejos con ramificaciones
+    - Personas con pensamiento visual que prefieren diagramas
+  </Card>
+  <Card title="Use Classic Editor for" icon="pen">
+    - Conversaciones simples y lineales
+    - Respuestas de IA altamente dinámicas
+    - Iteraciones rápidas de indicaciones
+    - Edición centrada en texto
+  </Card>
+</CardGroup>
+
+## Empezando
+
+<Steps>
+  <Step title="Open your assistant">
+    Navegue hasta **Asistentes** y haga clic en el asistente que desea editar.
+  </Step>
+  <Step title="Find Flow Builder">
+    En el formulario de edición, desplácese hasta la sección **Mensaje del Prompt** section y haga clic en la pestaña **Creador de flujos**.
+  </Step>
+  <Step title="Launch Flow Builder">
+    Haga clic en **Iniciar creador de flujos**. Se abrirá un editor en pantalla completa.
+  </Step>
+  <Step title="Choose how to start">
+    - **Continuar con el flujo existente** - edite su flujo actual.
+    - **Comenzar desde cero** - comience solo con un nodo de inicio.
+    - **Comenzar con una plantilla** - cargue una plantilla de flujo predefinida.
+  </Step>
+</Steps>
+
+## Descripción general de la interfaz
+
+### Área de lienzo (centro)
+
+El espacio de trabajo principal donde construyes tu flujo:
+
+- **Nodos** - arrastrar para reposicionar.
+- **Conexiones** - líneas que muestran el flujo entre nodos.
+- **Fondo de cuadrícula** - ayuda con la alineación.
+- **Controles de zoom** - acercar/alejar y ajustar a la vista.
+- **Desplazamiento** - haga clic y arrastre en el espacio vacío para moverlo.
+
+### Barra de herramientas inferior
+
+Acciones rápidas para gestionar tu flujo:
+
+| Botón | Acción |
+|--------|--------|
+| ⚡ Diseño automático | Organiza automáticamente los nodos de forma ordenada. |
+| 📋 Duplicado | Copiar el nodo seleccionado |
+| 🗑️ Eliminar | Eliminar el nodo o la conexión seleccionados |
+| **+ Agregar nodo** | Agrega un nuevo nodo al lienzo. |
+
+### Panel de configuración (lado derecho)
+
+Configura la personalidad y el comportamiento de tu asistente:
+
+- **Nombre del agente** - el nombre que utilizará tu IA.
+- **Tipo de agente** - Ventas, Soporte, Encuestas, etc.
+- **Idioma** - Idioma hablado para las llamadas
+- **Asertividad** - ¿Qué tan insistente debería ser la IA?
+- **Humor** - Nivel de humor en las respuestas
+- **Variables** - campos de datos previos a la llamada.
+- **Campos posteriores a la llamada** - datos que se recopilarán después de las llamadas.
+
+## Tipos de nodos
+
+Flow Builder tiene 5 tipos de nodos, cada uno con un propósito específico:
+
+<Frame>
+  <img src="/resources/ai-assistants/flow-builder-nodes.png" alt="Flow Builder Node Types" />
+</Frame>
+
+### Nodo de inicio (verde)
+
+<Card title="Start Node" icon="play" color="#22c55e">
+El punto de entrada de cada conversación. Cada flujo debe tener exactamente un nodo de inicio.
+
+**Propiedades:**
+- **Saludo** - el mensaje inicial cuando comienza la llamada.
+
+**Ejemplo:** "Hola, soy Sofia de Industrias ABC. ¿Cómo estás hoy?"
+
+</Card>
+
+### Nodo de habla (azul)
+
+<Card title="Speak Node" icon="volume-high" color="#3b82f6">
+Entrega un mensaje preescrito exactamente como se especificó. Úselo cuando necesite una redacción precisa.
+
+**Propiedades:**
+- **Texto** - El mensaje exacto que se va a decir
+- **Resultados** - diferentes caminos según la respuesta del cliente.
+
+**Ejemplo:** "Ofrecemos un descuento del 15% por tiempo limitado en todos los planes. ¿Le gustaría saber más?"
+</Card>
+
+### Nodo de aviso (púrpura)
+
+<Card title="Prompt Node" icon="message" color="#a855f7">
+Proporciona a la IA instrucciones sobre cómo responder. Es más flexible que los nodos Speak: la IA genera respuestas contextuales.
+
+**Propiedades:**
+- **Prompt** - Instrucciones para la IA
+- **Resultados** - diferentes rutas según las categorías de respuesta.
+
+**Ejemplo de prompt:** "Pregunte al cliente sobre su cobertura de seguro actual. Sea conversacional y empático. Preste atención a cualquier mención sobre el tamaño de su familia, sus preocupaciones presupuestarias o sus plazos."
+</Card>
+
+### Nodo de acción (naranja)
+
+<Card title="Action Node" icon="bolt" color="#f97316">
+Ejecuta acciones especiales durante la llamada.
+
+**Tipos de acciones:**
+- **Desvío de llamadas** - transferir a otro número.
+- **Reservar cita** - programarla usando el calendario conectado.
+- **Acción personalizada** - activa una herramienta personalizada durante la llamada.
+
+**Ejemplo:** Reenviar al equipo de ventas al +57-123-456-78-90 cuando el cliente esté listo para comprar.
+</Card>
+
+### Nodo final (rojo)
+
+<Card title="End Node" icon="phone-slash" color="#ef4444">
+Finaliza la llamada o la transfiere a otro destino.
+
+**Tipos de final de llamada:**
+- **Finalizar llamada** - Cuelgue con un mensaje de despedida
+- **Desvío de llamada** - transferir a un número de teléfono
+- **Agente de transferencias ** - Pasarle la tarea a otro asistente
+
+**Ejemplo de despedida:** "Gracias por su tiempo hoy. ¡Que tenga un buen día!"
+</Card>
+
+## Trabajar con nodos
+
+### Agregar nodos
+
+1. Haz clic en **+ Agregar nodo** en la barra de herramientas inferior.
+2. Seleccione el tipo de nodo en el menú desplegable.
+3. El nodo aparece en el lienzo.
+4. Arrástralo a la posición deseada.
+
+### Connecting Nodes
+
+1. Coloca el cursor sobre el borde inferior de un nodo para ver el **controlador de salida** (círculo pequeño)
+2. Haga clic y arrastre desde el controlador de salida
+3. Conectarse al **controlador de entrada** de otro nodo (borde superior)
+4. Suelta para establecer la conexión
+
+### Nodos de edición
+
+1. Haz clic en cualquier nodo para seleccionarlo.
+2. Las propiedades del nodo aparecen en un panel.
+3. Edita el texto, la solicitud o la configuración.
+4. Los cambios se guardan automáticamente en el lienzo.
+
+### Eliminación de nodos
+
+- Seleccione un nodo y pulse la tecla **Suprimir**, o
+- Seleccione un nodo y haga clic en el botón 🗑️ en la barra de herramientas.
+
+<Warning>
+El nodo de inicio no se puede eliminar. Cada flujo debe tener un nodo de inicio.
+</Warning>
+
+## Resultados (múltiples rutas)
+
+Los nodos Speak y Prompt pueden tener múltiples **resultados** - diferentes rutas según cómo responda el cliente.
+
+### Agregar resultados
+
+1. Seleccione un nodo de Hablar o de Indicar
+2. En el panel de propiedades, busque **Resultados.**
+3. Haga clic en **Agregar resultado**
+4. Indica el resultado (por ejemplo, "Interesado", "No interesado", "Quiere que le devolvamos la llamada").
+
+### Conectando resultados
+
+Cada resultado aparece como un punto de color en la parte inferior del nodo. Conecta cada resultado a un nodo de destino diferente para crear una lógica de ramificación.
+
+<Frame>
+  <img src="/resources/ai-assistants/flow-builder-branching.png" alt="Conversation Branching with Outcomes" />
+</Frame>
+
+**Ejemplo de flujo::**
+
+```
+[Inicio] → [Preguntar si está interesado]
+              ↓
+         [Prompt: "Pregunte si está interesado"]
+              ↓
+    ┌─────────┼─────────┐
+    ↓         ↓         ↓
+[Interesado] [Quizás] [No interesado]
+    ↓         ↓         ↓
+[Reservar demostración] [Enviar información] [Agradecer y finalizar]
+```
+
+## Panel de configuración
+
+<Frame>
+  <img src="/resources/ai-assistants/flow-builder-settings.png" alt="Flow Builder Settings Panel" />
+</Frame>
+
+### Identidad del agente
+
+| Configuración | Descripción |
+|---------|-------------|
+| **Nombre del agente** | Nombra la IA que utiliza para presentarse. |
+| **Tipo de agente** | Personalidad predefinida: Ventas, Soporte, Encuestas, etc. |
+| **Idioma** | Idioma principal de la conversación |
+
+### Personalidad
+
+| Configuración | Opciones | Descripción |
+|---------|---------|-------------|
+| **Asertividad** | Bajo / Medio / Alto | Qué tan persistente es la IA |
+| **Humor** | Apagado / Bajo / Medio / Alto | Nivel de humor en las respuestas |
+
+### Variables
+
+Agregue datos previos a la llamada que puedan utilizarse en sus mensajes:
+
+1. Haga clic en **Agregar variable**
+2. Introduzca un **nombre** (por ejemplo, `product_interest`)
+3. Establecer un **valor predeterminado**
+
+Utilice variables en los mensajes con llaves: `{variable_name}`
+
+**Ejemplo:** "Hola {nombre_del_cliente}, veo que estabas interesado en nuestro {interés_por_el_producto}."
+
+### Campos posteriores a la llamada
+
+Defina los datos que se extraerán de las llamadas:
+
+1. Haga clic en **Agregar campo**
+2. Ingrese el **nombre**, **el tipo**, y **la descripción.**
+3. La IA intentará rellenar estos campos basándose en la conversación.
+
+**Tipos:** `cadena`, `número`, `booleano`
+
+## Importación/Exportación
+
+### Exporta tu flujo
+
+1. Abra el panel de configuración.
+2. Desplázate hasta el final
+3. Haga clic en **Exportar JSON**
+4. Guarda el `.json` archivo
+
+### Importar un flujo
+
+1. Haz clic en  **Importar JSON** en la configuración.
+2. Seleccione su `.json` archivo
+3. Las cargas de flujo sobre el lienzo
+
+<Tip>
+Exporta tus flujos periódicamente como copias de seguridad. De esta forma, también puedes compartirlos con los miembros del equipo.
+</Tip>
+
+## Configuración del buzón de voz
+
+Configura qué sucede cuando se detecta un mensaje de voz:
+
+- **Mensaje de voz** - Mensaje que se dejará si contesta el buzón de voz.
+- **Finalizar llamada al recibir el mensaje de voz** - active esta opción para colgar automáticamente al recibir el mensaje de voz.
+
+## Guardando tu flujo
+
+Haz clic en el botón **Guardar** en la esquina superior derecha para guardar tu flujo en el asistente.
+
+<Note>
+El flujo se almacena como JSON en el campo de solicitud del sistema de tu asistente. Si cambias al Editor clásico, verás los datos JSON sin procesar.
+</Note>
+
+## Mejores prácticas
+
+<CardGroup cols={2}>
+  <Card title="Start Simple" icon="seedling">
+    Comience con un flujo básico y añada complejidad gradualmente. Realice pruebas en cada paso.
+  </Card>
+  <Card title="Use Prompt Nodes" icon="brain">
+    CXLos nodos de solicitud brindan flexibilidad a la IA. Úselos para obtener respuestas dinámicas y contextuales.
+  </Card>
+  <Card title="Plan Your Outcomes" icon="diagram-project">
+    Antes de construir, defina las rutas principales: respuestas positivas, negativas y neutrales. 
+  </Card>
+  <Card title="Test Thoroughly" icon="vial">
+    Realice llamadas de prueba que abarquen todas las rutas. Verifique que cada resultado conduzca al destino correcto.
+  </Card>
+</CardGroup>
+
+## Solución de problemas
+
+<AccordionGroup>
+  <Accordion title="Nodes won't connect">
+    - Asegúrate de arrastrar desde un **controlador de salida** (abajo) a un **controlador de entrada** (arriba)
+    - Comprueba que no estés creando una conexión circular. 
+    - El nodo Inicio solo tiene una salida, el nodo Fin solo tiene una entrada.
+  </Accordion>
+
+  <Accordion title="Flow not saving">
+    - Comprueba tu conexión a internet.
+    - Asegúrate de tener al menos un nodo (además de Inicio)
+    - Busca errores de validación en el panel de configuración.
+  </Accordion>
+
+  <Accordion title="AI not following the flow">
+    - Usa los nodos Hablar para los requisitos de redacción exactos.
+    - Haz que las instrucciones del nodo Indicar sean más específicas. 
+    - Comprueba que los resultados estén claramente definidos y conectados.
+  </Accordion>
+</AccordionGroup>
+
+## Recursos relacionados
+
+- [Editor de indicaciones con IA](/ai-assistants/ai-prompt-editor) - una alternativa basada en chat para la edición de indicaciones.
+- [Guía de indicaciones del sistema ](/ai-assistants/system-prompt) - comprensión de los fundamentos de las indicaciones
+- [Probando tu asistente ](/ai-assistants/testing) - cómo probar tus flujos
