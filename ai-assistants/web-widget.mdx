@@ -65,7 +65,7 @@ Solo conversaciones de voz en tiempo real.
 
 **Modo widget:** Voz, Chat o Voz y Chat
 
-**Tamaño del widget:** Elija entre el diseño estándar o **eel extragrande.** 
+**Tamaño del widget:** Elija entre el diseño estándar o **el extragrande.** 
 - **Estándar**: Widget flotante compacto adecuado para la mayoría de los casos de uso.
 - **Extra grande**: panel de media pantalla en ordenadores de escritorio, pantalla completa en dispositivos móviles; ideal para conversaciones detalladas.
 
@@ -79,165 +79,163 @@ Solo conversaciones de voz en tiempo real.
 
 **Apertura automática al cargar la página:** Cuando está activada, el widget se expande automáticamente al cargar la página, sin necesidad de que el visitante haga clic.
 
-### Button Tab
+### Pestaña de botón
 
 <Frame>
   <img src="/resources/widget-tab-button.png" alt="Widget Button Tab" />
 </Frame>
 
-**Custom Avatar:** Upload your own avatar image to replace the default widget icon. Appears on the toggle button and in the chat header. Max file size: 512KB, 1:1 aspect ratio (square).
+**Avatar personalizado:** Sube tu propia imagen de avatar para reemplazar el icono predeterminado del widget. Aparece en el botón de alternancia y en el encabezado del chat. Tamaño máximo del archivo: 512 KB, relación de aspecto 1:1 (cuadrado).
 
-**Button Main Text** (default: "Need help?") — primary text on the widget button
+**Texto principal del botón** (predeterminado: "¿Necesitas ayuda?") — texto principal del botón del widget
 
-**Button Sub Text** (default: "Chat with us") — secondary text, hidden when using the small button size
+**Subtexto del botón** (predeterminado: "Chatea con nosotros") — texto secundario, oculto al usar el tamaño pequeño del botón.
 
-**Tab Labels (Voice & Chat mode only):**
-- Voice Tab Label (default: "Voice") — rename to match your brand language (e.g., "Call Us", "Speak")
-- Chat Tab Label (default: "Chat") — rename to match your brand language (e.g., "Message", "Text")
+**Etiquetas de las pestañas (solo en modo voz y chat):**
+- Etiqueta de la pestaña Voz (predeterminado: "Voz") — cámbiele el nombre para que coincida con el lenguaje de su marca (por ejemplo, "Llámenos", "Hable").
+- Etiqueta de la pestaña de chat (predeterminada: "Chat"): cámbiele el nombre para que coincida con el lenguaje de su marca (por ejemplo, "Mensaje", "Texto").
 
-### Header & Modal Tab
+### Encabezado y pestaña modal
 
 <Frame>
   <img src="/resources/widget-tab-header-modal.png" alt="Widget Header & Modal Tab" />
 </Frame>
 
-**Header Title** (default: "AI Assistant")
+**Título del encabezado** (predeterminado: "Asistente de IA")
 
-**Header Subtitle** (default: "Ready to help you ✨")
+**Subtítulo del encabezado** (predeterminado: "Listos para ayudarte ✨")
 
-**Modal Title** (default: "Ready to chat?")
+**Título del modal** (predeterminado: "¿Listo para chatear?")
 
-**Start Button Text** (default: "Start Voice Chat")
+**Texto del botón de inicio** (predeterminado: "Iniciar chat de voz")
 
-**Modal Description** (default: "Click below to start your conversation")
+**Descripción del modal** (predeterminada: "Haz clic abajo para iniciar tu conversación")
 
-### Chat Settings Tab
+### Pestaña de configuración de chat
 
 <Frame>
   <img src="/resources/widget-tab-chat-settings.png" alt="Widget Chat Settings Tab" />
 </Frame>
 
 <Note>
-This tab is only visible when the widget mode includes chat (Chat Only or Voice & Chat).
+Esta pestaña solo es visible cuando el modo del widget incluye chat (Solo chat o Voz y chat).
 </Note>
 
-**Chat Placeholder** (default: "Type your message...")
+**Marcador de posición del chat** (predeterminado: "Escribe tu mensaje...")
 
-**Send Button Label** (default: "Send message") — accessibility label for the send button
+**Etiqueta del botón Enviar** (predeterminado: "Enviar mensaje") — etiqueta de accesibilidad para el botón Enviar
+**Mostrar llamadas a funciones:** Cuando está desactivada (opción predeterminada), las llamadas a herramientas LLM (por ejemplo, búsquedas en el calendario, consultas a la base de conocimientos) se ocultan del chat, lo que mantiene la conversación clara para los usuarios finales. Actívela para mostrar los detalles de uso de la herramienta.
 
-**Show Function Calls:** When disabled (default), LLM tool calls (e.g., calendar lookups, knowledge base queries) are hidden from the chat, keeping the conversation clean for end users. Enable to show tool usage details.
+### Enlaces en los que se puede hacer clic en el chat
 
-### Clickable Links in Chat
+El widget de chat admite el **formato Markdown**, por lo que tu asistente de IA puede enviar enlaces clicables, texto en negrita, listas y mucho más.
 
-The chat widget supports **markdown formatting**, so your AI assistant can send clickable links, bold text, lists, and more.
-
-To include clickable URLs in chat messages, use markdown link format in your assistant's prompt or initial message:
+Para incluir URL en las que se pueda hacer clic en los mensajes de chat, utilice el formato de enlace Markdown en la solicitud o el mensaje inicial de su asistente:
 
 ```
-Check out our [latest offers](https://example.com/offers) or visit our [help center](https://example.com/help).
+Echa un vistazo a nuestras [últimas ofertas](https://example.com/offers) o visita nuestro [centro de ayuda](https://example.com/help).
 ```
 
 <Tip>
-Add an instruction to your assistant's prompt like: *"When sharing links or URLs, always format them as clickable markdown links: [link text](url)"* — this ensures the AI consistently outputs clickable links instead of plain text URLs.
+Agregue una instrucción al mensaje de su asistente como: *"Al compartir enlaces o URL, siempre formatéelos como enlaces Markdown clicables: [texto del enlace](url)"* — esto garantiza que la IA genere consistentemente enlaces clicables en lugar de URL de texto plano.
 </Tip>
 
-### Voice Settings Tab
+### Pestaña de configuración de voz
 
 <Frame>
   <img src="/resources/widget-tab-voice-settings.png" alt="Widget Voice Settings Tab" />
 </Frame>
 
 <Note>
-This tab is only visible when the widget mode includes voice (Voice Only or Voice & Chat).
+Esta pestaña solo es visible cuando el modo del widget incluye voz (Solo voz o Voz y chat).
 </Note>
 
-**Connecting Text** (default: "Connecting...")
+**Texto de conexión** (predeterminado: "Conectando...")
 
-**Disconnect Text** (default: "Disconnect")
+**Texto de desconexión** (predeterminado: "Desconectar")
 
-**Error Text** (default: "Connection failed. Please try again.")
+**Texto de error** (predeterminado: "Error de conexión. Inténtelo de nuevo.")
 
-### Pre-Chat Form
+### Formulario previo al chat
 
 <Frame>
   <img src="/resources/widget-pre-chat-form.png" alt="Pre-Chat Form Configuration" />
 </Frame>
 
-Collect information before starting conversations:
+Recopile información antes de iniciar conversaciones:
 
-**Form Configuration:**
-- Pre-form Title (default: "Before we start...")
-- Pre-form Description (default: "Please provide some information to help us assist you better")
-- Submit Button Text (default: "Continue")
+**Configuración del formulario:**
+- Título del formulario previo (predeterminado: "Antes de empezar...")
+- Descripción del formulario previo (predeterminado: "Por favor, proporcione información para que podamos ayudarle mejor")
+- Texto del botón de envío (predeterminado: "Continuar")
 
-**Form Fields:**
-Add custom fields to collect data:
-- **Variable Name:** Internal variable name (maps to assistant variables). Only letters, numbers, dashes, and underscores allowed.
-- **Field Label:** Display label shown to users
-- **Field Type:** Text, Email, Phone, or Textarea
-- **Required:** Make field mandatory
-- **Placeholder:** Placeholder text shown in the field
-- **Helper Text:** Optional description below the field
+**Campos del formulario:**
+Añada campos personalizados para recopilar datos:
+- **Nombre de la variable:** Nombre interno de la variable (se asigna a variables auxiliares). Solo se permiten letras, números, guiones y guiones bajos.
+- **Etiqueta de campo:** Etiqueta que se muestra a los usuarios
+- **Tipo de campo:** Texto, correo electrónico, teléfono o área de texto
+- **Requerido** Haga que este campo sea obligatorio.
+- **Marcador de posición:** Texto de marcador de posición que se muestra en el campo
+- **Texto de ayuda:** Descripción opcional debajo del campo
 
-**Variable Mapping:**
-Form field names automatically map to your assistant's variables, making collected data available during conversations.
+**Asignación de variables:**
+Los nombres de los campos del formulario se asignan automáticamente a las variables de tu asistente, lo que permite que los datos recopilados estén disponibles durante las conversaciones.
 
-**Example Form Fields:**
+**Ejemplos de campos de formulario:**
 ```
-Name: Full Name (required, text)
-Email: Email Address (required, email)
-Company: Company Name (optional, text)
-Message: How can we help? (optional, textarea)
+Nombre: Nombre completo (obligatorio, texto)
+Correo electrónico: Dirección de correo electrónico (obligatorio, correo electrónico)
+Empresa: Nombre de la empresa (opcional, texto)
+Mensaje: ¿En qué podemos ayudarte? (opcional, área de texto)
 ```
 
-### AI Response Settings
+### Configuración de respuesta de IA
 
 <Frame>
   <img src="/resources/widget-ai-response-settings.png" alt="Widget AI Response Settings" />
 </Frame>
 
-**AI Enabled:** When toggled on (default), the AI assistant automatically responds to incoming messages. Turn this off if you want to use the widget for manual-only conversations — messages are collected but the AI does not reply.
+**IA habilitada:** Cuando está activada (opción predeterminada), el asistente de IA responde automáticamente a los mensajes entrantes. Desactívala si deseas usar el widget solo para conversaciones manuales; los mensajes se recopilan, pero la IA no responde.
 
-### Conversation Webhook
+### Webhook de conversación
 
 <Frame>
   <img src="/resources/widget-conversation-webhook.png" alt="Widget Conversation Webhook" />
 </Frame>
 
-**Webhook URL:** Enter a URL to receive a webhook notification whenever a new conversation starts via the widget. Use this to trigger automation flows, log events to your CRM, or notify your team in real-time.
+**URL del webhook:** Introduce una URL para recibir una notificación webhook cada vez que se inicie una nueva conversación a través del widget. Úsala para activar flujos de automatización, registrar eventos en tu CRM o notificar a tu equipo en tiempo real.
 
-### Widget Display
+### Visualización de widgets
 
 <Frame>
   <img src="/resources/widget-display-toggle.png" alt="Widget Display Toggle" />
 </Frame>
 
-**Enable Widget:** Master toggle that controls whether the widget loads on your website. When disabled, the widget will not appear even if the embed script is installed on your site. Use this to temporarily hide the widget without removing code from your website.
+**Habilitar widget:** Opción principal que controla si el widget se carga en tu sitio web. Cuando está desactivado, el widget no aparecerá aunque el script de inserción esté instalado en tu sitio. Úsalo para ocultar temporalmente el widget sin eliminar el código de tu sitio web.
 
 
-## Live Widget Preview
+## Vista previa del widget en vivo
 
 <Frame>
   <img src="/resources/widget-live-preview.png" alt="Widget Live Preview" />
 </Frame>
 
-At the top of the configuration panel, a live preview shows exactly how your widget will look and behave on a website. The preview updates in real-time as you change any setting.
+En la parte superior del panel de configuración, una vista previa en tiempo real muestra exactamente cómo se verá y funcionará su widget en un sitio web. La vista previa se actualiza automáticamente al modificar cualquier ajuste.
 
-**Copy Preview URL** — copies the preview URL to your clipboard so you can open it in a separate browser tab or share it with your team for review.
+**Copiar URL de vista previa** — copia la URL de vista previa al portapapeles para que puedas abrirla en una pestaña aparte del navegador o compartirla con tu equipo para su revisión.
 
-**Reset Data** — clears all stored conversation history, form submissions, and preferences in the preview. Use this to simulate a first-time visitor experience after testing.
-
+**Restablecer datos** — borra todo el historial de conversaciones, los formularios enviados y las preferencias almacenadas en la vista previa. Úselo para simular la experiencia de un visitante nuevo después de realizar las pruebas.
 <Tip>
-The preview is fully interactive — you can click the widget button, fill out the pre-chat form, and start a real conversation to test your configuration before deploying.
+La vista previa es totalmente interactiva: puedes hacer clic en el botón del widget, completar el formulario previo al chat e iniciar una conversación real para probar tu configuración antes de la implementación.
 </Tip>
 
-### Embed Code
+### Código de inserción
 
 <Frame>
   <img src="/resources/widget-embed-code.png" alt="Widget Embed Code" />
 </Frame>
 
-The embed code section provides a ready-to-copy script tag. Click **Copy** to copy it to your clipboard, then paste it into your website before the closing `</body>` tag:
+La sección de código de inserción proporciona una etiqueta de script lista para copiar. Haga clic en **Copiar** to copy it to your clipboard, para copiarla al portapapeles y luego péguela en su sitio web antes de la `</body>` etiqueta de cierre:
 
 ```html
 <script src="https://app.autocalls.ai/embed.js"
@@ -246,43 +244,42 @@ The embed code section provides a ready-to-copy script tag. Click **Copy** to co
 ```
 
 <Warning>
-Save your widget settings **before** copying the embed code. The script loads all configuration from the server, so any unsaved changes won't appear on your website.
-</Warning>
+Guarda la configuración de tu widget **antes** de copiar el código de inserción. El script carga toda la configuración desde el servidor, por lo que los cambios no guardados no aparecerán en tu sitio web.
 
-## Installation
+## Instalación
 
-1. Configure and save your widget settings
-2. Copy the embed code from the **Embed Code** section
-3. Paste the script tag before the closing `</body>` tag on your website
-4. Visit your website and verify the widget appears in the configured position
-5. Test voice/chat functionality and pre-chat form (if configured)
+1. Configura y guarda la configuración de tu widget
+2. Copia el código de inserción de la sección **Código de inserción** 
+3. Pega la etiqueta de script antes de la  `</body>` etiqueta de cierre en tu sitio web.
+4. Visite su sitio web y verifique que el widget aparezca en la posición configurada.
+5. Pruebe la funcionalidad de voz/chat y el formulario previo al chat (si está configurado).
 
-## Widget Behavior
+## Comportamiento del widget
 
-### First Visit
-- Widget button appears in configured position
-- Click opens modal/chat interface
-- Pre-chat form displays (if configured)
-- After form submission, conversation starts
+### Primera visita
+- El botón del widget aparece en la posición configurada.
+- Al hacer clic se abre la interfaz modal/de chat.
+- Se muestran los formularios previos al chat (si están configurados).
+- Tras enviar el formulario, comienza la conversación.
 
-### Return Visits
-- Previous conversation state may be restored
-- Form data remembered (if visitor hasn't cleared cookies)
-- Seamless continuation of support experience
+### Visitas de regreso
+- Se puede restaurar el estado de conversación anterior.
+- Los datos del formulario se recuerdan (si el visitante no ha borrado las cookies).
+- Continuidad sin interrupciones de la experiencia de soporte
 
-### Conversation Tracking
-All widget conversations appear in your [Conversations](/conversations/overview) page for review and analysis.
+### Seguimiento de conversaciones
+Todas las conversaciones de los widgets aparecen en tu página [Conversaciones](/conversations/overview) para su revisión y análisis.
 
 <Warning>
-HTTPS (SSL certificate) is required for voice functionality. HTTP sites can only use chat mode due to browser security restrictions.
+Se requiere HTTPS (certificado SSL) para la funcionalidad de voz. Los sitios HTTP solo pueden usar el modo de chat debido a las restricciones de seguridad del navegador.
 </Warning>
 
-## Troubleshooting
+## Solución de problemas
 
-For setup and configuration issues, see [Web Widget Troubleshooting](/troubleshooting/web-widget).
+Para problemas de configuración, consulte [la sección de solución de problemas de widgets web](/troubleshooting/web-widget).
 
-## Next Steps
+## Próximos pasos
 
-- Test widget using the live preview
-- Embed code on your website
-- Monitor conversations in the [Conversations](/conversations/overview) page
+- Probar el widget usando la vista previa en vivo
+- Inserta el código en tu sitio web.
+- Supervise las conversaciones en la página de [Conversaciones](/conversations/overview) page
