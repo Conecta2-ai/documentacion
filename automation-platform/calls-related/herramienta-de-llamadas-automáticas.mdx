@@ -1,0 +1,130 @@
+---
+título: "Herramienta de llamadas automáticas"
+icon: "teléfono"
+descripción: "Aprende a usar los activadores y acciones de Conectados en tus flujos de llamadas de IA."
+---
+
+# Herramienta de llamadas automáticas
+
+La herramienta Conectados es el componente principal que conecta su sistema de llamadas con IA mediante flujos de automatización. Permite el intercambio de datos en tiempo real entre sus asistentes de IA y los sistemas empresariales, lo que posibilita conversaciones personalizadas y seguimientos automatizados.
+
+<Note>
+  La herramienta de llamadas automáticas se muestra de forma destacada en la parte superior de la barra lateral de búsqueda cuando se buscan activadores o acciones.
+</Note>
+
+## Desencadenantes
+
+### Finalizada la llamada
+
+![Autocalls Call Ended Trigger](/resources/autocalls-trigger.jpg)
+
+El disparador "Llamada finalizada" se activa inmediatamente después de que finaliza una llamada de IA, proporcionando datos completos sobre la interacción:
+
+- Transcripción completa de la conversación con marcas de tiempo.
+- Respuestas y decisiones del asistente de IA
+- Duración de la llamada y metadatos técnicos
+- Información del cliente y número de teléfono
+- Análisis del resultado de la llamada y del sentimiento
+- Variables establecidas durante la conversación
+
+#### Configuración
+
+1. Seleccione "Llamada finalizada" como activador.
+2. Seleccione el asistente de IA específico para monitorear
+3. Configurar la asignación de variables
+
+### Inyección de variables en llamadas entrantes
+
+Este potente disparador se activa antes de que tu asistente de IA conteste una llamada entrante, lo que te permite:
+
+- Obtener e insertar datos de clientes en tiempo real
+- Personaliza el comportamiento de la IA en función del contexto.
+- Establecer parámetros de conversación
+- Defina los rasgos de personalidad de la IA.
+- Proporcione variables de lógica de negocio
+
+#### Configuración
+
+1. Seleccione "Llamada entrante" como activador.
+2. Definir las variables necesarias para el contexto de la IA
+
+## Comportamiento
+
+### Agregar cliente potencial a la campaña
+
+![Autocalls Action](/resources/autocalls-action.jpg)
+
+Esta acción ayuda a gestionar sus campañas de llamadas con IA mediante:
+
+- Generación de nuevos clientes potenciales a partir de herramientas externas como Hojas de cálculo, Hubspot y Facebook Leads.
+- Asignación de clientes potenciales a campañas de IA específicas
+- Agregar contexto para futuras llamadas
+
+#### Configuración
+
+1. Seleccione la campaña de IA objetivo
+2. Mapear los detalles de contacto a partir de los datos del activador.
+3. Agregar atributos personalizados para el contexto de IA
+
+### Variables de retorno
+
+Esta acción es crucial para las llamadas entrantes, ya que devuelve el contexto que se inyecta en el mensaje de la IA:
+
+- Perfil y preferencias del cliente
+- Resumen del historial de conversaciones
+- Reglas y restricciones empresariales
+- Indicadores de comportamiento de IA personalizados
+- Plantillas de respuesta dinámica
+
+#### Configuración
+
+1. Estructura de respuesta JSON
+2. Asignar datos de clientes a variables
+3. Establecer parámetros de conversación con la IA
+4. Configurar el manejo del tiempo de espera
+
+## Ejemplo de uso
+
+### Gestión de clientes potenciales posterior a la llamada
+
+```javascript
+Trigger: AI Call Ended
+↓
+Extract conversation insights
+↓
+Update Hubspot record
+↓
+Add to follow-up campaign if qualified
+```
+
+### Enrutamiento de entrada inteligente
+
+```javascript
+Trigger: Inbound Call to AI
+↓
+Fetch customer profile from CRM
+↓
+Get interaction history
+↓
+Return enriched context for AI prompt
+```
+
+## Mejores prácticas
+
+1. **Rendimiento de inyección variable**
+
+   - Mantén el procesamiento por debajo de 2 segundos.
+   - Establecer valores predeterminados sensatos
+
+2. **Estructura de datos**
+
+   - Siga los requisitos de las indicaciones de la IA
+   - Validar todas las variables
+   - Estructura claramente los objetos anidados
+   - Campos personalizados del documento
+
+3. **Manejo de errores**
+   - Proporcionar valores de reserva
+   - Fallos en la inyección de registros
+   - Monitorear los tiempos de respuesta
+   - Gestionar los datos faltantes de forma adecuada
