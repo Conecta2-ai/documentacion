@@ -34,133 +34,151 @@ número_de_teléfono,nombre_del_cliente,empresa,rango_de_presupuesto,teléfono_s
 +14155554567,Pablo Segura,Tech Start,5k-10k,,
 ```
 
-## Selección de campaña
+## Importar configuración
 
-### Seleccionar campaña objetivo
-1. **Seleccione la campaña ** en el menú desplegable durante la importación.
-2. **Las variables auxiliares** determinan automáticamente las columnas esperadas.  
-3. **La herencia de variables** aplica los valores predeterminados del asistente a todos los clientes potenciales importados.
+### Seleccionar campaña 
+1. **Seleccione la campaña objetivo** en el menú desplegable. Las variables del asistente determinarán qué columnas se esperan durante el mapeo.
 
-### Asignación de variables
-- **Las variables auxiliares** se convierten en encabezados de columna en el archivo de muestra.
-- **Valores predeterminados** de la configuración del asistente
-- **Anulación de la capacidad** con valores personalizados por cliente potencial
+2. **Contactos secundarios** Seleccione la cantidad de números de teléfono secundarios por contacto (0-10). Si su archivo contiene números de teléfono adicionales además del contacto principal, especifique la cantidad aquí. 
 
-<Note>
-**Descargar archivo de muestra:** El cuadro de diálogo de importación proporciona un archivo CSV de muestra con los encabezados adecuados según las variables del asistente de campaña seleccionadas.
-</Note>
+### 3. Formato del número de teléfono
+Elige el formato de tus números de teléfono:
+
+**Formato internacional (recomendado)**
+- Los números ya incluyen el código de país con el prefijo +.
+- Ejemplo: `+40741234567`, `+573101234567`
+- No es necesario seleccionar ningún país.
+- Se pueden mezclar varios países en el mismo archivo. 
+
+**Formato nacional**
+- Números sin prefijo de código de país
+- Ejemplo: `6042989898`, `7775551234`
+- **Debe seleccionar el código del país** durante la importación.
+- **Importante:** Separe su archivo por país; todos los números deben ser del mismo país por archivo.
+- El sistema añadirá el código de país seleccionado a todos los números.
+
+<Warning>
+Al usar el formato nacional, debe importar un archivo por país. No combine números de diferentes países en el mismo archivo.
+</Warning>
+
+### 4. Selección del código de país
+Solo aparece cuando se selecciona "Formato nacional" Elija el país que coincida con todos los números de teléfono de su archivo. El sistema añadirá automáticamente el código de país a todos los números.
 
 ## Pasos de importación
 
 ### 1. Iniciar el proceso de importación
-1. **Navegue a** la sección de clientes potenciales o a la pestaña de clientes potenciales de la campaña.
-2. **Haz clic en el botón "Importar clientes potenciales"** 
-3. **Seleccione la campaña** para la asignación principal.
-4. **Descarga** el archivo de muestra para ver el formato esperado.
+1. **Navegue a** la sección Clientes potenciales o a la pestaña Clientes potenciales de la campaña.
+2. **Haga clic en el botón "Importar clientes potenciales"**  
+3. **Seleccione la campaña** para la asignación de clientes potenciales.
+4. **Descargue ** file to see expected format
 
-### 2. Subir archivo
+### 2. Cargar y asignar columnas
 1. **Seleccione el archivo:** Seleccione su archivo CSV o Excel.
-2. **Opción Ignorar errores:** Habilitar para omitir filas no válidas
-3. **Revisar la configuración:** Confirmar la campaña y las opciones
-4. **Iniciar la importación:** Haga clic en "Importar ahora" para comenzar.
+2. **Asignación de columnas:** Asigne las columnas de su archivo a los campos del sistema:
+   - **Número de teléfono (obligatorio):** Seleccione la columna que contiene los números de teléfono.
+   - **Variables auxiliares:** Asigne cada variable a su columna correspondiente.
+   - **Contactos secundarios:** Si están configurados, asignen números de teléfono y variables secundarios.
+3. **Detección automática:** El sistema detecta automáticamente las asignaciones basándose en nombres de encabezado comunes.
+4. **Revisar e importar:** Confirme las asignaciones y haga clic en "Importar" para comenzar.
 
 ### 3. Procesamiento en segundo plano
 - **Procesamiento de cola:** Los archivos grandes se procesan en segundo plano.
-- **Seguimiento del progreso:** El estado de la importación se actualiza automáticamente.
-- **Notificación:** Recibirás una notificación por correo electrónico cuando se complete la importación.
-- **Informe de errores:** Descargar informe de las filas con errores.
+- **Seguimiento del progreso:** Importa automáticamente las actualizaciones de estado.
+- **Notificación:** Recibirá una notificación por correo electrónico cuando finalice la importación.
+- **Informe de errores:** Descargue el informe de las filas que hayan fallado.
 
 ## Reglas de validación
 
 ### Validación del número de teléfono
-- **Comprobación de formato:** Se prefiere el formato internacional (+1234567890)
-- **Detección de duplicados:** Evita números de teléfono duplicados
-- **Números no válidos:** Marcados y omitidos automáticamente
+- **Comprobación de formato:** Se prefiere el formato internacional (+573101231212)
+- **Detección de duplicados:** Evita números de teléfono duplicados.
+- **Números no válidos:** Se marcan y omiten automáticamente.
 
 ### Validación de variables
-- **Campos obligatorios:** Las variables marcadas como obligatorias deben tener valores
-- **Tipos de datos:** Texto, número, validación booleana cuando corresponda
+- **Campos obligatorios:** Las variables marcadas como obligatorias deben tener valores.
+- **Tipos de datos:** Texto, número, validación booleana cuando corresponda.
 - **Límites de longitud:** Se aplican límites máximos de caracteres.
 
 ### Validación de contacto secundario
 - **Formato de teléfono:** Misma validación que los números principales
 - **Números únicos:** Los contactos secundarios deben ser diferentes de los principales.
-- **Consistencia de las variables:** Variables de contacto secundario validadas de forma independiente.
+- **Consistencia de las variables:** Variables de contacto secundario validadas de forma independiente
 
 ## Manejo de errores
 
-### Omitir filas no válidas
-Cuando la opción "Ignorar errores" está habilitada:
-- **Filas válidas importadas:** Clientes potenciales validados correctamente añadidos.
-- **Filas no válidas omitidas:** Filas problemáticas excluidas de la importación
-- **Se ha generado un informe de errores:** Descargue el informe detallado de las filas omitidas.
-- **Éxito parcial:** La importación se completa con un subconjunto válido.
+### Gestión automática de errores
+El sistema de importación gestiona automáticamente los errores de validación:
+- **Filas válidas importadas:** Los clientes potenciales validados correctamente se agregan a la campaña.
+- **Filas no válidas omitidas:** Las filas que no superan la validación se excluyen automáticamente.
+- **nforme de errores generado:** Se crea un informe detallado de todas las filas que fallaron.
+- **Éxito parcial:** La importación se completa correctamente con todos los clientes potenciales válidos; las filas que fallaron se registran.
 
 ### Errores comunes de validación
-- **Números de teléfono no válidos:** Formato incorrecto o números imposibles
+- **Números de teléfono no válidos:** formato incorrecto o números imposibles.
 - **Faltan campos obligatorios:** Valores vacíos para las variables obligatorias
 - **Números de teléfono duplicados:** El número de teléfono ya existe en el sistema.
-- **Problemas con el formato de archivo:** Formato de archivo dañado o no compatible
+- **Problemas con el formato del archivo:** Formato de archivo dañado o no compatible.
 
 ### Descargar informe de errores
-Tras finalizar la importación:
-- **Enlace de descarga** disponible en la notificación.
-- **Descripciones detalladas de los errores** para cada fila fallida
+Una vez finalizada la importación:
+- **El enlace de descarga** se proporciona en la notificación.
+- **Descripciones detalladas de los errores** para cada fila que falló.
 - **Guía de corrección** para solucionar problemas
 - **Capacidad de reimportación** con datos corregidos
 
 ## Importación de contactos secundarios
 
 ### Múltiples números de teléfono por cliente potencial
-
 Incluir columnas adicionales para contactos secundarios:
 ```csv
-número_de_teléfono,nombre_del_cliente,teléfono_secundario_1,teléfono_secundario_2,teléfono_secundario_3 +14155551234,Jon Perez,+14155551235,+14155551236,+14155551237
+número_de_teléfono,nombre_del_cliente,teléfono_secundario_1,teléfono_secundario_2,teléfono_secundario_3
++571231234567,Jon Perez,+568769089,+573111234567,+573205678990
 ```
 
-### Variables de contacto secundarias
+### Variables de contacto secundario
 Agregar variables específicas para contactos secundarios:
 ```csv
-número_de_teléfono,nombre_del_cliente,teléfono_secundario_1,nombre_secundario_1,función_secundaria_1 +14155551234,Jon Perez,+14155551235,Diana Mayo,Responsable de la toma de decisiones
+número_de_teléfono,nombre_del_cliente,teléfono_secundario_1,nombre_del_contacto_secundario_1,función_del_contacto_secundario_1
++571231234567,Jon Perez,+573111234567,Sofia Martinez,Responsable de la toma de decisiones
 ```
 
-### Pedidos por contacto
-- **Contacto principal:** Siempre se le llama primero
-- **Orden secundario:** Se llama en orden de columna (secondary_phone_1, luego secondary_phone_2, etc.)
-- **Coordinación de campañas:** Respeta la configuración de reintento de campaña entre contactos
+### Contacto para realizar pedidos
+- **Contacto principal:** Siempre se le llama primero.
+- **Orden secundario:** Se llama en orden de columna (secondary_phone_1, luego secondary_phone_2, etc.).
+- **Coordinación de campaña:** Respeta la configuración de reintentos de campaña entre contactos.
 
 ## Manejo de archivos grandes
 
 ### Procesamiento en segundo plano
-- **Cola automática:** Los archivos con más de 1000 filas se procesan en segundo plano.
-- **Eficiencia de memoria:** El procesamiento en flujo continuo evita los tiempos de espera.
+- **Cola automática:** Los archivos de más de 1000 filas se procesan en segundo plano.
+- **Eficiencia de la memoria:** El procesamiento en tiempo real evita los tiempos de espera.
 - **Seguimiento del progreso:** Actualizaciones de estado en tiempo real
-- **Rendimiento del sistema:** No afecta al rendimiento de la plataforma durante la importación.
+- **Rendimiento del sistema:** No hay impacto en el rendimiento de la plataforma durante la importación.
 
 ### Sistema de notificación
 - **Notificaciones por correo electrónico:** Se envían cuando finaliza la importación.
 - **Resumen de éxito:** Número de clientes potenciales importados correctamente
-- **Resumen de errores:** Número y detalles de las filas con errores
+- **Resumen de errores:** Cantidad y detalles de las filas que fallaron
 - **Enlaces de descarga:** Acceso a informes de errores y datos importados
 
 ### Tiempo de procesamiento
-- **Archivos pequeños (< 100 filas):** Suelen completarse en 1 minuto.
-- **Archivos medianos (100-1000 filas):** 2-5 minutos (típico)
-- **Archivos grandes (más de 1000 filas):** 10-30 minutos según su complejidad
-- **Archivos muy grandes (más de 10 000 filas):** Pueden tardar varias horas
+- **Archivos pequeños (< 100 filas):** Generalmente se completan en 1 minuto.
+- **Archivos medianos (100-1000 filas):** 2-5 minutos normalmente.
+- **Archivos grandes (1000+ filas):** de 10 a 30 minutos, dependiendo de la complejidad.
+- **Archivos muy grandes (10k+ filas):** Puede tardar varias horas.
 
 ## Mejores prácticas
 
-- **Utilice el archivo de muestra:** Descargue la plantilla proporcionada para obtener el formato correcto.
-- **Formato de teléfono:** Formato internacional sin separadores (+1234567890)
-- **Limpieza de datos:** Eliminar filas vacías y validar el contenido
-- **Prueba primero:** Comienza con un lote pequeño para verificar el formato.
-- **Variables coincidentes:** Asegúrese de que las columnas coincidan con la configuración del asistente
+- **Utilice el archivo de ejemplo:** Descargue la plantilla proporcionada para obtener el formato correcto.
+- **Formato telefónico:** Formato internacional sin separadores (+573234567890)
+- **Limpiar datos:** Eliminar filas vacías y validar el contenido.
+- **Prueba primero:** comienza con un lote pequeño para verificar el formato.
+- **Variables coincidentes:** Asegúrese de que las columnas coincidan con la configuración del asistente.
 
 <Note>
-Para obtener información detallada sobre la resolución de problemas y los problemas de importación más comunes, consulte [Solución de problemas de clientes potenciales](/troubleshooting/leads).
+Para obtener información detallada sobre la solución de problemas y los problemas comunes de importación, consulte [Solución de problemas con clientes potenciales](/troubleshooting/leads).
 </Note>
 
 <Note>
-Para obtener información sobre la gestión de clientes potenciales importados, consulte [Gestión de clientes potenciales](/leads/managing-leads).
+Para obtener información sobre cómo administrar los clientes potenciales importados, consulte [Administración de clientes potenciales](/leads/managing-leads).
 </Note>
