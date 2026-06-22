@@ -14,7 +14,7 @@ Aprende a crear, editar y gestionar leads de forma eficaz para tus campañas con
 3. **Estado:** Se establece automáticamente en "Creado" para los nuevos clientes potenciales
 
 <Note>
-**Formato del número de teléfono:** Utilice el formato internacional sin espacios ni paréntesis (+1234567890) para importaciones automatizadas y cargas de archivos.
+**Formato del número de teléfono:** Utilice el formato internacional sin espacios ni paréntesis (+573105433454) para importaciones automatizadas y cargas de archivos.
 </Note>
 
 ### Configuración de variables
@@ -38,8 +38,8 @@ Agrega información personalizada para que la use tu asistente de IA:
 **Ejemplo de formato de variable:**
 ```json
 {
-  "nombre_del_cliente": "Sara Parker",
-  "empresa": "TechStart Solutions", 
+  "nombre_del_cliente": "Sara Martinez",
+  "empresa": "Tech Solutions", 
   "última_interacción": "Solicitó una demostración de las funciones premium",
   "hora_de_contacto_preferida": "Por la tarde, hora del Este",
   "sector": "Desarrollo de software"
@@ -48,7 +48,7 @@ Agrega información personalizada para que la use tu asistente de IA:
 
 ### Contactos secundarios
 
-Agrega números de teléfono adicionales para el mismo contacto cuando tengas varias formas de comunicarte con él.
+Añade números de teléfono adicionales para el mismo cliente potencial cuando tengas varias formas de contactarlo.
 
 #### Cuándo usar contactos secundarios
 - **Responsables de la toma de decisiones:** Varias personas involucradas en la decisión
@@ -111,9 +111,9 @@ Cada contacto secundario puede tener variables únicas:
 - **Reordenar contactos:** Cambiar la prioridad de la secuencia de llamadas
 - **Actualizar variables:** Modificar información específica del contacto
 
-## Gestión del estado de los líderes
+## Gestión del estado de los clientes potenciales
 
-### Comprensión de los cambios de estado
+### Comprender los cambios de estado
 El estado de los clientes potenciales se actualiza automáticamente en función de la actividad de la campaña:
 - **Creado → Procesando:** Cuando la campaña comienza a llamar
 - **Procesando → Completado:** Cuando la llamada se realiza correctamente o se alcanza el objetivo.  
@@ -131,7 +131,7 @@ Puedes cambiar manualmente el estado del cliente potencial cuando sea necesario:
 
 #### Marcar como completado
 **Marcado como "Completado":** Impide que la campaña llame a este cliente potencial.
-- **Caso práctico:** Objetivo alcanzado a través de otros canales
+- **Caso de uso:** Objetivo alcanzado a través de otros canales
 - **Efecto:** El cliente potencial queda excluido de futuras llamadas de campaña
 - **Consideraciones:** No se puede restablecer automáticamente mediante una campaña.
 
@@ -141,39 +141,39 @@ Puedes cambiar manualmente el estado del cliente potencial cuando sea necesario:
 - **"Reprogramado":** Restablecer el temporizador de reintentos
 
 <Tip>
-**Estrategia de estado:** Utilice los cambios de estado manuales con moderación. Deje que la automatización de campañas gestione la mayoría de las actualizaciones de estado para un comportamiento coherente.
+**Estrategia de estado:** Utilice los cambios de estado manuales con moderación. Deje que la automatización de campañas gestione la mayoría de las actualizaciones de estado para lograr un comportamiento coherente.
 </Tip>
 
 ## Operaciones masivas
 
-### eliminación masiva
+### Eliminación masiva
 Seleccione varios clientes potenciales y elimínelos:
 1. **Filtrar clientes potenciales:** Utilice los filtros de la tabla para seleccionar clientes potenciales específicos.
 2. **Seleccionar clientes potenciales:** Marque las casillas de los clientes potenciales que desea eliminar.
 3. **Eliminación masiva:** Seleccione la acción de eliminación en el menú de acciones masivas.
-4. **Confirma:** Revisa los cambios antes de aplicarlos.
+4. **Confirmar:** Revisa los cambios antes de aplicarlos.
 
-### Exportación a granel
+### Exportación masiva
 Exportar datos de clientes potenciales filtrados para su procesamiento externo:
 - **Aplicar filtros:** Filtrar por campaña, estado, rango de fechas
-- **Seleccionar columnas:** Elija qué datos exportar
+- **Seleccionar las columnas:** Elija qué datos exportar
 - **Incluir contactos secundarios:** Opción para incluir contactos secundarios
 - **Descargar:** Formato CSV para compatibilidad con hojas de cálculo
 
 ## Organización de clientes
 
-Utilice filtros de tabla, ordenación y búsqueda para organizar los clientes potenciales por campaña, estado, rango de fechas o contenido variable.
+Utilice filtros de tabla, funciones de ordenación y búsqueda para organizar los clientes potenciales por campaña, estado, rango de fechas o contenido variable.
 
-## Integración de campaña
+## Integración de campañas
 
 - **Una sola campaña** por cliente potencial
 - **Herencia de variables** desde la configuración del asistente
-- **Coordinación automática** con la programación de la campaña y la lógica de reintento
+- **Coordinación automática** con el cronograma de la campaña y la lógica de reintento.
 
 ## Mejores prácticas
 
 ### Puntos clave
-- **Formato de teléfono:** Formato internacional sin espacios (+1234567890)
+- **Formato de teléfono:** Formato internacional sin espacios (+573124567890)
 - **Variables:** Utilice nombres coherentes e información relevante.
 - **Contactos secundarios:** Ordenar por prioridad, evitar duplicados
 - **Privacidad:** Cumplir con los requisitos de protección de datos
@@ -183,5 +183,5 @@ Para solucionar problemas comunes con los clientes potenciales, consulte [Soluci
 </Note>
 
 <Note>
-Para obtener información sobre la importación masiva de clientes potenciales, consulte [Importación de clientes potenciales](/leads/importing-leads).
+Para obtener información sobre cómo importar clientes potenciales de forma masiva, consulte [Importación de clientes potenciales](/leads/importing-leads).
 </Note>
